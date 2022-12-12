@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterAnimEventHandler : MonoBehaviour
 {
     [SerializeField] Character character;
-    [SerializeField] CharacterAudio audio;
+    [SerializeField] new CharacterAudio audio;
 
     private void Awake()
     {

@@ -36,8 +36,7 @@ AnimatorState:
   m_Name: AttackSlash
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -2377654442166211683}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -346,8 +345,7 @@ AnimatorState:
   m_Name: Jump
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 705840496160652222}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -399,44 +397,33 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
+    m_State: {fileID: -7180167842986386421}
+    m_Position: {x: 330, y: 120, z: 0}
+  - serializedVersion: 1
     m_State: {fileID: -8988384320981211430}
-    m_Position: {x: -210, y: 200, z: 0}
+    m_Position: {x: 30, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 30182431098795597}
-    m_Position: {x: -210, y: -280, z: 0}
+    m_Position: {x: 30, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110751614281911874}
-    m_Position: {x: -770, y: -390, z: 0}
+    m_Position: {x: 340, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 522141447717236989}
-    m_Position: {x: -210, y: -20, z: 0}
+    m_Position: {x: 30, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7264793152466674983}
-    m_Position: {x: -510, y: -240, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1096578222463963520}
-    m_Position: {x: 120, y: -120, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -321664363704008882}
-    m_Position: {x: 120, y: -220, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 2643184669899027121}
-    m_Position: {x: 120, y: 10, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4600886328051279705}
-    m_Position: {x: -210, y: -120, z: 0}
+    m_Position: {x: 340, y: 350, z: 0}
   m_ChildStateMachines: []
-  m_AnyStateTransitions:
-  - {fileID: 2667066348609094858}
-  - {fileID: -6470628498216235685}
+  m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -190, y: 90, z: 0}
-  m_EntryPosition: {x: -480, y: -40, z: 0}
-  m_ExitPosition: {x: -480, y: 30, z: 0}
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 4600886328051279705}
+  m_DefaultState: {fileID: -7180167842986386421}
 --- !u!1102 &522141447717236989
 AnimatorState:
   serializedVersion: 6
@@ -447,8 +434,7 @@ AnimatorState:
   m_Name: Impact
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 5983541646614286626}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -696,7 +682,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: Blend
+  m_BlendParameter: MoveSpeed
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
