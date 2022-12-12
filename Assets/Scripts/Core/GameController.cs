@@ -8,16 +8,19 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public CameraController Camera { get; private set; }
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
+    [field: SerializeField] public CharacterConfig[] CharacterConfig { get; private set; }
+    [SerializeField] private int numberOfCharacter = 5;
     [SerializeField] float raycastDistance = 10f;
-    [field: SerializeField] public Material placingMaterialValid { get; private set; }
+    [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
-    public List<Character> enemies = new List<Character>();
     
     [field: SerializeField, Header("Layers")] public LayerMask BackgroundLayer;
     [field: SerializeField] public LayerMask GroundLayer;
     [field: SerializeField] public LayerMask EnviromentLayer;
     [field: SerializeField] public LayerMask InteractableLayer;
     [field: SerializeField] public LayerMask CharacterLayer;
+
+    public bool TestingMode = false;
 
     public Vector3 PositionUnderMouse
     {
@@ -30,8 +33,26 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        CreateListCharacterConfigs();
+    }
+
     private void Update()
     {
         //print(PositionUnderMouse);
+    }
+
+    private void CreateListCharacterConfigs()
+    {
+        List<CharacterConfig> characterConfigList = new List<CharacterConfig>();
+
+        for (int i = 0; i < numberOfCharacter; i++)
+        {
+            CharacterConfig config = new CharacterConfig();
+            characterConfigList.Add(config);
+        }
+
+        CharacterConfig = characterConfigList.ToArray();
     }
 }
