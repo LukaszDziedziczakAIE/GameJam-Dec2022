@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
+    [field: SerializeField] public CharacterAudio Audio;
     [field: SerializeField] public float Speed = 5;
 
     public int configRef;
@@ -19,6 +20,7 @@ public class Character : MonoBehaviour
         if (Game == null) Game = FindObjectOfType<GameController>();
         if (Controller == null) Controller = GetComponent<CharacterController>();
         if (Animator == null) Animator = GetComponentInChildren<Animator>();
+        if (Audio == null) Audio = GetComponentInChildren<CharacterAudio>();
     }
 
     protected virtual void Start()
