@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacter : MonoBehaviour
+public class PlayerCharacter : Character
 {
+    [Header("Player Character")]
     [SerializeField] Vector3 pos_levelStart;
     [SerializeField] Vector3 pos_characterCreator;
 

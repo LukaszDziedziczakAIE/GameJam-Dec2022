@@ -12,6 +12,8 @@ public class UI_LeveDesign : UI_Base
     [SerializeField] RectTransform interactableTab;
     [SerializeField] RectTransform characterTab;
 
+    List<PlaceableObject> enviromentalObject;
+
     private void Start()
     {
         enviromentButton.onClick.AddListener(OnEnviromentButtonPress);
