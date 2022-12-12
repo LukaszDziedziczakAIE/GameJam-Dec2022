@@ -15,7 +15,7 @@ public class UI_Programing : UI_Base
 
     ColorBlock originalColor;
 
-    public int currentlySelected { get; private set; }
+    [field: SerializeField] public int CurrentlySelected { get; private set; }
 
     ProgrammingObjectConfig[] programmingObjectConfigs;
 
@@ -41,6 +41,18 @@ public class UI_Programing : UI_Base
         enemyButton3.gameObject.gameObject.SetActive(Game.CharacterConfig[3].active);
         enemyButton4.gameObject.gameObject.SetActive(Game.CharacterConfig[4].active);
         BuildBlockList();
+
+        CurrentlySelected = 0;
+        enemyButton1.colors = originalColor;
+        enemyButton2.colors = originalColor;
+        enemyButton3.colors = originalColor;
+        enemyButton4.colors = originalColor;
+    }
+
+    public override void Hide()
+    {
+        Game.BlockDetector.ClearCodeBlocks();
+        base.Hide();
     }
 
     private void BuildBlockList()
@@ -58,7 +70,7 @@ public class UI_Programing : UI_Base
 
     private void OnEnemyButton1Press()
     {
-        currentlySelected = 1;
+        CurrentlySelected = 1;
         originalColor = enemyButton1.colors;
         enemyButton1.colors = selectedColor;
         enemyButton2.colors = originalColor;
@@ -69,7 +81,7 @@ public class UI_Programing : UI_Base
 
     private void OnEnemyButton2Press()
     {
-        currentlySelected = 2;
+        CurrentlySelected = 2;
         originalColor = enemyButton2.colors;
         enemyButton1.colors = originalColor;
         enemyButton2.colors = selectedColor;
@@ -80,7 +92,7 @@ public class UI_Programing : UI_Base
 
     private void OnEnemyButton3Press()
     {
-        currentlySelected = 3;
+        CurrentlySelected = 3;
         originalColor = enemyButton3.colors;
         enemyButton1.colors = originalColor;
         enemyButton2.colors = originalColor;
@@ -91,7 +103,7 @@ public class UI_Programing : UI_Base
 
     private void OnEnemyButton4Press()
     {
-        currentlySelected = 4;
+        CurrentlySelected = 4;
         originalColor = enemyButton4.colors;
         enemyButton1.colors = originalColor;
         enemyButton2.colors = originalColor;

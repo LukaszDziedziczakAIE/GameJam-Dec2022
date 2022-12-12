@@ -42,8 +42,6 @@ public class CodeBlockDetector : MonoBehaviour
 
     public void CodeBlockPlaced()
     {
-        print("Code Block Placed");
-
         CodeBlock[] blocks = FindObjectsOfType<CodeBlock>();
         if (blocks.Length > 0)
         {
@@ -53,33 +51,30 @@ public class CodeBlockDetector : MonoBehaviour
             }
         }
 
-        if (Game.HUD.Programing.currentlySelected == 0) return;
+        if (Game.HUD.Programing.CurrentlySelected == 0) return;
 
         if (codeBlocks.Count > 0)
         {
             foreach(CodeBlock codeBlock in codeBlocks)
             {
-                Game.CharacterConfig[Game.HUD.Programing.currentlySelected].AddCodeBlock(codeBlock);
-                /*if (!Game.CharacterConfig[Game.HUD.Programing.currentlySelected].HasCodeBlock(codeBlock.config.ObjectName))
-                {
-                    Game.CharacterConfig[Game.HUD.Programing.currentlySelected].AddCodeBlock(codeBlock);
-                }*/
+                Game.CharacterConfig[Game.HUD.Programing.CurrentlySelected].AddCodeBlock(codeBlock);
             }
         }
     }
 
     public void RebuildBlocks()
     {
-        if (Game.HUD.Programing.currentlySelected == 0) return;
+        if (Game.HUD.Programing.CurrentlySelected == 0) return;
         ClearCodeBlocks();
 
-        if (Game.CharacterConfig[Game.HUD.Programing.currentlySelected].CodeBlocks.Count > 0)
+        if (Game.CharacterConfig[Game.HUD.Programing.CurrentlySelected].CodeBlocks.Count > 0)
         {
             foreach(CharacterConfig.CharacterCodeBlock block in 
-                Game.CharacterConfig[Game.HUD.Programing.currentlySelected].CodeBlocks)
+                Game.CharacterConfig[Game.HUD.Programing.CurrentlySelected].CodeBlocks)
             {
                 CodeBlock newBlock = Instantiate(Game.CodeBlockPrefab, block.Position, Quaternion.Euler(Vector3.zero));
                 codeBlocks.Add(newBlock);
+                newBlock.Set(block.CodeConfig);
             }
         }
     }

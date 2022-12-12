@@ -35,10 +35,10 @@ public class CharacterConfig : ScriptableObject
 
     public void AddCodeBlock(CodeBlock newCodeBlock)
     {
-        if (!HasCodeBlock(newCodeBlock.CodeName)) return;
-
-        CharacterCodeBlock block = new CharacterCodeBlock(newCodeBlock);
-        CodeBlocks.Add(block);
+        //Debug.Log("Adding " + newCodeBlock.CodeName);
+        if (HasCodeBlock(newCodeBlock.CodeName)) return;
+        CodeBlocks.Add(new CharacterCodeBlock(newCodeBlock));
+        //Debug.Log("CodeBlock total = " + CodeBlocks.Count.ToString());
     }
 
     public bool HasCodeBlock(string CodeBlockName)

@@ -26,7 +26,7 @@ public class UI_ProgramingItem : UI_Base
 
     private void OnButtonPress()
     {
-        if (Game.HUD.Programing.currentlySelected == 0) return;
+        if (Game.HUD.Programing.CurrentlySelected == 0) return;
 
         CodeBlock codeBlock = Instantiate(Game.CodeBlockPrefab);
         codeBlock.Set(config);

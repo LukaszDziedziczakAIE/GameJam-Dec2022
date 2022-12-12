@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         {
             //print(name + " " + Controller.isGrounded);
             ApplyPhysics();
-            //ResetToCenter();
+            ResetToCenter();
         }
     }
 
