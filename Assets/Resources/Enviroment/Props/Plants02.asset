@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7445f2d759a47d949a74388359e8eea6, type: 3}
-  m_Name: Grass
+  m_Name: Plants02
   m_EditorClassIdentifier: 
   <ObjectName>k__BackingField: 
-  <Prefab>k__BackingField: {fileID: 8861453217197543556, guid: ea3707d6aa8fd6b4ba356679fed5b075, type: 3}
-  <Icon>k__BackingField: {fileID: 2800000, guid: 2bb041e27a8944f4b862ee9b6425e519, type: 3}
-  <xPos>k__BackingField: 0
+  <Prefab>k__BackingField: {fileID: 873639330267278538, guid: bb1ee3171c7bd7a43a00ef36d1d471d1, type: 3}
+  <Icon>k__BackingField: {fileID: 0}
+  <xPos>k__BackingField: -1.5

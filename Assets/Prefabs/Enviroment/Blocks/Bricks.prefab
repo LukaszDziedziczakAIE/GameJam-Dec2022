@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6929546895208392265}
   - component: {fileID: 5584737330485996912}
   - component: {fileID: 3817805939750982968}
-  m_Layer: 0
+  - component: {fileID: 4868361035765823798}
+  m_Layer: 6
   m_Name: Bricks_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4868361035765823798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338108951739907276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7302728, y: 1.7302727, z: 1.7302728}
+  m_Center: {x: 0, y: 0.82188386, z: 0}
 --- !u!1 &3917568486960035406
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +159,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &5722998110503388329
 BoxCollider:
