@@ -15,4 +15,8 @@ public class VoiceType
     [Header("Death")]
     [field: SerializeField] public AudioSource DeathSource;
     [field: SerializeField] public List<AudioClip> DeathClips;
+
+    [Header("Footsteps")]
+    [field: SerializeField] public AudioSource FootstepSource;
+    [field: SerializeField] public List<AudioClip> FootstepClips;
 }
