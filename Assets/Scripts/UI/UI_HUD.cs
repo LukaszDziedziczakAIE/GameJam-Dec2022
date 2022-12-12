@@ -12,6 +12,8 @@ public class UI_HUD : UI_Base
     [SerializeField] Button testingButton;
     [SerializeField] Button publishButton;
     [field: SerializeField] public UI_LeveDesign LevelDesign { get; private set; }
+    [field: SerializeField] public UI_CharacterDesign CharacterDesign { get; private set; }
+    [field: SerializeField] public UI_Programing Programing { get; private set; }
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class UI_HUD : UI_Base
         publishButton.onClick.AddListener(OnPublishButtonPress);
 
         LevelDesign.gameObject.SetActive(false);
+        CharacterDesign.gameObject.SetActive(false);
+        Programing.gameObject.SetActive(false);
 
         OnLevelDesignButtonPress();
     }
@@ -32,6 +36,9 @@ public class UI_HUD : UI_Base
         Game.PlayerCharacter.SetPos_LevelStart();
 
         LevelDesign.Show();
+        CharacterDesign.Hide();
+        Programing.Hide();
+        Game.TestingMode = false;
     }
 
     private void OnCharacterDesignButtonPress()
@@ -39,22 +46,36 @@ public class UI_HUD : UI_Base
         Game.Camera.FaceCharacterCreator();
         Game.PlayerCharacter.SetPos_CharacterCreator();
 
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
+        Game.TestingMode = false;
     }
 
     private void OnProgramingDesignButtonPress()
     {
+        Game.Camera.FaceProgramming();
+        Game.PlayerCharacter.SetPos_LevelStart();
 
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Hide();
+        Programing.Show();
+        Game.TestingMode = false;
     }
 
     private void OnTestingButtonnPress()
     {
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Hide();
+        Programing.Hide();
+        Game.TestingMode = true;
     }
 
     private void OnPublishButtonPress()
     {
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
+        Game.TestingMode = false;
     }
 }

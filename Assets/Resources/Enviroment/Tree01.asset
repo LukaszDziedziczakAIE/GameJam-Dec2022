@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7445f2d759a47d949a74388359e8eea6, type: 3}
   m_Name: Tree01
   m_EditorClassIdentifier: 
-  objectName: Tree01
-  prefab: {fileID: 6306870454260766762, guid: 336b5b747fa22374fa5d3415d4c70817, type: 3}
-  icon: {fileID: 2800000, guid: ab3e421e7a9c4f94b828db0e419143c7, type: 3}
-  xPos: 0
+  <ObjectName>k__BackingField: 
+  <Prefab>k__BackingField: {fileID: 6306870454260766762, guid: 336b5b747fa22374fa5d3415d4c70817, type: 3}
+  <Icon>k__BackingField: {fileID: 2800000, guid: ab3e421e7a9c4f94b828db0e419143c7, type: 3}
+  <xPos>k__BackingField: 0
