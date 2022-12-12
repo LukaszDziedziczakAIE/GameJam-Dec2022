@@ -12,6 +12,8 @@ public class UI_HUD : UI_Base
     [SerializeField] Button testingButton;
     [SerializeField] Button publishButton;
     [field: SerializeField] public UI_LeveDesign LevelDesign { get; private set; }
+    [field: SerializeField] public UI_CharacterDesign CharacterDesign { get; private set; }
+    [field: SerializeField] public UI_Programing Programing { get; private set; }
 
     private void Start()
     {

@@ -17,4 +17,6 @@ public class PlayerCharacter : Character
     {
         transform.position = pos_characterCreator;
     }
+
+
 }

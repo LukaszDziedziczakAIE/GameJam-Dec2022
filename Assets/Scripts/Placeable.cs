@@ -120,15 +120,16 @@ public class Placeable : MonoBehaviour
         {
             if (colliders.Count > 0)
             {
-                print("EnviromentLayer = " + game.EnviromentLayer.value);
-                print("CharacterLayer = " + game.CharacterLayer.value);
+                //print("EnviromentLayer = " + game.EnviromentLayer.value);
+                //print("CharacterLayer = " + game.CharacterLayer.value);
                 foreach (Collider collider in colliders)
                 {
-                    print(collider.name + " " + collider.gameObject.layer);
-                    
-                    if (game.EnviromentLayer.value == collider.gameObject.layer) return false;
-                    if (game.CharacterLayer.value == collider.gameObject.layer) return false;
+                    if (((1 << collider.gameObject.layer) & game.CharacterLayer) != 0) return false;
+                    if (((1 << collider.gameObject.layer) & game.EnviromentLayer) != 0) return false;
+                    if (((1 << collider.gameObject.layer) & game.InteractableLayer) != 0) return false;
+                    if (((1 << collider.gameObject.layer) & game.GroundLayer) != 0) return false;
                 }
+                
             }
 
             return true;
@@ -144,6 +145,8 @@ public class Placeable : MonoBehaviour
 
     private void OnPlace()
     {
+        if (!validPlacement) return;
+
         Placing = false;
         game.InputReader.RightMouseEvent -= OnCancel;
         game.InputReader.LeftMouseEvent -= OnPlace;
