@@ -38,6 +38,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Show();
         CharacterDesign.Hide();
         Programing.Hide();
+        Game.TestingMode = false;
     }
 
     private void OnCharacterDesignButtonPress()
@@ -48,6 +49,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Show();
         Programing.Hide();
+        Game.TestingMode = false;
     }
 
     private void OnProgramingDesignButtonPress()
@@ -58,13 +60,15 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Hide();
         Programing.Show();
+        Game.TestingMode = false;
     }
 
     private void OnTestingButtonnPress()
     {
         LevelDesign.Hide();
-        CharacterDesign.Show();
+        CharacterDesign.Hide();
         Programing.Hide();
+        Game.TestingMode = true;
     }
 
     private void OnPublishButtonPress()
@@ -72,5 +76,6 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Show();
         Programing.Hide();
+        Game.TestingMode = false;
     }
 }

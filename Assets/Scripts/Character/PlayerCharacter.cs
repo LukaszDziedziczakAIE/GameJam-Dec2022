@@ -16,9 +16,15 @@ public class PlayerCharacter : Character
         InputReader = Game.InputReader;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        configRef = 0;
+    }
+
     private void Update()
     {
-        
+        ProcessMovement();
     }
 
     public void SetPos_LevelStart()

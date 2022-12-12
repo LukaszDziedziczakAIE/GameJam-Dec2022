@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public CharacterController Controller;
 
-    public CharacterConfig Config { get; private set; }
+    public int configRef;
     protected Vector3 impact;
     float verticalVelocity;
     public Vector3 Movement => impact + Vector3.up * verticalVelocity;
@@ -18,7 +18,10 @@ public class Character : MonoBehaviour
         if (Controller == null) Controller = GetComponent<CharacterController>();
     }
 
-    public void SetNewConfig(CharacterConfig newConfig) { Config = newConfig; }
+    protected virtual void Start()
+    {
+
+    }
 
     protected void Move(Vector3 motion, float deltaTime)
     {
@@ -28,5 +31,18 @@ public class Character : MonoBehaviour
     protected void Move(float deltaTime)
     {
         Controller.Move((Movement) * deltaTime);
+    }
+
+    public CharacterConfig Config
+    {
+        get
+        {
+            return Game.CharacterConfig[configRef];
+        }
+    }
+
+    public void UpdateCharacter()
+    {
+
     }
 }
