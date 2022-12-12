@@ -317,6 +317,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!222 &5428535293635166620
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371441641739101590}
+  m_CullTransparentMesh: 1
 --- !u!114 &2413663370097041573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,14 +343,7 @@ MonoBehaviour:
   enemyButton3: {fileID: 4416920459548414140}
   enemyButton4: {fileID: 5390329337889090281}
   Content: {fileID: 3536072274525594537}
---- !u!222 &5428535293635166620
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371441641739101590}
-  m_CullTransparentMesh: 1
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7308152100394833115
 MonoBehaviour:
   m_ObjectHideFlags: 0

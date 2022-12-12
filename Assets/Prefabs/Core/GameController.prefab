@@ -49,10 +49,11 @@ MonoBehaviour:
   <Camera>k__BackingField: {fileID: 0}
   <PlayerCharacter>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 1191283179}
+  <CharacterConfig>k__BackingField: []
+  numberOfCharacter: 5
   raycastDistance: 50
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
-  enemies: []
   BackgroundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -68,6 +69,7 @@ MonoBehaviour:
   CharacterLayer:
     serializedVersion: 2
     m_Bits: 256
+  TestingMode: 0
 --- !u!114 &1191283179
 MonoBehaviour:
   m_ObjectHideFlags: 0

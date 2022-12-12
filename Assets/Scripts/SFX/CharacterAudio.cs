@@ -19,6 +19,19 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
+    private AudioClip FootstepClip
+    {
+        get
+        {
+            if (voice.FootstepClips.Count > 0)
+            {
+                return voice.FootstepClips[Random.Range(0, voice.FootstepClips.Count)];
+            }
+
+            return null;
+        }
+    }
+
     private AudioClip DeathClip
     {
         get
@@ -81,6 +94,16 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
+    private void PlayFootstepSource(AudioClip audioClip)
+    {
+        if (voice.FootstepSource != null && audioClip != null)
+        {
+            if (voice.FootstepSource.isPlaying) voice.FootstepSource.Stop();
+            voice.FootstepSource.clip = audioClip;
+            voice.FootstepSource.Play();
+        }
+    }
+
     private void PlayVoiceSource(AudioClip audioClip)
     {
         if (voice.VoiceSource != null && audioClip != null)
@@ -91,7 +114,7 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
-    public void PlaySwing()
+    public void PlayDeathVoice()
     {
         if (voice.DeathClips.Count > 0)
         {
@@ -99,7 +122,7 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
-    public void PlayReaction()
+    public void PlayReactionVoice()
     {
         if (voice.ReactionClips.Count > 0)
         {
@@ -107,7 +130,7 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
-    public void PlayJump()
+    public void PlayJumpVoice()
     {
         if (voice.JumpClips.Count > 0)
         {
@@ -115,11 +138,19 @@ public class CharacterAudio : MonoBehaviour
         }
     }
 
-    public void PlayAttack()
+    public void PlayAttackVoice()
     {
         if (voice.AttackingClips.Count > 0)
         {
             PlayVoiceSource(AttackingClip);
+        }
+    }
+
+    public void PlayFootstep()
+    {
+        if (voice.FootstepClips.Count > 0)
+        {
+            PlayFootstepSource(FootstepClip);
         }
     }
 }
