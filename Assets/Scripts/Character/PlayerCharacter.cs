@@ -9,6 +9,7 @@ public class PlayerCharacter : Character
     [SerializeField] Vector3 pos_characterCreator;
 
     InputReader InputReader;
+    [SerializeField] float RotationDamping = 0.1f;
 
     protected override void Awake()
     {
@@ -41,9 +42,40 @@ public class PlayerCharacter : Character
     {
         if (Game.TestingMode && InputReader.Movement.magnitude > 0)
         {
-            print("testing mode processing movement");
+            Vector3 Movement = CalculateMovement();
+            FaceMovementDirection(Movement);
+            Move(Movement * Speed);
+            Animator.SetFloat("MoveSpeed", 1);
+        }
+        else
+        {
+            Move();
+            Animator.SetFloat("MoveSpeed", 0);
         }
     }
 
+    protected Vector3 CalculateMovement()
+    {
+        Vector3 forward = Game.Camera.transform.forward;
+        Vector3 right = Game.Camera.transform.right;
 
+        forward.y = 0;
+        right.y = 0;
+
+        forward.Normalize();
+        right.Normalize();
+
+        return forward * Game.InputReader.Movement.y + right * Game.InputReader.Movement.x;
+    }
+
+    protected void FaceMovementDirection(Vector3 movement)
+    {
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Lerp(
+            transform.rotation,
+            Quaternion.LookRotation(movement),
+            Time.deltaTime * RotationDamping);
+        }
+    }
 }

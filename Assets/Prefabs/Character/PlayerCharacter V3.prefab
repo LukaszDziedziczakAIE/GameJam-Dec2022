@@ -169,9 +169,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd05450851d31de4ba03209591a352fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 3711287403960588901}
+  <Game>k__BackingField: {fileID: 0}
+  Controller: {fileID: 0}
+  Animator: {fileID: 0}
+  Speed: 5
+  configRef: 0
   pos_levelStart: {x: 0, y: 0, z: 0}
   pos_characterCreator: {x: -18.82, y: 2.72, z: 1.27}
+  RotationDamping: 24
 --- !u!143 &3711287403960588901
 CharacterController:
   m_ObjectHideFlags: 0
