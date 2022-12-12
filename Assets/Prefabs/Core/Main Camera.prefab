@@ -96,3 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff135be30e7e01b4a94b75720394104c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingPos: {x: -16, y: 2.5, z: 0}
+  programmingPos: {x: 0, y: 0, z: 0}
+  programmingAngles: {x: 0, y: 0, z: 0}
+  levelScreenAngles: {x: 0, y: 90, z: 0}
+  characterScreenAngles: {x: 0, y: -90, z: 0}
