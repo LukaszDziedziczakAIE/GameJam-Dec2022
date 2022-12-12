@@ -28,7 +28,7 @@ public class UI_LevelContentItem : MonoBehaviour
     public void Set(CharacterObject characterObject)
     {
         this.characterObject = characterObject;
-        image.texture = this.placeableObject.Icon;
+        image.texture = this.characterObject.Icon;
         text.text = "";
     }
 
@@ -37,12 +37,16 @@ public class UI_LevelContentItem : MonoBehaviour
         if (characterObject != null)
         {
             EnemyCharacter enemy = Instantiate(characterObject.EnemyCharacterPrefab);
+            enemy.configRef = characterObject.CharacterIndex;
+            enemy.Placeable.Placing = true;
+
             //enemy.Set(placeableObject);
         }
         else if (placeableObject != null)
         {
             Placeable placeable = Instantiate(placeableObject.Prefab);
             placeable.Set(placeableObject);
+            placeable.Placing = true;
         }
         
     }

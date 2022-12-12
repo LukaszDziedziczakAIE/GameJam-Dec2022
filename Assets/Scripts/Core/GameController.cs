@@ -9,10 +9,12 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
     [SerializeField] float raycastDistance = 10f;
+
     [field: SerializeField, Header("Characters")] public CharacterConfig[] CharacterConfig { get; private set; }
     [SerializeField] private int numberOfCharacter = 5;
     [field: SerializeField] public float MapZCenter = 0; 
     [field: SerializeField] public EnemyCharacter EnemyCharacterPrefab { get; private set; }
+
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
     
@@ -21,6 +23,11 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public LayerMask EnviromentLayer;
     [field: SerializeField] public LayerMask InteractableLayer;
     [field: SerializeField] public LayerMask CharacterLayer;
+
+    [field: SerializeField, Header("Screen PlayerCharacter Positions")] public Vector3 LevelStartPos;
+    [field: SerializeField] public Vector3 LevelStartRot;
+    [field: SerializeField] public Vector3 CharacterDesignPos;
+    [field: SerializeField] public Vector3 CharacterDesignRot;
 
     public bool TestingMode = false;
 

@@ -8,7 +8,7 @@ public class Placeable : MonoBehaviour
     [SerializeField] MeshRenderer[] meshRenderers;
     [SerializeField] List<Material[]> mat_arrays = new List<Material[]>();
     
-    public bool Placing = true;
+    public bool Placing;
     PlaceableObject config;
 
     [SerializeField] List<Collider> colliders = new List<Collider>();

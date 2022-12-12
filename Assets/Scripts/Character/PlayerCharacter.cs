@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerCharacter : Character
 {
-    [Header("Player Character")]
-    [SerializeField] Vector3 pos_levelStart;
-    [SerializeField] Vector3 pos_characterCreator;
-
     InputReader InputReader;
     [SerializeField] float RotationDamping = 0.1f;
+
+    Vector3 lastPos = Vector3.zero;
 
     protected override void Awake()
     {
@@ -23,19 +21,28 @@ public class PlayerCharacter : Character
         configRef = 0;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         ProcessMovement();
     }
 
     public void SetPos_LevelStart()
     {
-        transform.position = pos_levelStart;
+        transform.position = Game.LevelStartPos;
+        if (lastPos != Vector3.zero) transform.eulerAngles = lastPos;
+        else transform.eulerAngles = Game.LevelStartRot;
+        Controller.enabled = true;
+        inLevel = true;
     }
 
     public void SetPos_CharacterCreator()
     {
-        transform.position = pos_characterCreator;
+        Controller.enabled = false;
+        lastPos = transform.position;
+        transform.position = Game.CharacterDesignPos;
+        transform.eulerAngles = Game.CharacterDesignRot;
+        inLevel = false;
     }
 
     private void ProcessMovement()
@@ -79,9 +86,20 @@ public class PlayerCharacter : Character
         }
     }
 
-    public void MapControls()
+    public void MapControls(bool maping = true)
     {
-        
+        if (maping)
+        {
+            InputReader.JumpEvent += OnJump;
+            InputReader.InteractEvent += OnInteract;
+            InputReader.AttackEvent += OnAttack;
+        }
+        else
+        {
+            InputReader.JumpEvent -= OnJump;
+            InputReader.InteractEvent -= OnInteract;
+            InputReader.AttackEvent -= OnAttack;
+        }
     }
 
     private void OnJump()

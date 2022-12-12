@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     protected Vector3 dampingVelocity;
     float verticalVelocity;
     public Vector3 Movement => impact + Vector3.up * verticalVelocity;
+    public bool inLevel = true;
 
     protected virtual void Awake()
     {
@@ -32,10 +33,13 @@ public class Character : MonoBehaviour
 
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        ApplyPhysics();
-        ResetToCenter();
+        if (inLevel)
+        {
+            ApplyPhysics();
+            ResetToCenter();
+        }
     }
 
     private void ApplyPhysics()
@@ -68,12 +72,13 @@ public class Character : MonoBehaviour
 
     protected void Move(Vector3 motion)
     {
-        Controller.Move((motion + Movement) * Time.deltaTime);
+        if (Controller.enabled) Controller.Move((motion + Movement) * Time.deltaTime);
+
     }
 
     protected void Move()
     {
-        Controller.Move((Movement) * Time.deltaTime);
+        if (Controller.enabled) Controller.Move((Movement) * Time.deltaTime);
     }
 
     public CharacterConfig Config

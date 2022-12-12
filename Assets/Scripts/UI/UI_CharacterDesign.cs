@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UI_CharacterDesign : UI_Base
 {
     int currentCharacterIndex = 0;
+    Character selectedCharacter;
 
     [SerializeField] Texture enemyIcon;
     [SerializeField] Texture plusIcon;
@@ -93,7 +94,12 @@ public class UI_CharacterDesign : UI_Base
     {
         base.Show();
         OnPlayerButtonPress();
-        SetCharacterButtonVisibility();
+    }
+
+    public override void Hide()
+    {
+        ClearCharacter();
+        base.Hide();
     }
 
     private void OnPlayerButtonPress()
@@ -103,67 +109,83 @@ public class UI_CharacterDesign : UI_Base
         title.text = "Player";
         SetStats();
         SetCharacterButtonVisibility();
+
+        ClearCharacter();
+        Game.PlayerCharacter.SetPos_CharacterCreator();
+        selectedCharacter = Game.PlayerCharacter;
     }
 
     private void OnEnemy1ButtonPress()
     {
-        if (!Game.CharacterConfig[1].active)
-        {
-            Game.CharacterConfig[1].active = true;
-            enemy1Image.texture = enemyIcon;
-        }
         currentCharacterIndex = 1;
-        deleteButton.gameObject.SetActive(true);
-        title.text = "Enemy 1";
+        SetCurrentActive();
+        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
-
+        SpawnCharacter();
     }
 
     private void OnEnemy2ButtonPress()
     {
-        if (!Game.CharacterConfig[2].active)
-        {
-            Game.CharacterConfig[2].active = true;
-            enemy1Image.texture = enemyIcon;
-        }
         currentCharacterIndex = 2;
-        deleteButton.gameObject.SetActive(true);
-        title.text = "Enemy 2";
+        SetCurrentActive();
+        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
-
+        SpawnCharacter();
     }
 
     private void OnEnemy3ButtonPress()
     {
-        if (!Game.CharacterConfig[3].active)
-        {
-            Game.CharacterConfig[3].active = true;
-            enemy1Image.texture = enemyIcon;
-        }
         currentCharacterIndex = 3;
-        deleteButton.gameObject.SetActive(true);
-        title.text = "Enemy 3";
+        SetCurrentActive();
+        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
-
+        SpawnCharacter();
     }
 
     private void OnEnemy4ButtonPress()
     {
-        if (!Game.CharacterConfig[4].active)
-        {
-            Game.CharacterConfig[4].active = true;
-            enemy1Image.texture = enemyIcon;
-        }
         currentCharacterIndex = 4;
-        deleteButton.gameObject.SetActive(true);
-        title.text = "Enemy 4";
+        
+        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
-
+        SpawnCharacter();
     }
+
+    private void SetCurrentActive()
+    {
+        if (!Game.CharacterConfig[currentCharacterIndex].active)
+        {
+            Game.CharacterConfig[currentCharacterIndex].active = true;
+
+            switch(currentCharacterIndex)
+            {
+                case 1:
+                    enemy1Image.texture = enemyIcon;
+                    break;
+
+                case 2:
+                    enemy2Image.texture = enemyIcon;
+                    break;
+
+                case 3:
+                    enemy3Image.texture = enemyIcon;
+                    break;
+
+                case 4:
+                    enemy4Image.texture = enemyIcon;
+                    break;
+            }
+        }
+    }
+
 
     private void OnPreviousVoiceButtonPress()
     {
@@ -171,6 +193,7 @@ public class UI_CharacterDesign : UI_Base
         if (voiceIndex <= -1) voiceIndex = 3;
         voiceText.text = "Voice " + (voiceIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].voiceRef = voiceIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnNextVoiceButtonPress()
@@ -179,6 +202,7 @@ public class UI_CharacterDesign : UI_Base
         if (voiceIndex >= 4) voiceIndex = 0;
         voiceText.text = "Voice " + (voiceIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].voiceRef = voiceIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnPreviousHelmetButtonPress()
@@ -187,6 +211,7 @@ public class UI_CharacterDesign : UI_Base
         if (helmetIndex <= -1) helmetIndex = 3;
         helmetText.text = "Helmet " + (helmetIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnNextHelmetButtonPress()
@@ -195,36 +220,42 @@ public class UI_CharacterDesign : UI_Base
         if (helmetIndex >= 4) helmetIndex = 0;
         helmetText.text = "Helmet " + (helmetIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnColour1ButtonPress()
     {
         colourIndex = 0;
         Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnColour2ButtonPress()
     {
         colourIndex = 1;
         Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnColour3ButtonPress()
     {
         colourIndex = 2;
         Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnColour4ButtonPress()
     {
         colourIndex = 3;
         Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnColour5ButtonPress()
     {
         colourIndex = 4;
         Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnNextWeaponButtonPress()
@@ -234,6 +265,7 @@ public class UI_CharacterDesign : UI_Base
         if (weaponIndex == 0) weaponText.text = "Sword";
         else if (weaponIndex == 1) weaponText.text = "Bow";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnPreviousWeaponButtonPress()
@@ -243,11 +275,13 @@ public class UI_CharacterDesign : UI_Base
         if (weaponIndex == 0) weaponText.text = "Sword";
         else if (weaponIndex == 1) weaponText.text = "Bow";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
+        selectedCharacter.UpdateCharacter();
     }
 
     private void OnDeleteButtonPress()
     {
-        
+        Game.CharacterConfig[currentCharacterIndex].Clear();
+        OnPlayerButtonPress();
     }
 
     private void SetCharacterButtonVisibility()
@@ -305,5 +339,40 @@ public class UI_CharacterDesign : UI_Base
         weaponIndex = Game.CharacterConfig[currentCharacterIndex].weaponRef;
         if (weaponIndex == 0) weaponText.text = "Sword";
         else if (weaponIndex == 1) weaponText.text = "Bow";
+    }
+
+    private void SpawnCharacter()
+    {
+        if (Game.EnemyCharacterPrefab == null)
+        {
+            Debug.LogError("Missing enemy Prefab");
+            return;
+        }
+
+        ClearCharacter();
+        selectedCharacter = Instantiate(
+            Game.EnemyCharacterPrefab, 
+            Game.CharacterDesignPos, 
+            Quaternion.Euler(Game.CharacterDesignRot));
+        selectedCharacter.configRef = currentCharacterIndex;
+        selectedCharacter.UpdateCharacter();
+        selectedCharacter.inLevel = false;
+    }
+
+    public void ClearCharacter()
+    {
+        if (selectedCharacter == null) return;
+
+        if (selectedCharacter.configRef == 0)
+        {
+            Game.PlayerCharacter.SetPos_LevelStart();
+            selectedCharacter = null;
+        }
+        else if (selectedCharacter != null)
+        {
+            Destroy(selectedCharacter.gameObject);
+            selectedCharacter = null;
+        }
+        
     }
 }
