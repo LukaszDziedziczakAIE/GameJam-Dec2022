@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
+    [field: SerializeField] public float Speed = 5;
 
     public int configRef;
     protected Vector3 impact;
@@ -25,14 +26,14 @@ public class Character : MonoBehaviour
 
     }
 
-    protected void Move(Vector3 motion, float deltaTime)
+    protected void Move(Vector3 motion)
     {
-        Controller.Move((motion + Movement) * deltaTime);
+        Controller.Move((motion + Movement) * Time.deltaTime);
     }
 
-    protected void Move(float deltaTime)
+    protected void Move()
     {
-        Controller.Move((Movement) * deltaTime);
+        Controller.Move((Movement) * Time.deltaTime);
     }
 
     public CharacterConfig Config
