@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1813630410362815458
+--- !u!1 &6767817279943456359
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1324233745518418264}
-  - component: {fileID: 2724471092532664061}
-  - component: {fileID: 156415768205599287}
+  - component: {fileID: 6244185194559433949}
+  - component: {fileID: 6991863489999987576}
+  - component: {fileID: 5110707640072673202}
   m_Layer: 0
-  m_Name: Grass
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1324233745518418264
+--- !u!4 &6244185194559433949
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813630410362815458}
+  m_GameObject: {fileID: 6767817279943456359}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.00011481207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4094780443259347768}
+  m_Father: {fileID: 3379653107435669369}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2724471092532664061
+--- !u!33 &6991863489999987576
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813630410362815458}
-  m_Mesh: {fileID: 8241279385697779978, guid: a5a416c82d7edfa45a3552b1dfacd769, type: 3}
---- !u!23 &156415768205599287
+  m_GameObject: {fileID: 6767817279943456359}
+  m_Mesh: {fileID: -5656271439220315490, guid: fdd4b70c9b515fd459d8280bde78f3c4, type: 3}
+--- !u!23 &5110707640072673202
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813630410362815458}
+  m_GameObject: {fileID: 6767817279943456359}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,8 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: da56f7ac6d025c64a8e4c536bebd07bc, type: 2}
-  - {fileID: 2100000, guid: 8dcde53a07b00f24687a86405edf861c, type: 2}
+  - {fileID: 2100000, guid: fc081753f105a32449fe56f2fdf43d29, type: 2}
+  - {fileID: 2100000, guid: 123a53a6db14c914b97d6f8e92250f15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6029152739409963046
+--- !u!1 &8721077935363223346
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,38 +90,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4094780443259347768}
-  - component: {fileID: 8861453217197543556}
-  - component: {fileID: 3220965646865880408}
+  - component: {fileID: 3379653107435669369}
+  - component: {fileID: 4282195935888954694}
+  - component: {fileID: 5431826664342001359}
   m_Layer: 0
-  m_Name: Grass_Block
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4094780443259347768
+--- !u!4 &3379653107435669369
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6029152739409963046}
+  m_GameObject: {fileID: 8721077935363223346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1324233745518418264}
+  - {fileID: 6244185194559433949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8861453217197543556
+--- !u!65 &4282195935888954694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8721077935363223346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4596956, y: 2.6376116, z: 3.4606142}
+  m_Center: {x: 0, y: 1.3188058, z: 0.000000059604645}
+--- !u!114 &5431826664342001359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6029152739409963046}
+  m_GameObject: {fileID: 8721077935363223346}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ae17b412643155409069834dae9d7df, type: 3}
@@ -129,16 +142,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderers: []
   Placing: 1
---- !u!65 &3220965646865880408
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6029152739409963046}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.4648318, y: 3.444903, z: 3.4400413}
-  m_Center: {x: 0.013409615, y: 1.7143555, z: 0.00096166134}

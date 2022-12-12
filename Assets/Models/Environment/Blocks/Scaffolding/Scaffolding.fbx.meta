@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: d2cdd59b67c331d4b986afd72eb932f0
+guid: a7f1390087fee3b4d8cd7e6060fd5827
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plank_Mat
+    second: {fileID: 2100000, guid: 886574f1b829ac348aa7557d6f8407fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scaffold_Mat
+    second: {fileID: 2100000, guid: 3ec5e4812c952144ebc2d70c206e83be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

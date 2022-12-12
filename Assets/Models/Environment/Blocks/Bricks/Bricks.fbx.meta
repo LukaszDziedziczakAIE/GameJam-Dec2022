@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf9321c3cba97ba4683e897a193037cc
+guid: 6ae1c6c498e532443a8b23636a99bf19
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plank_Mat
-    second: {fileID: 2100000, guid: 886574f1b829ac348aa7557d6f8407fb, type: 2}
+      name: Brick_Grout
+    second: {fileID: 2100000, guid: 2f2740b6f91fdd749b2092d159566e90, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Scaffold_Mat
-    second: {fileID: 2100000, guid: 3ec5e4812c952144ebc2d70c206e83be, type: 2}
+      name: Bricks_Mat
+    second: {fileID: 2100000, guid: c9d652adba203714fbc585ea7833399d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
