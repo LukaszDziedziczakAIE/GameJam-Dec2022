@@ -6,7 +6,7 @@ public class UI_Base : MonoBehaviour
 {
     [SerializeField] protected GameController Game;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (Game == null) Game = FindObjectOfType<GameController>();
     }
