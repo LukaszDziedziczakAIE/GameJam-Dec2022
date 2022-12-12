@@ -1350,6 +1350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterDesignHUD
       objectReference: {fileID: 0}
+    - target: {fileID: 534261713449316451, guid: 10273bc6252280648b561284129e6d3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1377,14 +1381,6 @@ PrefabInstance:
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_LocalPosition.x
