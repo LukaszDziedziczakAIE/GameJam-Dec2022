@@ -812,6 +812,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db98aa19ab1232f48b766d8c43bdfaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Game>k__BackingField: {fileID: 0}
+  <HeadPos>k__BackingField: {fileID: 1657864265860271197}
+  Controller: {fileID: 1005324743469211783}
+  Animator: {fileID: 8103971886590934061}
+  Audio: {fileID: 7051761790057310334}
+  Speed: 5
+  configRef: 0
 --- !u!143 &1005324743469211783
 CharacterController:
   m_ObjectHideFlags: 0

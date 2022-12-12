@@ -21,10 +21,9 @@ public class UI_LeveDesign : UI_Base
     [SerializeField] RectTransform interactableContent;
     [SerializeField] RectTransform characterContent;
 
-    //[Header("Object Lists")]
-    /*[SerializeField] */PlaceableObject[] enviromentalObjects;
-    /*[SerializeField] */PlaceableObject[] interactableObjects;
-    /*[SerializeField] */PlaceableObject[] characterObjects;
+    PlaceableObject[] enviromentalObjects;
+    PlaceableObject[] interactableObjects;
+    CharacterObject[] characterObjects;
 
     // tab lists
     List<UI_LevelContentItem> enviromentalObjectItems = new List<UI_LevelContentItem>();
@@ -43,7 +42,7 @@ public class UI_LeveDesign : UI_Base
 
         enviromentalObjects = Resources.LoadAll<PlaceableObject>("Enviroment/");
         interactableObjects = Resources.LoadAll<PlaceableObject>("Interactable/");
-        characterObjects = Resources.LoadAll<PlaceableObject>("Character/");
+        characterObjects = Resources.LoadAll<CharacterObject>("Character/");
 
         //Debug.Log("Loaded " + interactableObjects.Length + " interactable object to place.");
     }
@@ -112,11 +111,15 @@ public class UI_LeveDesign : UI_Base
     {
         if (characterObjectsItems.Count == 0 && characterObjects.Length > 0)
         {
-            foreach (PlaceableObject placeableObject in characterObjects)
+            foreach (CharacterObject characterObject in characterObjects)
             {
-                UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, characterContent);
-                levelContentItem.Set(placeableObject);
-                enviromentalObjectItems.Add(levelContentItem);
+                if (Game.CharacterConfig[characterObject.CharacterIndex].active)
+                {
+                    UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, characterContent);
+                    levelContentItem.Set(characterObject);
+                    enviromentalObjectItems.Add(levelContentItem);
+                }
+                
             }
         }
     }
