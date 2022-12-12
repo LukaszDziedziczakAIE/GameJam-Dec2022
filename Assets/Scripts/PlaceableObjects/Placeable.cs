@@ -151,6 +151,11 @@ public class Placeable : MonoBehaviour
         game.InputReader.RightMouseEvent -= OnCancel;
         game.InputReader.LeftMouseEvent -= OnPlace;
         SetMaterialsOriginal();
+
+        if(gameObject.TryGetComponent<EnemyCharacter>(out EnemyCharacter enemy))
+        {
+            enemy.inLevel = true;
+        }
     }
 
 

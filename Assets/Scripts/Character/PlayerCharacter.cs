@@ -104,16 +104,16 @@ public class PlayerCharacter : Character
 
     private void OnJump()
     {
-
+        Jump();
     }
 
     private void OnInteract()
     {
-
+        Interact();
     }
 
     private void OnAttack()
     {
-
+        Attack();
     }
 }

@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int numberOfCharacter = 5;
     [field: SerializeField] public float MapZCenter = 0; 
     [field: SerializeField] public EnemyCharacter EnemyCharacterPrefab { get; private set; }
+    [field: SerializeField] public Material[] ArmourColors { get; private set; }
 
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }

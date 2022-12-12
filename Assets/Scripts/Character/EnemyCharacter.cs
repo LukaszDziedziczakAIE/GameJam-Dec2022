@@ -14,12 +14,7 @@ public class EnemyCharacter : Character
 
     protected override void Update()
     {
+        if (Placeable.Placing) return;
         base.Update();
-        PlacingLogic();
-    }
-
-    public void PlacingLogic()
-    {
-
     }
 }

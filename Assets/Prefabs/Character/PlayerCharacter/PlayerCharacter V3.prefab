@@ -176,8 +176,10 @@ MonoBehaviour:
   Animator: {fileID: 2434338333872718430}
   Audio: {fileID: 6443308998982580109}
   Speed: 5
+  Renderer: {fileID: 0}
   configRef: 0
   drag: 0.3
+  inLevel: 1
   RotationDamping: 24
 --- !u!143 &3711287403960588901
 CharacterController:

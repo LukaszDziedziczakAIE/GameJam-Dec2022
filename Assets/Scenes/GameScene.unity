@@ -720,6 +720,30 @@ PrefabInstance:
       propertyPath: <PlayerCharacter>k__BackingField
       value: 
       objectReference: {fileID: 128901875}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f1e5896de87d21a418e285fd993c173d, type: 2}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4d20fd31c0f77b438111ed4300d7a4b, type: 2}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0dfa970b1e032394ba59d9716077c1a8, type: 2}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e03f1c9afe752ea4a9e454b69a309e5d, type: 2}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <ArmourColors>k__BackingField.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: d5e66116b54ec884d980cf529c343aff, type: 2}
     - target: {fileID: 503326331158938953, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -777,6 +801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 39634643, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3846298026242527742, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
       propertyPath: m_RootOrder
       value: 2

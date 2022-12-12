@@ -38,6 +38,8 @@ public class UI_LevelContentItem : MonoBehaviour
         {
             EnemyCharacter enemy = Instantiate(characterObject.EnemyCharacterPrefab);
             enemy.configRef = characterObject.CharacterIndex;
+            enemy.UpdateCharacter();
+            enemy.Placeable.Set(characterObject);
             enemy.Placeable.Placing = true;
 
             //enemy.Set(placeableObject);
@@ -47,7 +49,6 @@ public class UI_LevelContentItem : MonoBehaviour
             Placeable placeable = Instantiate(placeableObject.Prefab);
             placeable.Set(placeableObject);
             placeable.Placing = true;
-        }
-        
+        }     
     }
 }

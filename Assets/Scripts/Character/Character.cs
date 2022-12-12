@@ -11,13 +11,15 @@ public class Character : MonoBehaviour
     [field: SerializeField] public Animator Animator;
     [field: SerializeField] public CharacterAudio Audio;
     [field: SerializeField] public float Speed = 5;
+    [field: SerializeField] public float jumpForce = 5;
+    [SerializeField] SkinnedMeshRenderer Renderer;
 
     public int configRef;
     [SerializeField] protected float drag = 0.3f;
     protected Vector3 impact;
     protected Vector3 dampingVelocity;
     float verticalVelocity;
-    public Vector3 Movement => impact + Vector3.up * verticalVelocity;
+    public Vector3 Movement => impact + (transform.up * verticalVelocity);
     public bool inLevel = true;
 
     protected virtual void Awake()
@@ -38,7 +40,7 @@ public class Character : MonoBehaviour
         if (inLevel)
         {
             ApplyPhysics();
-            ResetToCenter();
+            //ResetToCenter();
         }
     }
 
@@ -53,6 +55,8 @@ public class Character : MonoBehaviour
         {
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
+
+        Animator?.SetBool("IsGrounded", Controller.isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -91,6 +95,32 @@ public class Character : MonoBehaviour
 
     public void UpdateCharacter()
     {
+        ApplyArmourColors();
+    }
 
+    private void ApplyArmourColors()
+    {
+        if (Renderer == null) Renderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        Renderer.material = Game.ArmourColors[Game.CharacterConfig[configRef].armourColourRef];
+    }
+
+    protected void Attack()
+    {
+        Animator?.SetTrigger("Attack");
+    }
+
+    protected void Jump()
+    {
+        verticalVelocity += jumpForce;
+    }
+
+    protected void Interact()
+    {
+
+    }
+
+    public void AddForce(Vector3 force)
+    {
+        impact += force;
     }
 }
