@@ -78,4 +78,24 @@ public class PlayerCharacter : Character
             Time.deltaTime * RotationDamping);
         }
     }
+
+    public void MapControls()
+    {
+        
+    }
+
+    private void OnJump()
+    {
+
+    }
+
+    private void OnInteract()
+    {
+
+    }
+
+    private void OnAttack()
+    {
+
+    }
 }
