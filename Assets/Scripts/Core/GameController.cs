@@ -8,9 +8,10 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public CameraController Camera { get; private set; }
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
-    [field: SerializeField] public CharacterConfig[] CharacterConfig { get; private set; }
-    [SerializeField] private int numberOfCharacter = 5;
     [SerializeField] float raycastDistance = 10f;
+    [field: SerializeField, Header("Characters")] public CharacterConfig[] CharacterConfig { get; private set; }
+    [SerializeField] private int numberOfCharacter = 5;
+    [field: SerializeField] public EnemyCharacter EnemyCharacterPrefab { get; private set; }
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
     
