@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c88bd8e0ade6f499e471985bea01cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Game: {fileID: 0}
 --- !u!1 &5069643492689380274
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ MonoBehaviour:
   testingButton: {fileID: 6958417661450465222}
   publishButton: {fileID: 6958417660828317533}
   <LevelDesign>k__BackingField: {fileID: 1103812624103039312}
-  <CharacterDesign>k__BackingField: {fileID: 7388807356261637363}
+  <CharacterDesign>k__BackingField: {fileID: 6148847170391464710}
   <Programing>k__BackingField: {fileID: 2413663370097041573}
 --- !u!1 &8568223091253381340
 GameObject:
@@ -1369,10 +1370,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterDesignHUD
       objectReference: {fileID: 0}
-    - target: {fileID: 534261713449316451, guid: 10273bc6252280648b561284129e6d3e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1400,6 +1397,14 @@ PrefabInstance:
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1456,9 +1461,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
   m_PrefabInstance: {fileID: 7986615517714129775}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7388807356261637363 stripped
+--- !u!114 &6148847170391464710 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 602489882131939228, guid: 10273bc6252280648b561284129e6d3e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4288341174866966633, guid: 10273bc6252280648b561284129e6d3e, type: 3}
   m_PrefabInstance: {fileID: 7986615517714129775}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

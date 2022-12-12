@@ -24,6 +24,8 @@ public class UI_HUD : UI_Base
         publishButton.onClick.AddListener(OnPublishButtonPress);
 
         LevelDesign.gameObject.SetActive(false);
+        CharacterDesign.gameObject.SetActive(false);
+        Programing.gameObject.SetActive(false);
 
         OnLevelDesignButtonPress();
     }
@@ -34,6 +36,8 @@ public class UI_HUD : UI_Base
         Game.PlayerCharacter.SetPos_LevelStart();
 
         LevelDesign.Show();
+        CharacterDesign.Hide();
+        Programing.Hide();
     }
 
     private void OnCharacterDesignButtonPress()
@@ -41,22 +45,29 @@ public class UI_HUD : UI_Base
         Game.Camera.FaceCharacterCreator();
         Game.PlayerCharacter.SetPos_CharacterCreator();
 
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
     }
 
     private void OnProgramingDesignButtonPress()
     {
-
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
     }
 
     private void OnTestingButtonnPress()
     {
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
     }
 
     private void OnPublishButtonPress()
     {
-        LevelDesign.gameObject.SetActive(false);
+        LevelDesign.Hide();
+        CharacterDesign.Show();
+        Programing.Hide();
     }
 }
