@@ -41,6 +41,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePos"",
+                    ""type"": ""Value"",
+                    ""id"": ""dc878f62-1d32-461e-a810-adc8162a9bf1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -120,6 +128,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""RightMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4780eade-3f0e-4e44-a744-4f5973174271"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -137,6 +156,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_CameraControl = m_Player.FindAction("CameraControl", throwIfNotFound: true);
         m_Player_LeftMouse = m_Player.FindAction("LeftMouse", throwIfNotFound: true);
         m_Player_RightMouse = m_Player.FindAction("RightMouse", throwIfNotFound: true);
+        m_Player_MousePos = m_Player.FindAction("MousePos", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -189,6 +209,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_CameraControl;
     private readonly InputAction m_Player_LeftMouse;
     private readonly InputAction m_Player_RightMouse;
+    private readonly InputAction m_Player_MousePos;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -196,6 +217,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @CameraControl => m_Wrapper.m_Player_CameraControl;
         public InputAction @LeftMouse => m_Wrapper.m_Player_LeftMouse;
         public InputAction @RightMouse => m_Wrapper.m_Player_RightMouse;
+        public InputAction @MousePos => m_Wrapper.m_Player_MousePos;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +236,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @RightMouse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightMouse;
                 @RightMouse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightMouse;
                 @RightMouse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightMouse;
+                @MousePos.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
+                @MousePos.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
+                @MousePos.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -227,6 +252,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @RightMouse.started += instance.OnRightMouse;
                 @RightMouse.performed += instance.OnRightMouse;
                 @RightMouse.canceled += instance.OnRightMouse;
+                @MousePos.started += instance.OnMousePos;
+                @MousePos.performed += instance.OnMousePos;
+                @MousePos.canceled += instance.OnMousePos;
             }
         }
     }
@@ -245,5 +273,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnCameraControl(InputAction.CallbackContext context);
         void OnLeftMouse(InputAction.CallbackContext context);
         void OnRightMouse(InputAction.CallbackContext context);
+        void OnMousePos(InputAction.CallbackContext context);
     }
 }
