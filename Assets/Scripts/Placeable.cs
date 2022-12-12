@@ -11,6 +11,8 @@ public class Placeable : MonoBehaviour
     public bool Placing = true;
     PlaceableObject config;
 
+    [SerializeField] List<Collider> colliders = new List<Collider>();
+
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
@@ -19,6 +21,7 @@ public class Placeable : MonoBehaviour
     private void Start()
     {
         game.InputReader.RightMouseEvent += OnCancel;
+        game.InputReader.LeftMouseEvent += OnPlace;
     }
 
     private void Update()
@@ -96,6 +99,9 @@ public class Placeable : MonoBehaviour
     {
         if (!Placing || config == null) return;
 
+        if (validPlacement) SetMaterialsPlacementValid();
+        else SetMaterialsPlacementInvalid();
+
         if (game.PositionUnderMouse != Vector3.zero)
         {
             transform.position = new Vector3(config.xPos, game.PositionUnderMouse.y, game.PositionUnderMouse.z);
@@ -108,9 +114,52 @@ public class Placeable : MonoBehaviour
         
     }
 
+    private bool validPlacement
+    {
+        get
+        {
+            if (colliders.Count > 0)
+            {
+                print("EnviromentLayer = " + game.EnviromentLayer.value);
+                print("CharacterLayer = " + game.CharacterLayer.value);
+                foreach (Collider collider in colliders)
+                {
+                    print(collider.name + " " + collider.gameObject.layer);
+                    
+                    if (game.EnviromentLayer.value == collider.gameObject.layer) return false;
+                    if (game.CharacterLayer.value == collider.gameObject.layer) return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
+
     private void OnCancel()
     {
         Destroy(gameObject);
     }
 
+
+    private void OnPlace()
+    {
+        Placing = false;
+        game.InputReader.RightMouseEvent -= OnCancel;
+        game.InputReader.LeftMouseEvent -= OnPlace;
+        SetMaterialsOriginal();
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //print("Add " + other.gameObject.name);
+        colliders.Add(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //print("Removed " + other.gameObject.name);
+        colliders.Remove(other);
+    }
 }
