@@ -43,7 +43,6 @@ public class UI_LeveDesign : UI_Base
 
         enviromentalObjects = Resources.LoadAll<PlaceableObject>("Enviroment/");
         interactableObjects = Resources.LoadAll<PlaceableObject>("Interactable/");
-        //interactableObjects = (PlaceableObject[])Resources.LoadAll("Interactable", typeof(PlaceableObject));
         characterObjects = Resources.LoadAll<PlaceableObject>("Character/");
 
         //Debug.Log("Loaded " + interactableObjects.Length + " interactable object to place.");
