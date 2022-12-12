@@ -28,6 +28,7 @@ public class EnemyCharacter : Character
         if (Game.TestingMode)
         {
             CB_PatrolBehaviour();
+
         }
     }
 

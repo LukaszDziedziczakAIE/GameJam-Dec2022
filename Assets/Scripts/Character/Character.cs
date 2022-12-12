@@ -37,7 +37,7 @@ public class Character : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (inLevel)
+        if (inLevel && !(Game.HUD.Programing.gameObject.activeSelf || Game.HUD.CharacterDesign.gameObject.activeSelf))
         {
             //print(name + " " + Controller.isGrounded);
             ApplyPhysics();

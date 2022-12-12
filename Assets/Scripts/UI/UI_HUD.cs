@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI_HUD : UI_Base
 {
-    
+    [SerializeField] Button xButton;
     [SerializeField] Button levelDesignButton;
     [SerializeField] Button characterDesignButton;
     [SerializeField] Button programingDesignButton;
@@ -17,6 +17,7 @@ public class UI_HUD : UI_Base
 
     private void Start()
     {
+        xButton.onClick.AddListener(OnXButtonPress);
         levelDesignButton.onClick.AddListener(OnLevelDesignButtonPress);
         characterDesignButton.onClick.AddListener(OnCharacterDesignButtonPress);
         programingDesignButton.onClick.AddListener(OnProgramingDesignButtonPress);
@@ -77,6 +78,11 @@ public class UI_HUD : UI_Base
         CharacterDesign.Show();
         Programing.Hide();
         TestingMode(false);
+    }
+
+    private void OnXButtonPress()
+    {
+        Application.Quit();
     }
 
     private void TestingMode(bool testing)

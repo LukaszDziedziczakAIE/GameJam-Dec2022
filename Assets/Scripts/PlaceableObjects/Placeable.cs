@@ -7,17 +7,17 @@ public class Placeable : MonoBehaviour
     GameController game;
     [SerializeField] MeshRenderer[] meshRenderers;
     [SerializeField] List<Material[]> mat_arrays = new List<Material[]>();
-    
     public bool Placing;
     PlaceableObject config;
     CodeBlock codeBlock;
-
     [SerializeField] List<Collider> colliders = new List<Collider>();
+    Character character;
 
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
         codeBlock = GetComponent<CodeBlock>();
+        character = GetComponent<Character>();
     }
 
     private void Start()
@@ -36,6 +36,7 @@ public class Placeable : MonoBehaviour
         this.config = config;
         SaveOriginalMaterials();
         SetMaterialsPlacementValid();
+        if (character != null) character.Controller.enabled = false;
     }
 
     public void SaveOriginalMaterials()
@@ -161,6 +162,7 @@ public class Placeable : MonoBehaviour
         }
 
         if (codeBlock != null) game.BlockDetector.CodeBlockPlaced();
+        if (character != null) character.Controller.enabled = true;
     }
 
 

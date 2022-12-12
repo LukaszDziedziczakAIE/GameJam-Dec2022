@@ -43,10 +43,14 @@ public class UI_Programing : UI_Base
         BuildBlockList();
 
         CurrentlySelected = 0;
-        enemyButton1.colors = originalColor;
-        enemyButton2.colors = originalColor;
-        enemyButton3.colors = originalColor;
-        enemyButton4.colors = originalColor;
+
+        if (originalColor == new ColorBlock())
+        {
+            enemyButton1.colors = originalColor;
+            enemyButton2.colors = originalColor;
+            enemyButton3.colors = originalColor;
+            enemyButton4.colors = originalColor;
+        }
     }
 
     public override void Hide()
