@@ -1073,6 +1073,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5323864862010821639, guid: 420eec20232811e46abbd1ea7776d015, type: 3}
+      propertyPath: enviromentalObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323864862010821639, guid: 420eec20232811e46abbd1ea7776d015, type: 3}
+      propertyPath: enviromentalObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 82b6eaeae941276499ac787906e7c82d, type: 2}
     - target: {fileID: 5719460640515584850, guid: 420eec20232811e46abbd1ea7776d015, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
