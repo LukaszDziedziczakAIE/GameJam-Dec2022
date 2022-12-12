@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478418faec8dd1c41af827b35ba50359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <HUD>k__BackingField: {fileID: 0}
+  <Camera>k__BackingField: {fileID: 0}
+  <PlayerCharacter>k__BackingField: {fileID: 0}

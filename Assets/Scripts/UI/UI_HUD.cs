@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UI_HUD : MonoBehaviour
 {
+    [SerializeField] GameController Game; 
     [SerializeField] Button levelDesignButton;
     [SerializeField] Button characterDesignButton;
     [SerializeField] Button programingDesignButton;
@@ -13,7 +14,7 @@ public class UI_HUD : MonoBehaviour
 
     private void Awake()
     {
-        
+        if (Game == null) Game= FindObjectOfType<GameController>();
     }
 
     private void Start()
@@ -27,12 +28,14 @@ public class UI_HUD : MonoBehaviour
 
     private void OnLevelDesignButtonPress()
     {
-
+        Game.Camera.FaceLevel();
+        Game.PlayerCharacter.SetPos_LevelStart();
     }
 
     private void OnCharacterDesignButtonPress()
     {
-
+        Game.Camera.FaceCharacterCreator();
+        Game.PlayerCharacter.SetPos_CharacterCreator();
     }
 
     private void OnProgramingDesignButtonPress()
