@@ -49,7 +49,8 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < numberOfCharacter; i++)
         {
-            CharacterConfig config = new CharacterConfig();
+            CharacterConfig config = (CharacterConfig)ScriptableObject.CreateInstance("CharacterConfig");
+            if (i == 0) config.active = true;
             characterConfigList.Add(config);
         }
 
