@@ -707,6 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3536072274525594537}
+  - component: {fileID: 1493931763086726810}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -733,6 +734,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1493931763086726810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412373614701747541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 250, y: 80}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &3994406855862391187
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +972,15 @@ MonoBehaviour:
   enemyButton3: {fileID: 4416920459548414140}
   enemyButton4: {fileID: 5390329337889090281}
   Content: {fileID: 3536072274525594537}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selectedColor:
+    m_NormalColor: {r: 1, g: 0.8300616, b: 0.16509432, a: 0}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 0
+  programingItemPrefab: {fileID: 6114937610319085313, guid: 19c9ee0a776c4a64294bcebc09f664b3, type: 3}
 --- !u!114 &7308152100394833115
 MonoBehaviour:
   m_ObjectHideFlags: 0

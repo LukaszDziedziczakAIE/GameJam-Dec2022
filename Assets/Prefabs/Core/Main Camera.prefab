@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4815714112418732568}
   - component: {fileID: 4815714112418732569}
   - component: {fileID: 8684206880949297707}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPos: {x: -16, y: 2.5, z: 0}
   programmingPos: {x: -16, y: 2.5, z: 1000}
-  programmingAngles: {x: 0, y: 0, z: 0}
+  programmingAngles: {x: 0, y: 90, z: 0}
   levelScreenAngles: {x: 0, y: 90, z: 0}
   characterScreenAngles: {x: 0, y: -90, z: 0}

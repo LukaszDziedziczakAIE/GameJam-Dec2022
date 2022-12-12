@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
     {
         if (inLevel)
         {
-            print(name + isGrounded);
+            //print(name + " " + Controller.isGrounded);
             ApplyPhysics();
             //ResetToCenter();
         }
@@ -57,7 +57,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        Animator?.SetBool("IsGrounded", isGrounded);
+        //Animator?.SetBool("IsGrounded", Controller.isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -129,19 +129,35 @@ public class Character : MonoBehaviour
     {
         get
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+
+            Ray ray = new Ray(position, transform.up);
+            Debug.DrawLine(ray.origin, transform.up * -0.5f);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Game.GroundLayer.value);
             
-            RaycastHit hit;
-            if (Physics.SphereCast(position, 0.5f, Vector3.up, out hit, Game.GroundLayer)) return true;
-            else return false;
+            if (hits.Length > 0)
+            {
+                foreach (RaycastHit hit in hits)
+                {
+                    //if (((1 << hit.collider.gameObject.layer) & Game.InteractableLayer) != 0) return true;
+                    if (((1 << hit.collider.gameObject.layer) & Game.GroundLayer) != 0)
+                    {
+                        print(hit.collider.gameObject.name);
+                        return true;
+                    }
+                }
+            }
+            
+            
+            return false;
         }
     }
 
-    private void OnDrawGizmos()
+/*    private void OnDrawGizmos()
     {
-        Vector3 position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        Vector3 position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(position, 0.5f);
-    }
+    }*/
 
 }

@@ -10,12 +10,14 @@ public class Placeable : MonoBehaviour
     
     public bool Placing;
     PlaceableObject config;
+    CodeBlock codeBlock;
 
     [SerializeField] List<Collider> colliders = new List<Collider>();
 
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
+        codeBlock = GetComponent<CodeBlock>();
     }
 
     private void Start()
@@ -97,21 +99,22 @@ public class Placeable : MonoBehaviour
 
     private void PlacingLogic()
     {
-        if (!Placing || config == null) return;
+        if (!Placing || (config == null && codeBlock == null)) return;
 
         if (validPlacement) SetMaterialsPlacementValid();
         else SetMaterialsPlacementInvalid();
 
         if (game.PositionUnderMouse != Vector3.zero)
         {
-            transform.position = new Vector3(config.xPos, game.PositionUnderMouse.y, game.PositionUnderMouse.z);
+            float x;
+            if (config != null) x = config.xPos;
+            else x = 0;
+            transform.position = new Vector3(x, game.PositionUnderMouse.y, game.PositionUnderMouse.z);
         }
         else
         {
             transform.position = new Vector3(0, 100f, 0);
         }
-
-        
     }
 
     private bool validPlacement
@@ -156,6 +159,8 @@ public class Placeable : MonoBehaviour
         {
             enemy.inLevel = true;
         }
+
+        if (codeBlock != null) game.BlockDetector.CodeBlockPlaced();
     }
 
 
