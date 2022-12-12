@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos_levelStart: {x: 0, y: 0, z: 0}
-  pos_characterCreator: {x: -13, y: 2.7, z: 1.6}
+  pos_characterCreator: {x: -18.82, y: 2.72, z: 1.27}
 --- !u!1001 &1909824245069339806
 PrefabInstance:
   m_ObjectHideFlags: 0
