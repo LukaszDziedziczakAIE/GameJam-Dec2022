@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "GameJam/PlaceableObject")]
 public class PlaceableObject : ScriptableObject
 {
-    [SerializeField] string objectName;
-    [SerializeField] Placeable prefab;
-    [SerializeField] Texture icon;
-    [SerializeField] float xPos = 0;
+    [field: SerializeField] public string ObjectName { get; private set; }
+    [field: SerializeField] public Placeable Prefab { get; private set; }
+    [field: SerializeField] public Texture Icon { get; private set; }
+    [field: SerializeField] public float xPos { get; private set; } = 0;
 }
