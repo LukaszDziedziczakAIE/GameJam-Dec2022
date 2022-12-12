@@ -727,16 +727,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
-      propertyPath: programmingAngles.x
+      propertyPath: programmingPos.x
       value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
-      propertyPath: programmingAngles.y
+      propertyPath: programmingPos.y
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
-      propertyPath: programmingAngles.z
+      propertyPath: programmingPos.z
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
+      propertyPath: programmingAngles.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
+      propertyPath: programmingAngles.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684206880949297707, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}
+      propertyPath: programmingAngles.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b3bbbd44620f243a32ff94d6e15a1a, type: 3}

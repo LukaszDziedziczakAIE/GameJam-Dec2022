@@ -52,9 +52,12 @@ public class UI_HUD : UI_Base
 
     private void OnProgramingDesignButtonPress()
     {
+        Game.Camera.FaceProgramming();
+        Game.PlayerCharacter.SetPos_LevelStart();
+
         LevelDesign.Hide();
-        CharacterDesign.Show();
-        Programing.Hide();
+        CharacterDesign.Hide();
+        Programing.Show();
     }
 
     private void OnTestingButtonnPress()

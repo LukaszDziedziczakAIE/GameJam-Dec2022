@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingPos: {x: -16, y: 2.5, z: 0}
-  programmingPos: {x: 0, y: 0, z: 0}
+  programmingPos: {x: -16, y: 2.5, z: 1000}
   programmingAngles: {x: 0, y: 0, z: 0}
   levelScreenAngles: {x: 0, y: 90, z: 0}
   characterScreenAngles: {x: 0, y: -90, z: 0}
