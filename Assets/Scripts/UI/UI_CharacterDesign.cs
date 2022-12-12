@@ -11,6 +11,9 @@ public class UI_CharacterDesign : UI_Base
     [SerializeField] Texture enemyIcon;
     [SerializeField] Texture plusIcon;
 
+    [Header("Title")]
+    [SerializeField] TextMeshProUGUI title;
+
     [Header("Character Buttons")]
     [SerializeField] Button playerButton;
     [SerializeField] Button enemy1Button;
@@ -97,25 +100,68 @@ public class UI_CharacterDesign : UI_Base
     {
         currentCharacterIndex = 0;
         deleteButton.gameObject.SetActive(false);
+        title.text = "Player";
+        SetStats();
+        SetCharacterButtonVisibility();
     }
 
     private void OnEnemy1ButtonPress()
     {
+        if (!Game.CharacterConfig[1].active)
+        {
+            Game.CharacterConfig[1].active = true;
+            enemy1Image.texture = enemyIcon;
+        }
+        currentCharacterIndex = 1;
+        deleteButton.gameObject.SetActive(true);
+        title.text = "Enemy 1";
+        SetStats();
+        SetCharacterButtonVisibility();
 
     }
 
     private void OnEnemy2ButtonPress()
     {
+        if (!Game.CharacterConfig[2].active)
+        {
+            Game.CharacterConfig[2].active = true;
+            enemy1Image.texture = enemyIcon;
+        }
+        currentCharacterIndex = 2;
+        deleteButton.gameObject.SetActive(true);
+        title.text = "Enemy 2";
+        SetStats();
+        SetCharacterButtonVisibility();
 
     }
 
     private void OnEnemy3ButtonPress()
     {
+        if (!Game.CharacterConfig[3].active)
+        {
+            Game.CharacterConfig[3].active = true;
+            enemy1Image.texture = enemyIcon;
+        }
+        currentCharacterIndex = 3;
+        deleteButton.gameObject.SetActive(true);
+        title.text = "Enemy 3";
+        SetStats();
+        SetCharacterButtonVisibility();
 
     }
 
     private void OnEnemy4ButtonPress()
     {
+        if (!Game.CharacterConfig[4].active)
+        {
+            Game.CharacterConfig[4].active = true;
+            enemy1Image.texture = enemyIcon;
+        }
+        currentCharacterIndex = 4;
+        deleteButton.gameObject.SetActive(true);
+        title.text = "Enemy 4";
+        SetStats();
+        SetCharacterButtonVisibility();
 
     }
 
@@ -153,27 +199,32 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnColour1ButtonPress()
     {
-
+        colourIndex = 0;
+        Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
     }
 
     private void OnColour2ButtonPress()
     {
-
+        colourIndex = 1;
+        Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
     }
 
     private void OnColour3ButtonPress()
     {
-
+        colourIndex = 2;
+        Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
     }
 
     private void OnColour4ButtonPress()
     {
-
+        colourIndex = 3;
+        Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
     }
 
     private void OnColour5ButtonPress()
     {
-
+        colourIndex = 4;
+        Game.CharacterConfig[currentCharacterIndex].armourColourRef = colourIndex;
     }
 
     private void OnNextWeaponButtonPress()
@@ -196,11 +247,63 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnDeleteButtonPress()
     {
-
+        
     }
 
     private void SetCharacterButtonVisibility()
     {
+        if (!Game.CharacterConfig[1].active) enemy1Image.texture = plusIcon;
+        else enemy1Image.texture = enemyIcon;
+        if (!Game.CharacterConfig[2].active) enemy2Image.texture = plusIcon;
+        else enemy2Image.texture = enemyIcon;
+        if (!Game.CharacterConfig[3].active) enemy3Image.texture = plusIcon;
+        else enemy3Image.texture = enemyIcon;
+        if (!Game.CharacterConfig[4].active) enemy4Image.texture = plusIcon;
+        else enemy4Image.texture = enemyIcon;
 
+        if (!Game.CharacterConfig[1].active)
+        {
+            enemy1Button.gameObject.SetActive(true);
+            enemy2Button.gameObject.SetActive(false);
+            enemy3Button.gameObject.SetActive(false);
+            enemy4Button.gameObject.SetActive(false);
+        }
+        else if (!Game.CharacterConfig[2].active)
+        {
+            enemy1Button.gameObject.SetActive(true);
+            enemy2Button.gameObject.SetActive(true);
+            enemy3Button.gameObject.SetActive(false);
+            enemy4Button.gameObject.SetActive(false);
+        }
+        else if (!Game.CharacterConfig[3].active)
+        {
+            enemy1Button.gameObject.SetActive(true);
+            enemy2Button.gameObject.SetActive(true);
+            enemy3Button.gameObject.SetActive(true);
+            enemy4Button.gameObject.SetActive(false);
+        }
+        else if (!Game.CharacterConfig[4].active)
+        {
+            enemy1Button.gameObject.SetActive(true);
+            enemy2Button.gameObject.SetActive(true);
+            enemy3Button.gameObject.SetActive(true);
+            enemy4Button.gameObject.SetActive(true);
+        }
+    }
+
+    private void SetStats()
+    {
+        voiceIndex = Game.CharacterConfig [currentCharacterIndex].voiceRef;
+        voiceText.text = "Voice " + (voiceIndex + 1);
+
+        helmetIndex = Game.CharacterConfig [currentCharacterIndex].helmetRef;
+        helmetText.text = "Helmet " + (helmetIndex + 1);
+
+        colourIndex = Game.CharacterConfig[currentCharacterIndex].armourColourRef;
+        //set colour to index colour
+
+        weaponIndex = Game.CharacterConfig[currentCharacterIndex].weaponRef;
+        if (weaponIndex == 0) weaponText.text = "Sword";
+        else if (weaponIndex == 1) weaponText.text = "Bow";
     }
 }
