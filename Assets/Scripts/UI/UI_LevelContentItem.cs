@@ -26,6 +26,7 @@ public class UI_LevelContentItem : MonoBehaviour
 
     private void OnButtonPress()
     {
-        Debug.Log(placeableObject.ObjectName + " button press.");
+        Placeable placeable = Instantiate(placeableObject.Prefab);
+        placeable.Set(placeableObject);
     }
 }
