@@ -52,6 +52,7 @@ public class UI_LeveDesign : UI_Base
     {
         base.Show();
         OnEnviromentButtonPress();
+        Game.PlayerCharacter.Animator.StopPlayback();
     }
 
     private void OnEnviromentButtonPress()

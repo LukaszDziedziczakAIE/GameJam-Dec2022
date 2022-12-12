@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public CharacterController Controller;
+    [field: SerializeField] public Animator Animator;
 
     public int configRef;
     protected Vector3 impact;
@@ -16,6 +17,7 @@ public class Character : MonoBehaviour
     {
         if (Game == null) Game = FindObjectOfType<GameController>();
         if (Controller == null) Controller = GetComponent<CharacterController>();
+        if (Animator == null) Animator = GetComponentInChildren<Animator>();
     }
 
     protected virtual void Start()
