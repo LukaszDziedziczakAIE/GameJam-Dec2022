@@ -39,6 +39,7 @@ public class Character : MonoBehaviour
     {
         if (inLevel)
         {
+            print(name + isGrounded);
             ApplyPhysics();
             //ResetToCenter();
         }
@@ -56,7 +57,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        Animator?.SetBool("IsGrounded", Controller.isGrounded);
+        Animator?.SetBool("IsGrounded", isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -123,4 +124,24 @@ public class Character : MonoBehaviour
     {
         impact += force;
     }
+
+    private bool isGrounded
+    {
+        get
+        {
+            Vector3 position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            
+            RaycastHit hit;
+            if (Physics.SphereCast(position, 0.5f, Vector3.up, out hit, Game.GroundLayer)) return true;
+            else return false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(position, 0.5f);
+    }
+
 }

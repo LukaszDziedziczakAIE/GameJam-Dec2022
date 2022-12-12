@@ -176,6 +176,7 @@ MonoBehaviour:
   Animator: {fileID: 2434338333872718430}
   Audio: {fileID: 6443308998982580109}
   Speed: 5
+  jumpForce: 5
   Renderer: {fileID: 0}
   configRef: 0
   drag: 0.3
@@ -1270,7 +1271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8963145849178948254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.99, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4285456284652288176}
