@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503326331158938955}
   - component: {fileID: 503326331158938952}
+  - component: {fileID: 1191283179}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -47,7 +48,38 @@ MonoBehaviour:
   <HUD>k__BackingField: {fileID: 0}
   <Camera>k__BackingField: {fileID: 0}
   <PlayerCharacter>k__BackingField: {fileID: 0}
+  <InputReader>k__BackingField: {fileID: 1191283179}
+  raycastDistance: 50
+  <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
+  <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   enemies: []
+  BackgroundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  EnviromentLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  InteractableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  CharacterLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1191283179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503326331158938953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77569b559ad85b641bc0eec077211005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4370897587858925102
 PrefabInstance:
   m_ObjectHideFlags: 0
