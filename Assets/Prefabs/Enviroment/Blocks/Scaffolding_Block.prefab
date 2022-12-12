@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4463601633483171608}
   - component: {fileID: 2829668295402444199}
-  - component: {fileID: 8383071749223638949}
   - component: {fileID: 3403497453579076029}
+  - component: {fileID: 1345752865292849148}
   m_Layer: 0
   m_Name: Scaffolding_Block
   m_TagString: Untagged
@@ -49,19 +49,6 @@ MonoBehaviour:
   meshRenderers: []
   Placing: 1
   colliders: []
---- !u!65 &8383071749223638949
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606083435273240398}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.4762344, y: 3.4605455, z: 3.5056942}
-  m_Center: {x: 0.000000059604645, y: 1.7302728, z: 0}
 --- !u!54 &3403497453579076029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -78,6 +65,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1345752865292849148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606083435273240398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7381172, y: 1.7302728, z: 1.752847}
+  m_Center: {x: -0.00000008940697, y: 0.8651364, z: 0}
 --- !u!1 &8477539364624305585
 GameObject:
   m_ObjectHideFlags: 0
