@@ -992,10 +992,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
-      propertyPath: GroundRaycastLength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: <HUD>k__BackingField
       value: 
       objectReference: {fileID: 304228132565001728}
@@ -1007,14 +1003,6 @@ PrefabInstance:
       propertyPath: <PlayerCharacter>k__BackingField
       value: 
       objectReference: {fileID: 128901875}
-    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
-      propertyPath: <WeaponConfigs>k__BackingField.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
-      propertyPath: <WeaponConfigs>k__BackingField.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6547dd66c4747cc47a0e99d1dcdda3f7, type: 2}
     - target: {fileID: 503326331158938953, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: m_Name
       value: GameController
