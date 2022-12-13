@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UI_Programing : UI_Base
 {
+    [field: SerializeField] public int CurrentlySelected { get; private set; }
     [SerializeField] RectTransform CharacterBlocks;
 
     [Header("Buttons")]
@@ -12,8 +13,10 @@ public class UI_Programing : UI_Base
     [SerializeField] Button enemyButton2;
     [SerializeField] Button enemyButton3;
     [SerializeField] Button enemyButton4;
+
+    [Header("Content")]
     [SerializeField] RectTransform CodeBlockContent;
-    [field: SerializeField] public int CurrentlySelected { get; private set; }
+    [SerializeField] RectTransform CharacterBlocksContent;
     ProgrammingObjectConfig[] programmingObjectConfigs;
 
     [Header("Prefab")]
@@ -29,8 +32,6 @@ public class UI_Programing : UI_Base
         enemyButton2.onClick.AddListener(OnEnemyButton2Press);
         enemyButton3.onClick.AddListener(OnEnemyButton3Press);
         enemyButton4.onClick.AddListener(OnEnemyButton4Press);
-
-        print(programmingObjectConfigs.Length);
     }
 
     public override void Show()
@@ -83,5 +84,24 @@ public class UI_Programing : UI_Base
         CurrentlySelected = 4;
     }
 
+    private CharacterConfig config
+    {
+        get
+        {
+            return Game.CharacterConfig[CurrentlySelected];
+        }
+    }
 
+    private void BuildCharacterBlocks()
+    {
+        if (CurrentlySelected == 0 || programmingCharacterItem != null) return;
+
+        if (config.CodeBlocks.Count > 0)
+        {
+            foreach(CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
+            {
+
+            }
+        }
+    }
 }
