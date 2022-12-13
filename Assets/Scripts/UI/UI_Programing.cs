@@ -49,8 +49,6 @@ public class UI_Programing : UI_Base
         CurrentlySelected = 0;
         UpdateButtonInteractability();
 
-        Camera.main.orthographic = false;
-
         if (Game.CharacterConfig[1].active) OnEnemyButton1Press();
     }
 

@@ -51,6 +51,7 @@ public class CameraController : MonoBehaviour
     {
         transform.position = programmingPos;
         transform.eulerAngles = programmingAngles;
+        Camera.orthographic = false;
     }
 
     public void SetPerspectiveProjection()
