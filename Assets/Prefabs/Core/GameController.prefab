@@ -115,11 +115,11 @@ MonoBehaviour:
   MapZCenter: 0
   <EnemyCharacterPrefab>k__BackingField: {fileID: 422785070277948551, guid: 9eefc5bef2d565f4f8c2e87a6b7200fe, type: 3}
   <ArmourColors>k__BackingField:
-  - {fileID: 2100000, guid: f1e5896de87d21a418e285fd993c173d, type: 2}
-  - {fileID: 2100000, guid: b4d20fd31c0f77b438111ed4300d7a4b, type: 2}
-  - {fileID: 2100000, guid: 0dfa970b1e032394ba59d9716077c1a8, type: 2}
-  - {fileID: 2100000, guid: e03f1c9afe752ea4a9e454b69a309e5d, type: 2}
-  - {fileID: 2100000, guid: d5e66116b54ec884d980cf529c343aff, type: 2}
+  - {fileID: 2100000, guid: 00c9b2eeb0877a74eb8c5fb1bf920f15, type: 2}
+  - {fileID: 2100000, guid: 4be2989a610e1b541b562958f7820049, type: 2}
+  - {fileID: 2100000, guid: 1b6fb80fb32b6e34788f49294a965f4f, type: 2}
+  - {fileID: 2100000, guid: 0158c5cc3fe2aa540939a2537867f1a4, type: 2}
+  - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   BackgroundLayer:
