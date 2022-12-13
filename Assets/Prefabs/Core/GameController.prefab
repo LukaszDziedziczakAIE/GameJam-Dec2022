@@ -122,15 +122,28 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0158c5cc3fe2aa540939a2537867f1a4, type: 2}
   - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
   <HelmentPrefabs>k__BackingField:
-  - {fileID: 22397740786480669, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
+  - {fileID: 4273563135216738221, guid: 2ec6425c2e479954d92582b158e3b3ac, type: 3}
+  - {fileID: 3904482638809368521, guid: 9a5ff60bc12de9b478ab83c3643d7076, type: 3}
+  - {fileID: 1747929372068756665, guid: 3be3e807121b6a14ebe2ad694d68b853, type: 3}
   <Helmet1Colors>k__BackingField:
-  - {fileID: 2100000, guid: b4952f74860f4f04184cdd169651654b, type: 2}
-  - {fileID: 2100000, guid: 22963b90040be064b96ec06f5c09aca7, type: 2}
-  - {fileID: 2100000, guid: b3ee78788d07d3d43b06421f3aaed7ef, type: 2}
-  - {fileID: 2100000, guid: 9a6ab1361df0443488e771ed0759e826, type: 2}
-  - {fileID: 2100000, guid: 414172c8d00301642a7e460a577af7c0, type: 2}
-  <Helmet2Colors>k__BackingField: []
-  <Helmet3Colors>k__BackingField: []
+  - {fileID: 2100000, guid: e8e9142546dc11a48b1d8512c5837bac, type: 2}
+  - {fileID: 2100000, guid: 6f510d9c4eecff245a9af19613cfb24b, type: 2}
+  - {fileID: 2100000, guid: 5b11c76a586351d4298b6a949bb0ac4a, type: 2}
+  - {fileID: 2100000, guid: a8dc81d76d7eb8f45b6e9f340c7e0c32, type: 2}
+  - {fileID: 2100000, guid: acab9ea07a6cffc49b4dbc97fd9756f6, type: 2}
+  <Helmet2Colors>k__BackingField:
+  - {fileID: 2100000, guid: 897cc92a5608c0e40804a50ea0d49715, type: 2}
+  - {fileID: 2100000, guid: ccb5d0aea2a113a42ad900d2dfdc6fc7, type: 2}
+  - {fileID: 2100000, guid: e4e3574bd4e105a439dfaf00982a3700, type: 2}
+  - {fileID: 2100000, guid: ba68d3c59ba0f2b46b622775cf96f298, type: 2}
+  - {fileID: 2100000, guid: c639d7c6f9ce0df4da60244831942678, type: 2}
+  <Helmet3Colors>k__BackingField:
+  - {fileID: 2100000, guid: 95e90533f7eef2942ad51261116c1e74, type: 2}
+  - {fileID: 2100000, guid: 77488585b2bbc90478b9ab31f9fbf06b, type: 2}
+  - {fileID: 2100000, guid: 7a15cde655bca09429ac6d0e201967d5, type: 2}
+  - {fileID: 2100000, guid: b35b7ac28285e114b8cc3002c3a65b07, type: 2}
+  - {fileID: 2100000, guid: b983a936981fbea4b98893c54750038f, type: 2}
+  <WeaponConfigs>k__BackingField: []
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   BackgroundLayer:
@@ -150,7 +163,7 @@ MonoBehaviour:
     m_Bits: 256
   LevelStartPos: {x: 0, y: 0, z: 0}
   LevelStartRot: {x: 0, y: 0, z: 0}
-  CharacterDesignPos: {x: -19.16, y: 2.5, z: 1.13}
+  CharacterDesignPos: {x: -18.802, y: 1.73, z: 1.099}
   CharacterDesignRot: {x: 0, y: 95, z: 0}
   CodeBlockPrefab: {fileID: 2494328983319479514, guid: 7d90000985adfa34198f1a9521920771, type: 3}
   TestingMode: 0

@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public Material[] Helmet1Colors { get; private set; }
     [field: SerializeField] public Material[] Helmet2Colors { get; private set; }
     [field: SerializeField] public Material[] Helmet3Colors { get; private set; }
+    [field: SerializeField] public WeaponConfig[] WeaponConfigs { get; private set; }
 
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
@@ -74,5 +75,6 @@ public class GameController : MonoBehaviour
         }
 
         CharacterConfig = characterConfigList.ToArray();
+        PlayerCharacter.UpdateCharacter();
     }
 }

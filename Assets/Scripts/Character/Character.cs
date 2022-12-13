@@ -7,6 +7,9 @@ public class Character : MonoBehaviour
 {
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public Transform HeadPos { get; private set; }
+    [field: SerializeField] public Transform RightHand { get; private set; }
+    [field: SerializeField] public Transform LeftHand { get; private set; }
+    [field: SerializeField] public Weapon Weapon;
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
     [field: SerializeField] public CharacterAudio Audio;
@@ -33,14 +36,13 @@ public class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-
     }
 
     protected virtual void Update()
     {
         if (inLevel && !(Game.HUD.Programing.gameObject.activeSelf || Game.HUD.CharacterDesign.gameObject.activeSelf))
         {
-            print(name + " " + Controller.isGrounded);
+            //print(name + " " + Controller.isGrounded);
             ApplyPhysics();
             ResetToCenter();
         }
@@ -50,6 +52,7 @@ public class Character : MonoBehaviour
     {
         get
         {
+            if (Game.CharacterConfig.Length == 0) return null;
             return Game.CharacterConfig[configRef];
         }
     }
@@ -108,6 +111,7 @@ public class Character : MonoBehaviour
         ApplyArmourColors();
         ApplyHelmet();
         ApplyHelmetColor();
+        ApplyWeaponConfig();
     }
 
     private void ApplyArmourColors()
@@ -125,9 +129,9 @@ public class Character : MonoBehaviour
         }
 
         Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
-        Helmet.transform.parent = HeadPos;
+        /*Helmet.transform.parent = HeadPos;
         Helmet.transform.localEulerAngles = Vector3.zero;
-        Helmet.transform.localPosition = Vector3.zero;
+        Helmet.transform.localPosition = Vector3.zero;*/
     }
 
     private void ApplyHelmetColor()
@@ -136,18 +140,43 @@ public class Character : MonoBehaviour
 
         switch (config.helmetRef)
         {
-            case 1:
+            case 0:
                 HelmentRenderer.material = Game.Helmet1Colors[config.armourColourRef];
                 break;
 
-            case 2:
+            case 1:
                 HelmentRenderer.material = Game.Helmet2Colors[config.armourColourRef];
                 break;
 
-            case 3:
+            case 2:
                 HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
                 break;
         }
+    }
+
+    private void ApplyWeaponConfig()
+    {
+        if (Game.CharacterConfig.Length == 0) return;
+
+        if (Weapon != null)
+        {
+            Destroy(Weapon.gameObject);
+            Weapon = null;
+        }
+
+        /*print("length = " + Game.WeaponConfigs.Length);
+        print("configRef = " + configRef);
+        print("CharacterConfigLength = " + Game.CharacterConfig.Length);
+        print("config = " + Game.CharacterConfig[configRef] != null);
+        print("refNo = " + Game.CharacterConfig[configRef]);*/
+
+        if (Game.WeaponConfigs[config.weaponRef] == null) return;
+
+        if (!Game.WeaponConfigs[config.weaponRef].LeftHanded)
+            Weapon = Instantiate(Game.WeaponConfigs[config.weaponRef].Prefab, RightHand);
+        else
+            Weapon = Instantiate(Game.WeaponConfigs[config.weaponRef].Prefab, LeftHand);
+
     }
 
     protected void Attack()
@@ -174,10 +203,10 @@ public class Character : MonoBehaviour
     {
         get
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
 
             Ray ray = new Ray(position, transform.up);
-            Debug.DrawLine(ray.origin, transform.up * -0.5f);
+            Debug.DrawLine(ray.origin, transform.up * 1f);
             RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Game.GroundLayer.value);
             
             if (hits.Length > 0)
