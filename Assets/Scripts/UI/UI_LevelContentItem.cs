@@ -9,9 +9,9 @@ public class UI_LevelContentItem : UI_Base
     [SerializeField] Button button;
     [SerializeField] RawImage image;
     [SerializeField] TextMeshProUGUI text;
-
-    PlaceableObject placeableObject;
-    CharacterObject characterObject;
+    [Header("Debug")]
+    [SerializeField] PlaceableObject placeableObject;
+    [SerializeField] CharacterObject characterObject;
 
     private void Start()
     {
@@ -34,9 +34,17 @@ public class UI_LevelContentItem : UI_Base
 
     private void OnButtonPress()
     {
-        if (Game.isPlacing) return;
+        if (Game.isPlacing)
+        {
+            Debug.LogError("Game is placing, exiting.");
+            return;
+        }
 
-        if (!Game.PointSystem.CanBuy(placeableObject.Cost))
+        int cost = 0;
+        if (placeableObject != null) cost = placeableObject.Cost;
+        else if (characterObject != null) cost = characterObject.Cost;
+
+        if (!Game.PointSystem.CanBuy(cost))
         {
             Debug.LogError("Cannot afford " + placeableObject.Cost);
             return;
@@ -50,8 +58,6 @@ public class UI_LevelContentItem : UI_Base
             enemy.Placeable.Set(characterObject);
             enemy.Placeable.Placing = true;
             Game.isPlacing = true;
-
-            //enemy.Set(placeableObject);
         }
         else if (placeableObject != null)
         {

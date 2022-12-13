@@ -88,7 +88,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8129619586017848368}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6ebb53659df5f44916dbc443e88b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Game: {fileID: 0}
   text: {fileID: 5504177242343675925}
   button: {fileID: 7397380326302790443}
   icon: {fileID: 0}
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+  m_Texture: {fileID: 2800000, guid: fa0e729f48305bb4eb466773a1e9b7f1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -201,8 +202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
+  m_sharedMaterial: {fileID: -7345992752625734411, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -226,8 +227,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

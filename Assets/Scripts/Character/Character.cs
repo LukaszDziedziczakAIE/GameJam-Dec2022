@@ -213,9 +213,9 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int amount = 1)
     {
-        Animator?.SetTrigger("Impact");
         Health -= amount;
         if (Health <= 0) Death();
+        else Animator?.SetTrigger("Impact");
     }
 
     public void GiveHealth(int amount = 1)
