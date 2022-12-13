@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
     [field: SerializeField] public CharacterAudio Audio;
+    [field: SerializeField] public GameObject Helmet { get; private set; }
     [field: SerializeField] public float Speed = 5;
     [field: SerializeField] public float jumpForce = 5;
     [SerializeField] SkinnedMeshRenderer Renderer;
@@ -42,6 +43,14 @@ public class Character : MonoBehaviour
             print(name + " " + Controller.isGrounded);
             ApplyPhysics();
             ResetToCenter();
+        }
+    }
+
+    private CharacterConfig config
+    {
+        get
+        {
+            return Game.CharacterConfig[configRef];
         }
     }
 
@@ -97,12 +106,45 @@ public class Character : MonoBehaviour
     public void UpdateCharacter()
     {
         ApplyArmourColors();
+        ApplyHelmet();
+        ApplyHelmetColor();
     }
 
     private void ApplyArmourColors()
     {
         if (Renderer == null) Renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         Renderer.material = Game.ArmourColors[Game.CharacterConfig[configRef].armourColourRef];
+    }
+
+    private void ApplyHelmet()
+    {
+        if (Helmet != null)
+        {
+            Destroy(Helmet);
+            Helmet = null;
+        }
+
+        Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
+    }
+
+    private void ApplyHelmetColor()
+    {
+        MeshRenderer HelmentRenderer = Helmet.GetComponent<MeshRenderer>();
+
+        switch (config.helmetRef)
+        {
+            case 1:
+                HelmentRenderer.material = Game.Helmet1Colors[config.armourColourRef];
+                break;
+
+            case 2:
+                HelmentRenderer.material = Game.Helmet2Colors[config.armourColourRef];
+                break;
+
+            case 3:
+                HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
+                break;
+        }
     }
 
     protected void Attack()

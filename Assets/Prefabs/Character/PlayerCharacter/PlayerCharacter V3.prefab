@@ -175,6 +175,7 @@ MonoBehaviour:
   Controller: {fileID: 3711287403960588901}
   Animator: {fileID: 2434338333872718430}
   Audio: {fileID: 6443308998982580109}
+  <Helmet>k__BackingField: {fileID: 2713854385501004259}
   Speed: 5
   jumpForce: 5
   Renderer: {fileID: 0}
@@ -1406,6 +1407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
+--- !u!1 &2713854385501004259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 22397740786480669, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
+  m_PrefabInstance: {fileID: 2730903824594442238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3378364391435811673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 793832057891007655, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
