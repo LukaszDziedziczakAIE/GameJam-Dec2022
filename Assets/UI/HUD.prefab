@@ -410,6 +410,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2848269781436776470}
     m_Modifications:
+    - target: {fileID: 389512001313615257, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 869658283433282713, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
+    - target: {fileID: 869658283433282713, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7345992752625734411, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
     - target: {fileID: 1996532683756276299, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -493,6 +505,22 @@ PrefabInstance:
     - target: {fileID: 1996532683756276299, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075986411424301970, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075986411424301970, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075986411424301970, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 19.7823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075986411424301970, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.8912
       objectReference: {fileID: 0}
     - target: {fileID: 7072002354493335582, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
       propertyPath: m_Name
@@ -892,16 +920,6 @@ PrefabInstance:
     - target: {fileID: 534261713449316451, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_Name
       value: CharacterDesignHUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826013997735477518, guid: 10273bc6252280648b561284129e6d3e, type: 3}
-      propertyPath: m_text
-      value: 'Knights Sword
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636791955262214506, guid: 10273bc6252280648b561284129e6d3e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_Pivot.x
