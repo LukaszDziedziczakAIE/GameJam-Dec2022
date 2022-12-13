@@ -48,6 +48,8 @@ public class UI_Programing : UI_Base
 
         CurrentlySelected = 0;
         UpdateButtonInteractability();
+
+        OnEnemyButton1Press();
     }
 
     public override void Hide()
@@ -88,6 +90,7 @@ public class UI_Programing : UI_Base
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
         UpdateButtonInteractability();
+        Game.PlayerCharacter.SetPos_Programming();
     }
 
     private void OnEnemyButton3Press()

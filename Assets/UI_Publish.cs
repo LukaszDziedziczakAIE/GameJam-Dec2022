@@ -57,19 +57,22 @@ public class UI_Publish : MonoBehaviour
 
     public void PopulateMenu()
     {
-        artBar.value = pointSystem.artPoints / pointSystem.initialPoints;
+        artBar.value = pointSystem.artPoints / (float)pointSystem.initialPoints;
         artScore.text = pointSystem.artPoints.ToString();
 
-        designBar.value = pointSystem.designPoints / pointSystem.initialPoints;
+        designBar.value = pointSystem.designPoints / (float)pointSystem.initialPoints;
         designScore.text = pointSystem.designPoints.ToString();
 
-        programmingBar.value = pointSystem.programmingPoints / pointSystem.initialPoints;
+        programmingBar.value = pointSystem.programmingPoints / (float)pointSystem.initialPoints;
         programmingScore.text = pointSystem.programmingPoints.ToString();
 
         if (isArt) artReference.SetActive(true);
         else if (isDesign) designReference.SetActive(true);
         else if (isProgramming) programmingReference.SetActive(true);
-        else mulitReference.SetActive(true);
+        else 
+        {
+            mulitReference.SetActive(true);
+        }
     }
 
     public bool isArt
