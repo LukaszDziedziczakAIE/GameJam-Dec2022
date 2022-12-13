@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
 {
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public Transform HeadPos { get; private set; }
+    [field: SerializeField] public Transform RightHand { get; private set; }
+    [field: SerializeField] public Transform LightHand { get; private set; }
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
     [field: SerializeField] public CharacterAudio Audio;
@@ -66,7 +68,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        Animator?.SetBool("IsGrounded", Controller.isGrounded);
+        //Animator?.SetBool("IsGrounded", Controller.isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -125,9 +127,9 @@ public class Character : MonoBehaviour
         }
 
         Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
-        Helmet.transform.parent = HeadPos;
+        /*Helmet.transform.parent = HeadPos;
         Helmet.transform.localEulerAngles = Vector3.zero;
-        Helmet.transform.localPosition = Vector3.zero;
+        Helmet.transform.localPosition = Vector3.zero;*/
     }
 
     private void ApplyHelmetColor()
