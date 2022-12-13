@@ -68,7 +68,7 @@ public class EnemyCharacter : Character
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(ATTACK)) return;
 
-        if (distanceToPlayer < attackRange)
+        if (distanceToPlayer < attackRange && Game.PlayerCharacter.isAlive)
         {
             Attack();
         }
@@ -77,8 +77,8 @@ public class EnemyCharacter : Character
     private void CB_ChaseBehaviour()
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(CHASE)) return;
-        print("running chase");
-        print(name + " distance to player = " + distanceToPlayer);
+        //print("running chase");
+        //print(name + " distance to player = " + distanceToPlayer);
         if (distanceToPlayer < maxChaseRange && distanceToPlayer > minChaseRange)
         {
             if (Game.PlayerCharacter.transform.position.z < transform.position.z) MoveLeft();

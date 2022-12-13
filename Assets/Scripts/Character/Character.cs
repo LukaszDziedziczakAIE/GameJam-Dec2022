@@ -100,7 +100,7 @@ public class Character : MonoBehaviour
 
     protected void Move(Vector3 motion)
     {
-        print(motion);
+        //print(motion);
         if (Controller.enabled) Controller.Move((motion + Movement) * Time.deltaTime);
 
     }
