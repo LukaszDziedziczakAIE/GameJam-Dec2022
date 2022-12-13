@@ -8,12 +8,32 @@ public class PointSystem : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public Slider slider;
+    public Image sliderFill;
 
-    public int points = 200;
+    public Color[] colors;
 
-    void Start()
+    public int points;
+
+    private float originalPoints;
+
+
+    private void Start()
     {
-        
+        originalPoints = points;    
+    }
+
+    private void Update()
+    {
+        if(colors != null)
+        {
+            if(colors.Length >= 3)
+            {
+                if (slider.value >= 0.75) sliderFill.color = colors[0];
+                else if (slider.value >= 0.5 && slider.value < 0.75) sliderFill.color = colors[1];
+                else if (slider.value >= 0.25 && slider.value < 0.50) sliderFill.color = colors[2];
+                else if (slider.value < 0.25) sliderFill.color = colors[3];
+            }
+        }
     }
 
     public void TakePoints(int remove)
@@ -21,7 +41,7 @@ public class PointSystem : MonoBehaviour
         points -= remove;
         text.text = "Points: " + points;
 
-        int sliderValue = points / 200;
+        float sliderValue = originalPoints / 200;
         slider.value = sliderValue;
     }
 
@@ -30,7 +50,7 @@ public class PointSystem : MonoBehaviour
         points += add;
         text.text = "Points: " + points;
 
-        int sliderValue = points / 200;
+        float sliderValue = originalPoints / 200;
         slider.value = sliderValue;
     }
 }

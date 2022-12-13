@@ -372,6 +372,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 869658283433282713}
   slider: {fileID: 389512001313615257}
+  sliderFill: {fileID: 1660783497391276010}
+  colors:
+  - {r: 0, g: 1, b: 0.0009315014, a: 1}
+  - {r: 0.9467213, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.57911307, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
   points: 200
 --- !u!1 &7072002354493335582
 GameObject:
