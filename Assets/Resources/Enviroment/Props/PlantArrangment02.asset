@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PlantArrangment02
   m_EditorClassIdentifier: 
   <ObjectName>k__BackingField: 
-  <Prefab>k__BackingField: {fileID: 3979904896065818472, guid: 874f82cbc25e0e547a499ca7d1bbe73c, type: 3}
-  <Icon>k__BackingField: {fileID: 2800000, guid: 83c37579b68982144a33de392899a21b, type: 3}
+  <Prefab>k__BackingField: {fileID: 3489161309771149784, guid: b84b74a9d9f51be4f88b22eb47f19486, type: 3}
+  <Icon>k__BackingField: {fileID: 2800000, guid: f9939c7d0af4c3943a84bcbb1a1e0687, type: 3}
   <xPos>k__BackingField: 1
-  <Cost>k__BackingField: 4
+  <Cost>k__BackingField: 3
+  <isDesign>k__BackingField: 0
+  <isArt>k__BackingField: 1

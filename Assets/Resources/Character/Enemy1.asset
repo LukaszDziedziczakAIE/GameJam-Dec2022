@@ -16,5 +16,8 @@ MonoBehaviour:
   <Prefab>k__BackingField: {fileID: 0}
   <Icon>k__BackingField: {fileID: 2800000, guid: 48bb7fca29668854e83c817236c0edd9, type: 3}
   <xPos>k__BackingField: 0
+  <Cost>k__BackingField: 0
+  <isDesign>k__BackingField: 1
+  <isArt>k__BackingField: 0
   <EnemyCharacterPrefab>k__BackingField: {fileID: 422785070277948551, guid: 9eefc5bef2d565f4f8c2e87a6b7200fe, type: 3}
   <CharacterIndex>k__BackingField: 1

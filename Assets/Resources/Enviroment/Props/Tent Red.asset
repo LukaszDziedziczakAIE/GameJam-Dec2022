@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7445f2d759a47d949a74388359e8eea6, type: 3}
+  m_Name: Tent Red
+  m_EditorClassIdentifier: 
+  <ObjectName>k__BackingField: Tent Blue
+  <Prefab>k__BackingField: {fileID: 4009505482238468487, guid: 2f9b9f0998b0678469e85bb5494e387e, type: 3}
+  <Icon>k__BackingField: {fileID: 2800000, guid: 06f8c09f8e8ac084db8433a0cc676847, type: 3}
+  <xPos>k__BackingField: 2
+  <Cost>k__BackingField: 10
+  <isDesign>k__BackingField: 0
+  <isArt>k__BackingField: 1
