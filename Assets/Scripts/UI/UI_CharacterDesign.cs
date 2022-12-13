@@ -441,6 +441,5 @@ public class UI_CharacterDesign : UI_Base
             Destroy(selectedCharacter.gameObject);
             selectedCharacter = null;
         }
-        
     }
 }
