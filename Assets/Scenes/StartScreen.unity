@@ -3406,7 +3406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1922281308}
   credits: {fileID: 1327146502}
-  loading: {fileID: 0}
+  loading: {fileID: 1957015967}
 --- !u!114 &1833951001
 MonoBehaviour:
   m_ObjectHideFlags: 0
