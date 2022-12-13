@@ -47,8 +47,6 @@ public class UI_Publish : MonoBehaviour
         artReference.SetActive(false);
         designReference.SetActive(false);
         programmingReference.SetActive(false);
-
-        PopulateMenu();
     }
 
     void Update()
@@ -58,13 +56,13 @@ public class UI_Publish : MonoBehaviour
 
     public void PopulateMenu()
     {
-        artBar.value = pointSystem.artPoints / pointSystem.originalPoints;
+        artBar.value = pointSystem.artPoints / pointSystem.initialPoints;
         artScore.text = pointSystem.artPoints.ToString();
 
-        designBar.value = pointSystem.designPoints / pointSystem.originalPoints;
+        designBar.value = pointSystem.designPoints / pointSystem.initialPoints;
         designScore.text = pointSystem.designPoints.ToString();
 
-        programmingBar.value = pointSystem.programmingPoints / pointSystem.originalPoints;
+        programmingBar.value = pointSystem.programmingPoints / pointSystem.initialPoints;
         programmingScore.text = pointSystem.programmingPoints.ToString();
 
         if (isArt) artReference.SetActive(true);
@@ -118,5 +116,6 @@ public class UI_Publish : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+        PopulateMenu();
     }
 }
