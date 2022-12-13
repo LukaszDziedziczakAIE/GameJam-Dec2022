@@ -49,6 +49,8 @@ public class UI_Programing : UI_Base
         CurrentlySelected = 0;
         UpdateButtonInteractability();
 
+        Camera.main.orthographic = false;
+
         OnEnemyButton1Press();
     }
 
@@ -79,6 +81,7 @@ public class UI_Programing : UI_Base
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
         UpdateButtonInteractability();
+        SpawnCharacter();
     }
 
     private void OnEnemyButton2Press()
@@ -90,7 +93,7 @@ public class UI_Programing : UI_Base
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
         UpdateButtonInteractability();
-        Game.PlayerCharacter.SetPos_Programming();
+        SpawnCharacter();
     }
 
     private void OnEnemyButton3Press()
@@ -102,6 +105,7 @@ public class UI_Programing : UI_Base
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
         UpdateButtonInteractability();
+        SpawnCharacter();
     }
 
     private void OnEnemyButton4Press()
@@ -113,6 +117,7 @@ public class UI_Programing : UI_Base
         enemyButton4.interactable = false;
         BuildCharacterBlocks();
         UpdateButtonInteractability();
+        SpawnCharacter();
     }
 
     private CharacterConfig config

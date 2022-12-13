@@ -117,7 +117,7 @@ MonoBehaviour:
   LevelStartRot: {x: 0, y: 0, z: 0}
   CharacterDesignPos: {x: -18.94, y: 1.61, z: 1.15}
   CharacterDesignRot: {x: 0, y: 120, z: 0}
-  ProgrammingPos: {x: -12.35, y: 1.5, z: 997.75}
+  ProgrammingPos: {x: -12.97, y: 1.5, z: 998.29}
   ProgrammingRot: {x: 0, y: 300.65405, z: 0}
   TestingMode: 0
   isPlacing: 0
