@@ -125,6 +125,9 @@ public class Character : MonoBehaviour
         }
 
         Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
+        Helmet.transform.parent = HeadPos;
+        Helmet.transform.localEulerAngles = Vector3.zero;
+        Helmet.transform.localPosition = Vector3.zero;
     }
 
     private void ApplyHelmetColor()
