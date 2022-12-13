@@ -66,11 +66,32 @@ public class UI_Publish : MonoBehaviour
         programmingBar.value = pointSystem.programmingPoints / (float)pointSystem.initialPoints;
         programmingScore.text = pointSystem.programmingPoints.ToString();
 
-        if (isArt) artReference.SetActive(true);
-        else if (isDesign) designReference.SetActive(true);
-        else if (isProgramming) programmingReference.SetActive(true);
-        else 
+        if (isArt)
         {
+            artReference.SetActive(true);
+            designReference.SetActive(false);
+            programmingReference.SetActive(false);
+            mulitReference.SetActive(false);
+        }
+        else if (isDesign)
+        {
+            designReference.SetActive(true);
+            artReference.SetActive(false);
+            programmingReference.SetActive(false);
+            mulitReference.SetActive(false);
+        }
+        else if (isProgramming)
+        {
+            artReference.SetActive(false);
+            designReference.SetActive(false);
+            programmingReference.SetActive(true);
+            mulitReference.SetActive(false);
+        }
+        else
+        {
+            artReference.SetActive(false);
+            designReference.SetActive(false);
+            programmingReference.SetActive(false);
             mulitReference.SetActive(true);
         }
     }
