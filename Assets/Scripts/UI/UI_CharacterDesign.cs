@@ -12,6 +12,8 @@ public class UI_CharacterDesign : UI_Base
     [SerializeField] Texture enemyIcon;
     [SerializeField] Texture plusIcon;
 
+    [SerializeField] int costPerEnemy;
+
     [Header("Title")]
     [SerializeField] TextMeshProUGUI title;
 
@@ -183,6 +185,7 @@ public class UI_CharacterDesign : UI_Base
                     enemy4Image.texture = enemyIcon;
                     break;
             }
+            Game.PointSystem.TakePoints(costPerEnemy);
         }
     }
 
@@ -282,6 +285,7 @@ public class UI_CharacterDesign : UI_Base
     {
         Game.CharacterConfig[currentCharacterIndex].Clear();
         OnPlayerButtonPress();
+        Game.PointSystem.AddPoints(costPerEnemy);
     }
 
     private void SetCharacterButtonVisibility()

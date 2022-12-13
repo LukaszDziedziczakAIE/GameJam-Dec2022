@@ -426,6 +426,7 @@ MonoBehaviour:
   Game: {fileID: 0}
   enemyIcon: {fileID: 2800000, guid: d87d0e5b2fea4c949b98112275a9a3ef, type: 3}
   plusIcon: {fileID: 2800000, guid: 27508e31a751b104ba60f4ad20edf0f2, type: 3}
+  costPerEnemy: 25
   title: {fileID: 3291046033568151820}
   playerButton: {fileID: 4330040300790190798}
   enemy1Button: {fileID: 1858910827580892301}
