@@ -36,7 +36,11 @@ public class UI_LevelContentItem : UI_Base
     {
         if (Game.isPlacing) return;
 
-        if (!Game.PointSystem.CanBuy(placeableObject.Cost)) return;
+        if (!Game.PointSystem.CanBuy(placeableObject.Cost))
+        {
+            Debug.LogError("Cannot afford " + placeableObject.Cost);
+            return;
+        }
 
         if (characterObject != null)
         {

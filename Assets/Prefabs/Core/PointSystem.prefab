@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f8a749805ba884e9decb33d85d5605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  slider: {fileID: 0}
+  sliderFill: {fileID: 0}
+  colors: []
+  spendingPoints: 200
+  programmingPoints: 0
+  artPoints: 0
+  designPoints: 0
