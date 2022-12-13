@@ -103,8 +103,10 @@ public class UI_LeveDesign : UI_Base
 
     private void BuildListInteractable()
     {
+        
         if (interactableObjectsItems.Count == 0 && interactableObjects.Length > 0)
         {
+            
             foreach (PlaceableObject placeableObject in interactableObjects)
             {
                 UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, interactableContent);
@@ -112,6 +114,8 @@ public class UI_LeveDesign : UI_Base
                 enviromentalObjectItems.Add(levelContentItem);
             }
         }
+
+
     }
 
     private void BuildListCharacter()
