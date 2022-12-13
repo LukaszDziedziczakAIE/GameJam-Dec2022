@@ -118,7 +118,7 @@ public class EnemyCharacter : Character
         if (/*Game.TestingMode &&*/ EnemyMovement != Vector3.zero)
         {
             FaceMovementDirection(EnemyMovement);
-            Move(Movement * Speed);
+            Move(EnemyMovement * Speed);
             Animator.SetFloat("MoveSpeed", 1);
         }
         else

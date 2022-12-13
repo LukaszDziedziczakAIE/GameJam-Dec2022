@@ -77,7 +77,8 @@ public class UI_HUD : UI_Base
         CharacterDesign.Hide();
         Programing.Hide();
         Publish.Hide();
-        TestingMode(true);
+        if (!Game.TestingMode) TestingMode(true);
+        else TestingMode(false);
     }
 
     private void OnPublishButtonPress()

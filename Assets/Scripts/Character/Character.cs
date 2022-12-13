@@ -73,7 +73,7 @@ public class Character : MonoBehaviour
         }
 
         Animator?.SetBool("IsGrounded", isGrounded);
-        print(name + " " + isGrounded);
+        //print(name + " " + isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
         {
             impact = Vector3.zero;
         }
-        print(name + " running physics");
+        //print(name + " running physics");
     }
 
     public void ResetPhysics()
@@ -100,6 +100,7 @@ public class Character : MonoBehaviour
 
     protected void Move(Vector3 motion)
     {
+        print(motion);
         if (Controller.enabled) Controller.Move((motion + Movement) * Time.deltaTime);
 
     }
