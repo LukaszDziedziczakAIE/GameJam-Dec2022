@@ -109,7 +109,7 @@ public class UI_Publish : MonoBehaviour
 
     private void OnContinuePressed()
     {
-        this.gameObject.SetActive(false);
+        game.HUD.OnLevelDesignButtonPress();
     }
 
     public void Hide()

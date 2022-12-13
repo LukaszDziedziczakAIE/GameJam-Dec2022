@@ -35,7 +35,7 @@ public class UI_HUD : UI_Base
         OnLevelDesignButtonPress();
     }
 
-    private void OnLevelDesignButtonPress()
+    public void OnLevelDesignButtonPress()
     {
         Game.Camera.FaceLevel();
         Game.PlayerCharacter.SetPos_LevelStart();
