@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameObject Helmet { get; private set; }
     [field: SerializeField] public float Speed = 5;
     [field: SerializeField] public float jumpForce = 5;
-    [field: SerializeField] public int Health { get; private set; } = 1;
+    [field: SerializeField] public int Health { get; protected set; } = 1;
     [SerializeField] SkinnedMeshRenderer Renderer;
 
     public int configRef;
@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
         {
             //print(name + " grounded = " + isGrounded);
             ApplyPhysics();
-            ResetToCenter();
+            //ResetToCenter();
         }
     }
 
@@ -59,7 +59,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void ApplyPhysics()
+    protected void ApplyPhysics()
     {
         //gravity
         if (verticalVelocity < 0f && isGrounded)
@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void ResetToCenter()
+    protected void ResetToCenter()
     {
         if (transform.position.z != Game.MapZCenter)
         {
