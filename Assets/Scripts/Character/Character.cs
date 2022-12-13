@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameObject Helmet { get; private set; }
     [field: SerializeField] public float Speed = 5;
     [field: SerializeField] public float jumpForce = 5;
+    [field: SerializeField] public float deathSpeed = 5;
     [field: SerializeField] public int Health { get; protected set; } = 1;
     [SerializeField] SkinnedMeshRenderer Renderer;
 
@@ -61,6 +62,7 @@ public class Character : MonoBehaviour
 
     protected void ApplyPhysics()
     {
+        print(name + " running physics");
         //gravity
         if (verticalVelocity < 0f && isGrounded)
         {
@@ -79,6 +81,12 @@ public class Character : MonoBehaviour
         {
             impact = Vector3.zero;
         }
+    }
+
+    public void ResetPhysics()
+    {
+        verticalVelocity = 0f;
+        impact = Vector3.zero;
     }
 
     protected void ResetToCenter()
@@ -232,7 +240,7 @@ public class Character : MonoBehaviour
     private void Death()
     {
         Animator?.SetTrigger("Death");
-        if (configRef != 0) Destroy(gameObject, 2);
+        if (configRef != 0) Destroy(gameObject, deathSpeed);
     }
 
     public bool isAlive { get { return Health > 0; } }

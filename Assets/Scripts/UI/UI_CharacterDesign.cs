@@ -220,9 +220,18 @@ public class UI_CharacterDesign : UI_Base
     {
         helmetIndex--;
         if (helmetIndex <= -1) helmetIndex = 2;
-        if (helmetIndex == 0) helmetText.text = "Titan";
-        else if (helmetIndex == 1) helmetText.text = "Bezerker";
-        else if (helmetIndex == 2) helmetText.text = "Vanguard";
+        if (currentCharacterIndex == 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Titan";
+            else if (helmetIndex == 1) helmetText.text = "Bezerker";
+            else if (helmetIndex == 2) helmetText.text = "Vanguard";
+        }
+        else if (currentCharacterIndex > 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Gitz";
+            else if (helmetIndex == 1) helmetText.text = "Golfo";
+            else if (helmetIndex == 2) helmetText.text = "Gollum";
+        }
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -240,8 +249,8 @@ public class UI_CharacterDesign : UI_Base
         else if (currentCharacterIndex > 0)
         {
             if (helmetIndex == 0) helmetText.text = "Gitz";
-            else if (helmetIndex == 1) helmetText.text = "Gulfo";
-            else if (helmetIndex == 2) helmetText.text = "Golem";
+            else if (helmetIndex == 1) helmetText.text = "Golfo";
+            else if (helmetIndex == 2) helmetText.text = "Gollum";
         }
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();

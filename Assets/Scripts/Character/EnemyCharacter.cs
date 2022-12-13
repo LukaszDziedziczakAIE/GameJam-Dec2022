@@ -51,7 +51,7 @@ public class EnemyCharacter : Character
 
         PlayMode();
 
-        print(name + " distance to player = " + distanceToPlayer);
+        
     }
 
     private void PlayMode()
@@ -61,8 +61,7 @@ public class EnemyCharacter : Character
             CB_PatrolBehaviour();
             CB_ChaseBehaviour();
             CB_ClimbBehaviour();
-            
-            CB_PatrolBehaviour();
+            CB_AttackBehaviour();
         }
     }
 
@@ -81,6 +80,7 @@ public class EnemyCharacter : Character
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(CHASE)) return;
         print("running chase");
+        print(name + " distance to player = " + distanceToPlayer);
         if (distanceToPlayer < maxChaseRange && distanceToPlayer > minChaseRange)
         {
             if (Game.PlayerCharacter.transform.position.z < transform.position.z) MoveLeft();
