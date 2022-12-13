@@ -35,7 +35,11 @@ public class UI_LevelContentItem : UI_Base
     private void OnButtonPress()
     {
         print("clicked something to place");
-        if (Game.isPlacing) return;
+        if (Game.isPlacing)
+        {
+            Debug.LogError("Game is placing, exiting.");
+            return;
+        }
 
         if (!Game.PointSystem.CanBuy(placeableObject.Cost))
         {
@@ -43,6 +47,7 @@ public class UI_LevelContentItem : UI_Base
             return;
         }
 
+        print(characterObject);
         if (characterObject != null)
         {
             print("about to place enemy character");

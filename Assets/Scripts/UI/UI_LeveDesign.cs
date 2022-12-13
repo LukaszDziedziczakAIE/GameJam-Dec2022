@@ -63,7 +63,6 @@ public class UI_LeveDesign : UI_Base
 
     private void OnCharacterButtonPress()
     {
-
         BuildListCharacter();
     }
 
