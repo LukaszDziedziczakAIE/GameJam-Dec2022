@@ -8,7 +8,8 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameController Game { get; private set; }
     [field: SerializeField] public Transform HeadPos { get; private set; }
     [field: SerializeField] public Transform RightHand { get; private set; }
-    [field: SerializeField] public Transform LightHand { get; private set; }
+    [field: SerializeField] public Transform LeftHand { get; private set; }
+    [field: SerializeField] public Weapon Weapon;
     [field: SerializeField] public CharacterController Controller;
     [field: SerializeField] public Animator Animator;
     [field: SerializeField] public CharacterAudio Audio;
@@ -35,14 +36,14 @@ public class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-
+        ApplyWeaponConfig();
     }
 
     protected virtual void Update()
     {
         if (inLevel && !(Game.HUD.Programing.gameObject.activeSelf || Game.HUD.CharacterDesign.gameObject.activeSelf))
         {
-            print(name + " " + Controller.isGrounded);
+            //print(name + " " + Controller.isGrounded);
             ApplyPhysics();
             ResetToCenter();
         }
@@ -52,6 +53,7 @@ public class Character : MonoBehaviour
     {
         get
         {
+            if (Game.CharacterConfig.Length == 0) return null;
             return Game.CharacterConfig[configRef];
         }
     }
@@ -110,6 +112,7 @@ public class Character : MonoBehaviour
         ApplyArmourColors();
         ApplyHelmet();
         ApplyHelmetColor();
+        ApplyWeaponConfig();
     }
 
     private void ApplyArmourColors()
@@ -150,6 +153,31 @@ public class Character : MonoBehaviour
                 HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
                 break;
         }
+    }
+
+    private void ApplyWeaponConfig()
+    {
+        if (Game.CharacterConfig.Length == 0) return;
+
+        if (Weapon != null)
+        {
+            Destroy(Weapon.gameObject);
+            Weapon = null;
+        }
+
+        print("length = " + Game.WeaponConfigs.Length);
+        print("configRef = " + configRef);
+        print("CharacterConfigLength = " + Game.CharacterConfig.Length);
+        print("config = " + Game.CharacterConfig[configRef] != null);
+        print("refNo = " + Game.CharacterConfig[configRef]);
+
+        if (Game.WeaponConfigs[config.weaponRef] == null) return;
+
+        if (!Game.WeaponConfigs[config.weaponRef].LeftHanded)
+            Weapon = Instantiate(Game.WeaponConfigs[config.weaponRef].Prefab, RightHand);
+        else
+            Weapon = Instantiate(Game.WeaponConfigs[config.weaponRef].Prefab, LeftHand);
+
     }
 
     protected void Attack()
