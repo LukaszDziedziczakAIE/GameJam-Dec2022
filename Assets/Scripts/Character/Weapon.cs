@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     {
         if (other.TryGetComponent<Character>(out Character character) && character != self)
         {
-            print(character.name);
+            character.TakeDamage();
         }
     }
 }
