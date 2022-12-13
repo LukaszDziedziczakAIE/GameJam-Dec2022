@@ -31,6 +31,8 @@ public class UI_HUD : UI_Base
         LevelDesign.gameObject.SetActive(false);
         CharacterDesign.gameObject.SetActive(false);
         Programing.gameObject.SetActive(false);
+
+        OnLevelDesignButtonPress();
     }
 
     private void OnLevelDesignButtonPress()
