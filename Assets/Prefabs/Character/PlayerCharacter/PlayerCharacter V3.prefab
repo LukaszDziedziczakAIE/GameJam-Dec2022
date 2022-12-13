@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 960499001258045205}
   - component: {fileID: 6607990202921629039}
+  - component: {fileID: 8260117093874178028}
   m_Layer: 0
   m_Name: CharacterModel
   m_TagString: Untagged
@@ -115,6 +116,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8260117093874178028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441265267141129647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab1c146c5e68ea4e8f45f3303dd5672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 3749232231841957442}
+  audio: {fileID: 6443308998982580109}
 --- !u!1 &631062252497029816
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +203,7 @@ GameObject:
   - component: {fileID: 2119423825811036681}
   - component: {fileID: 3749232231841957442}
   - component: {fileID: 3711287403960588901}
+  - component: {fileID: 877428395710176487}
   m_Layer: 8
   m_Name: PlayerCharacter V3
   m_TagString: Untagged
@@ -257,6 +273,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &877428395710176487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221819789562790233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab1c146c5e68ea4e8f45f3303dd5672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 3749232231841957442}
+  audio: {fileID: 6443308998982580109}
 --- !u!1 &1750678672724229907
 GameObject:
   m_ObjectHideFlags: 0
