@@ -14,6 +14,7 @@ public class UI_HUD : UI_Base
     [field: SerializeField] public UI_LeveDesign LevelDesign { get; private set; }
     [field: SerializeField] public UI_CharacterDesign CharacterDesign { get; private set; }
     [field: SerializeField] public UI_Programing Programing { get; private set; }
+    [field: SerializeField] public UI_Publish Publish { get; private set; }
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class UI_HUD : UI_Base
         CharacterDesign.gameObject.SetActive(false);
         Programing.gameObject.SetActive(false);
 
+        Publish = FindObjectOfType<UI_Publish>();
+
         OnLevelDesignButtonPress();
     }
 
@@ -39,6 +42,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Show();
         CharacterDesign.Hide();
         Programing.Hide();
+        Publish.Hide();
         TestingMode(false);
     }
 
@@ -49,6 +53,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Show();
         Programing.Hide();
+        Publish.Hide();
         TestingMode(false);
     }
 
@@ -61,6 +66,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Hide();
         Programing.Show();
+        Publish.Hide();
         TestingMode(false);
     }
 
@@ -69,14 +75,16 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Hide();
         Programing.Hide();
+        Publish.Hide();
         TestingMode(true);
     }
 
     private void OnPublishButtonPress()
     {
         LevelDesign.Hide();
-        CharacterDesign.Show();
+        CharacterDesign.Hide();
         Programing.Hide();
+        Publish.Show();
         TestingMode(false);
     }
 

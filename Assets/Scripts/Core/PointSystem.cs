@@ -17,7 +17,7 @@ public class PointSystem : MonoBehaviour
     public int artPoints;
     public int designPoints;
 
-    private float originalPoints;
+    [HideInInspector] public float originalPoints;
 
 
     private void Start()
