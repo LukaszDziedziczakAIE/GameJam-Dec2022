@@ -13,32 +13,22 @@ public class UI_LeveDesign : UI_Base
     [SerializeField] Button interactableButton;
     [SerializeField] Button characterButton;
 
-    [Header("Tabs")]
-    [SerializeField] RectTransform enviromentTab;
-    [SerializeField] RectTransform interactableTab;
-    [SerializeField] RectTransform characterTab;
-    [SerializeField] RectTransform enviromentContent;
-    [SerializeField] RectTransform interactableContent;
-    [SerializeField] RectTransform characterContent;
+    [Header("Content")]
+    [SerializeField] RectTransform content;
 
     PlaceableObject[] enviromentalObjects;
     PlaceableObject[] interactableObjects;
     CharacterObject[] characterObjects;
 
-    // tab lists
-    List<UI_LevelContentItem> enviromentalObjectItems = new List<UI_LevelContentItem>();
-    List<UI_LevelContentItem> interactableObjectsItems = new List<UI_LevelContentItem>();
-    List<UI_LevelContentItem> characterObjectsItems = new List<UI_LevelContentItem>();
+    [Header("Debug")]
+    [SerializeField] List<UI_LevelContentItem> objectItems = new List<UI_LevelContentItem>();
+
 
     private void Start()
     {
         enviromentButton.onClick.AddListener(OnEnviromentButtonPress);
         interactableButton.onClick.AddListener(OnInteractableButtonPress);
         characterButton.onClick.AddListener(OnCharacterButtonPress);
-
-        enviromentTab.gameObject.SetActive(false);
-        interactableTab.gameObject.SetActive(false);
-        characterTab.gameObject.SetActive(false);
 
         enviromentalObjects = Resources.LoadAll<PlaceableObject>("Enviroment/");
         interactableObjects = Resources.LoadAll<PlaceableObject>("Interactable/");
@@ -63,75 +53,76 @@ public class UI_LeveDesign : UI_Base
 
     private void OnEnviromentButtonPress()
     {
-        enviromentTab.gameObject.SetActive(true);
-        interactableTab.gameObject.SetActive(false);
-        characterTab.gameObject.SetActive(false);
-        
         BuildListEnviroment();
     }
 
     private void OnInteractableButtonPress()
     {
-        enviromentTab.gameObject.SetActive(false);
-        interactableTab.gameObject.SetActive(true);
-        characterTab.gameObject.SetActive(false);
-
         BuildListInteractable();
     }
 
     private void OnCharacterButtonPress()
     {
-        enviromentTab.gameObject.SetActive(false);
-        interactableTab.gameObject.SetActive(false);
-        characterTab.gameObject.SetActive(true);
 
         BuildListCharacter();
     }
 
     private void BuildListEnviroment()
     {
-        if (enviromentalObjectItems.Count == 0 && enviromentalObjects.Length > 0)
+        ClearList();
+        if (objectItems.Count == 0 && enviromentalObjects.Length > 0)
         {
             foreach (PlaceableObject placeableObject in enviromentalObjects)
             {
-                UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, enviromentContent);
+                UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, content);
                 levelContentItem.Set(placeableObject);
-                enviromentalObjectItems.Add(levelContentItem);
+                objectItems.Add(levelContentItem);
             }
         }
     }
 
     private void BuildListInteractable()
     {
-        
-        if (interactableObjectsItems.Count == 0 && interactableObjects.Length > 0)
+        ClearList();
+        if (objectItems.Count == 0 && interactableObjects.Length > 0)
         {
             
             foreach (PlaceableObject placeableObject in interactableObjects)
             {
-                UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, interactableContent);
+                UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, content);
                 levelContentItem.Set(placeableObject);
-                enviromentalObjectItems.Add(levelContentItem);
+                objectItems.Add(levelContentItem);
             }
         }
-
-
     }
 
     private void BuildListCharacter()
     {
-        if (characterObjectsItems.Count == 0 && characterObjects.Length > 0)
+        ClearList();
+        if (objectItems.Count == 0 && characterObjects.Length > 0)
         {
             foreach (CharacterObject characterObject in characterObjects)
             {
                 if (Game.CharacterConfig[characterObject.CharacterIndex].active)
                 {
-                    UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, characterContent);
+                    UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, content);
                     levelContentItem.Set(characterObject);
-                    enviromentalObjectItems.Add(levelContentItem);
+                    objectItems.Add(levelContentItem);
                 }
                 
             }
+        }
+    }
+
+    public void ClearList()
+    {
+        if (objectItems.Count > 0)
+        {
+            foreach(var placeableObject in objectItems)
+            {
+                Destroy(placeableObject.gameObject);
+            }
+            objectItems.Clear();
         }
     }
 

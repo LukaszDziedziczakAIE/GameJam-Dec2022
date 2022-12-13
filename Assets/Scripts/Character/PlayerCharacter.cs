@@ -47,7 +47,7 @@ public class PlayerCharacter : Character
 
     private void ProcessMovement()
     {
-        if (Game.TestingMode && InputReader.Movement.x > 0)
+        if (Game.TestingMode && InputReader.Movement.x != 0)
         {
             Vector3 Movement = CalculateMovement();
             FaceMovementDirection(Movement);
