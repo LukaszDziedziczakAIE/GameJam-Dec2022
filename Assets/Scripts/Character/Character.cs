@@ -128,26 +128,30 @@ public class Character : MonoBehaviour
             Helmet = null;
         }
 
-        Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
+        if(configRef == 0) Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
+        else Helmet = Instantiate(Game.GolbinHeadPrefabs[config.helmetRef], HeadPos);
     }
 
     private void ApplyHelmetColor()
     {
-        MeshRenderer HelmentRenderer = Helmet.GetComponent<MeshRenderer>();
-
-        switch (config.helmetRef)
+        if(configRef == 0)
         {
-            case 0:
-                HelmentRenderer.material = Game.Helmet1Colors[config.armourColourRef];
-                break;
+            MeshRenderer HelmentRenderer = Helmet.GetComponent<MeshRenderer>();
 
-            case 1:
-                HelmentRenderer.material = Game.Helmet2Colors[config.armourColourRef];
-                break;
+            switch (config.helmetRef)
+            {
+                case 0:
+                    HelmentRenderer.material = Game.Helmet1Colors[config.armourColourRef];
+                    break;
 
-            case 2:
-                HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
-                break;
+                case 1:
+                    HelmentRenderer.material = Game.Helmet2Colors[config.armourColourRef];
+                    break;
+
+                case 2:
+                    HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
+                    break;
+            }
         }
     }
 
