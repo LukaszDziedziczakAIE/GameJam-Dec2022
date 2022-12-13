@@ -197,8 +197,9 @@ public class UI_CharacterDesign : UI_Base
     private void OnPreviousVoiceButtonPress()
     {
         voiceIndex--;
-        if (voiceIndex <= -1) voiceIndex = 3;
-        voiceText.text = "Voice " + (voiceIndex + 1);
+        if (voiceIndex <= -1) voiceIndex = 1;
+        if (voiceIndex == 0) voiceText.text = "Human";
+        else if (voiceIndex == 1) voiceText.text = "Golbin";
         Game.CharacterConfig[currentCharacterIndex].voiceRef = voiceIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -206,8 +207,9 @@ public class UI_CharacterDesign : UI_Base
     private void OnNextVoiceButtonPress()
     {
         voiceIndex++;
-        if (voiceIndex >= 4) voiceIndex = 0;
-        voiceText.text = "Voice " + (voiceIndex + 1);
+        if (voiceIndex >= 2) voiceIndex = 0;
+        if (voiceIndex == 0) voiceText.text = "Human";
+        else if (voiceIndex == 1) voiceText.text = "Golbin";
         Game.CharacterConfig[currentCharacterIndex].voiceRef = voiceIndex;
         selectedCharacter.UpdateCharacter();
     }
