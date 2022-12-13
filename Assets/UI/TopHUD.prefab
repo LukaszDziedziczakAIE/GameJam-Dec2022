@@ -378,7 +378,10 @@ MonoBehaviour:
   - {r: 0.9467213, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.57911307, b: 0, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
-  points: 200
+  initialPoints: 200
+  programmingPoints: 0
+  artPoints: 0
+  designPoints: 0
 --- !u!1 &7072002354493335582
 GameObject:
   m_ObjectHideFlags: 0
