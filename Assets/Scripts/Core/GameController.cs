@@ -39,6 +39,8 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public Vector3 LevelStartRot;
     [field: SerializeField] public Vector3 CharacterDesignPos;
     [field: SerializeField] public Vector3 CharacterDesignRot;
+    [field: SerializeField] public Vector3 ProgrammingPos;
+    [field: SerializeField] public Vector3 ProgrammingRot;
 
     [field: SerializeField, Header("Code Blocks")] public CodeBlock CodeBlockPrefab;
 
