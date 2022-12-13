@@ -225,6 +225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Game>k__BackingField: {fileID: 0}
   <HeadPos>k__BackingField: {fileID: 6936682350432629418}
+  <RightHand>k__BackingField: {fileID: 1399341265451808566}
+  <LeftHand>k__BackingField: {fileID: 5828429132807380285}
+  Weapon: {fileID: 0}
   Controller: {fileID: 3711287403960588901}
   Animator: {fileID: 6607990202921629039}
   Audio: {fileID: 6443308998982580109}
@@ -253,7 +256,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1750678672724229907
 GameObject:
   m_ObjectHideFlags: 0

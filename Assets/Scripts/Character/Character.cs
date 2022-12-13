@@ -36,7 +36,6 @@ public class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-        ApplyWeaponConfig();
     }
 
     protected virtual void Update()
@@ -70,7 +69,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        //Animator?.SetBool("IsGrounded", Controller.isGrounded);
+        Animator?.SetBool("IsGrounded", Controller.isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -165,11 +164,11 @@ public class Character : MonoBehaviour
             Weapon = null;
         }
 
-        print("length = " + Game.WeaponConfigs.Length);
+        /*print("length = " + Game.WeaponConfigs.Length);
         print("configRef = " + configRef);
         print("CharacterConfigLength = " + Game.CharacterConfig.Length);
         print("config = " + Game.CharacterConfig[configRef] != null);
-        print("refNo = " + Game.CharacterConfig[configRef]);
+        print("refNo = " + Game.CharacterConfig[configRef]);*/
 
         if (Game.WeaponConfigs[config.weaponRef] == null) return;
 

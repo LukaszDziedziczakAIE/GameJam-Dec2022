@@ -75,5 +75,6 @@ public class GameController : MonoBehaviour
         }
 
         CharacterConfig = characterConfigList.ToArray();
+        PlayerCharacter.UpdateCharacter();
     }
 }
