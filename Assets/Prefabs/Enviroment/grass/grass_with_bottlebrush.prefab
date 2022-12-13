@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae17b412643155409069834dae9d7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderers: []
+  Placing: 0
+  colliders: []
 --- !u!65 &158345538966492898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56,8 +59,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59939116, y: 0.96703285, z: 0.43064296}
-  m_Center: {x: 0.046186358, y: 0.47707316, z: -0.018737786}
+  m_Size: {x: 0.52768683, y: 0.82362413, z: 0.43064296}
+  m_Center: {x: 0.04000494, y: 0.51910675, z: -0.018737793}
 --- !u!1 &6578995334392009132
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +120,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 7123d9603537a1f438f38550320f04ad, type: 3}
+  - {fileID: 2100000, guid: 934d704dbba26184bab2e167a225fa85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
