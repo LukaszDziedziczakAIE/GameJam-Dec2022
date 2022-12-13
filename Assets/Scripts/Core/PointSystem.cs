@@ -12,7 +12,10 @@ public class PointSystem : MonoBehaviour
 
     public Color[] colors;
 
-    public int points;
+    //public int points;
+    public int programmingPoints;
+    public int artPoints;
+    public int designPoints;
 
     private float originalPoints;
 
@@ -20,6 +23,14 @@ public class PointSystem : MonoBehaviour
     private void Start()
     {
         originalPoints = points;
+    }
+
+    public float points
+    {
+        get
+        {
+            return programmingPoints + artPoints + designPoints;
+        }
     }
 
     private void Update()
@@ -36,26 +47,52 @@ public class PointSystem : MonoBehaviour
         }
     }
 
-    public void TakePoints(int remove)
+    public void AddProgrammingPoints(int add)
     {
-        points -= remove;
-        text.text = "Points: " + points;
-
-        float sliderValue = (float)points / originalPoints;
-        slider.value = sliderValue;
+        programmingPoints += add;
+        UpdateScoreText();
     }
 
-    public void AddPoints(int add)
+    public void RemoveProgrammingPoints(int remove)
     {
-        points += add;
-        text.text = "Points: " + points;
+        programmingPoints -= remove;
+        UpdateScoreText();
+    }
 
-        float sliderValue = (float)points / originalPoints;
-        slider.value = sliderValue;
+    public void AddArtPoints(int add)
+    {
+        artPoints += add;
+        UpdateScoreText();
+    }
+
+    public void RemoveArtPoints(int remove)
+    {
+        artPoints -= remove;
+        UpdateScoreText();
+    }
+
+    public void AddDesignPoints(int add)
+    {
+        designPoints += add;
+        UpdateScoreText();
+    }
+
+    public void RemoveDesignPoints(int remove)
+    {
+        designPoints -= remove;
+        UpdateScoreText();
     }
 
     public bool CanBuy(int price)
     {
         return points - price >= 0;
+    }
+
+    public void UpdateScoreText()
+    {
+        text.text = "Points: " + points;
+
+        float sliderValue = (float)points / originalPoints;
+        slider.value = sliderValue;
     }
 }

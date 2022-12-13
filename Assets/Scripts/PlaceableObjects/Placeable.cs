@@ -184,7 +184,8 @@ public class Placeable : MonoBehaviour
 
         if (character != null) character.Controller.enabled = true;
 
-        game.PointSystem?.TakePoints(config.Cost);
+        if (config.isArt) game.PointSystem?.AddArtPoints(config.Cost);
+        else if (config.isDesign) game.PointSystem?.AddDesignPoints(config.Cost);
     }
 
 

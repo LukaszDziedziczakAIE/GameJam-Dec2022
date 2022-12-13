@@ -10,4 +10,8 @@ public class PlaceableObject : ScriptableObject
     [field: SerializeField] public Texture Icon { get; private set; }
     [field: SerializeField] public float xPos { get; private set; } = 0;
     [field: SerializeField] public int Cost { get; private set; }
+    [field: SerializeField] public bool isDesign { get; private set; }
+    [field: SerializeField] public bool isArt { get; private set; }
+
+
 }
