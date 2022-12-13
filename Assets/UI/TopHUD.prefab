@@ -701,6 +701,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!222 &9082928885271413556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603915415518319485}
+  m_CullTransparentMesh: 1
+--- !u!114 &6272512753660041060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603915415518319485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9e01f80f92535944b982370796167f34, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6050093798855821374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1202,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterDesignButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5005371293728745404, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_text
+      value: 'CharacterDesign
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 6708166355974614226, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1266,6 +1310,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Publish
       objectReference: {fileID: 0}
+    - target: {fileID: 2693711268542662955, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2849304041294610063, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Name
       value: PublishButton
@@ -1273,6 +1321,22 @@ PrefabInstance:
     - target: {fileID: 4571508374499874104, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571508374499874104, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571508374499874104, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571508374499874104, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541187864496894508, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708166355974614226, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Pivot.x
@@ -1389,6 +1453,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6708166355974614226, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
   m_PrefabInstance: {fileID: 2325797593664387640}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5603915415518319485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7891432410831448389, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+  m_PrefabInstance: {fileID: 2325797593664387640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2325797594461865167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1399,6 +1468,10 @@ PrefabInstance:
     - target: {fileID: 2849304041294610063, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Name
       value: ProgramingDesignButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005371293728745404, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_text
+      value: Programming
       objectReference: {fileID: 0}
     - target: {fileID: 6708166355974614226, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Pivot.x
@@ -1501,6 +1574,12 @@ PrefabInstance:
     - target: {fileID: 2849304041294610063, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Name
       value: LevelDesignButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005371293728745404, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
+      propertyPath: m_text
+      value: 'LevelDesign
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6708166355974614226, guid: dbb55ecb60de682449b51804f3e58d4c, type: 3}
       propertyPath: m_Pivot.x
