@@ -15,9 +15,16 @@ public class CharacterAnimEventHandler : MonoBehaviour
 
     private void PlayFootstep()
     {
-        if (audio != null)
-        {
-            audio.PlayFootstep();
-        }
+        audio?.PlayFootstep();
+    }
+
+    private void PlayAttackVoice()
+    {
+        audio?.PlayAttackVoice();
+    }
+
+    private void PlayJumpVoice()
+    {
+        audio?.PlayJumpVoice();
     }
 }

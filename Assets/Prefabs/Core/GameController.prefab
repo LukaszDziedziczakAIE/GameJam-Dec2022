@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1201300338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201300339}
+  - component: {fileID: 1201300341}
+  - component: {fileID: 1201300340}
+  m_Layer: 0
+  m_Name: CodeBlockDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201300339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201300338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.61, y: 0, z: 998.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 503326331158938955}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1201300341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201300338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1201300340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201300338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbd1bcb368f7a74889affa23c89d85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codeBlocks: []
 --- !u!1 &503326331158938953
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +88,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 503326332316074822}
+  - {fileID: 1201300339}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,12 +105,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <HUD>k__BackingField: {fileID: 0}
+  <BlockDetector>k__BackingField: {fileID: 1201300340}
   <Camera>k__BackingField: {fileID: 0}
   <PlayerCharacter>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 1191283179}
+  raycastDistance: 50
+  <GridSnapInterval>k__BackingField: 0.25
   <CharacterConfig>k__BackingField: []
   numberOfCharacter: 5
-  raycastDistance: 50
+  MapZCenter: 0
+  <EnemyCharacterPrefab>k__BackingField: {fileID: 422785070277948551, guid: 9eefc5bef2d565f4f8c2e87a6b7200fe, type: 3}
+  <ArmourColors>k__BackingField:
+  - {fileID: 2100000, guid: 00c9b2eeb0877a74eb8c5fb1bf920f15, type: 2}
+  - {fileID: 2100000, guid: 4be2989a610e1b541b562958f7820049, type: 2}
+  - {fileID: 2100000, guid: 1b6fb80fb32b6e34788f49294a965f4f, type: 2}
+  - {fileID: 2100000, guid: 0158c5cc3fe2aa540939a2537867f1a4, type: 2}
+  - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
+  <HelmentPrefabs>k__BackingField:
+  - {fileID: 22397740786480669, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
+  <HelmetColors>k__BackingField:
+  - {fileID: 2100000, guid: 00c9b2eeb0877a74eb8c5fb1bf920f15, type: 2}
+  - {fileID: 2100000, guid: 4be2989a610e1b541b562958f7820049, type: 2}
+  - {fileID: 2100000, guid: 1b6fb80fb32b6e34788f49294a965f4f, type: 2}
+  - {fileID: 2100000, guid: 0158c5cc3fe2aa540939a2537867f1a4, type: 2}
+  - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   BackgroundLayer:
@@ -69,6 +146,11 @@ MonoBehaviour:
   CharacterLayer:
     serializedVersion: 2
     m_Bits: 256
+  LevelStartPos: {x: 0, y: 0, z: 0}
+  LevelStartRot: {x: 0, y: 0, z: 0}
+  CharacterDesignPos: {x: -19.16, y: 2.5, z: 1.13}
+  CharacterDesignRot: {x: 0, y: 95, z: 0}
+  CodeBlockPrefab: {fileID: 2494328983319479514, guid: 7d90000985adfa34198f1a9521920771, type: 3}
   TestingMode: 0
 --- !u!114 &1191283179
 MonoBehaviour:

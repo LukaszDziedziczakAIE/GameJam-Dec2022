@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI_HUD : UI_Base
 {
-    
+    [SerializeField] Button xButton;
     [SerializeField] Button levelDesignButton;
     [SerializeField] Button characterDesignButton;
     [SerializeField] Button programingDesignButton;
@@ -17,6 +17,7 @@ public class UI_HUD : UI_Base
 
     private void Start()
     {
+        xButton.onClick.AddListener(OnXButtonPress);
         levelDesignButton.onClick.AddListener(OnLevelDesignButtonPress);
         characterDesignButton.onClick.AddListener(OnCharacterDesignButtonPress);
         programingDesignButton.onClick.AddListener(OnProgramingDesignButtonPress);
@@ -38,29 +39,29 @@ public class UI_HUD : UI_Base
         LevelDesign.Show();
         CharacterDesign.Hide();
         Programing.Hide();
-        Game.TestingMode = false;
+        TestingMode(false);
     }
 
     private void OnCharacterDesignButtonPress()
     {
         Game.Camera.FaceCharacterCreator();
-        Game.PlayerCharacter.SetPos_CharacterCreator();
 
         LevelDesign.Hide();
         CharacterDesign.Show();
         Programing.Hide();
-        Game.TestingMode = false;
+        TestingMode(false);
     }
 
     private void OnProgramingDesignButtonPress()
     {
         Game.Camera.FaceProgramming();
-        Game.PlayerCharacter.SetPos_LevelStart();
+        if (Game.PlayerCharacter.transform.position == Game.CharacterDesignPos) 
+            Game.PlayerCharacter.SetPos_LevelStart();
 
         LevelDesign.Hide();
         CharacterDesign.Hide();
         Programing.Show();
-        Game.TestingMode = false;
+        TestingMode(false);
     }
 
     private void OnTestingButtonnPress()
@@ -68,7 +69,7 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Hide();
         Programing.Hide();
-        Game.TestingMode = true;
+        TestingMode(true);
     }
 
     private void OnPublishButtonPress()
@@ -76,6 +77,17 @@ public class UI_HUD : UI_Base
         LevelDesign.Hide();
         CharacterDesign.Show();
         Programing.Hide();
-        Game.TestingMode = false;
+        TestingMode(false);
+    }
+
+    private void OnXButtonPress()
+    {
+        Application.Quit();
+    }
+
+    private void TestingMode(bool testing)
+    {
+        Game.TestingMode = testing;
+        Game.PlayerCharacter.MapControls(testing);
     }
 }

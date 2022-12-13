@@ -11,6 +11,7 @@ public class UI_LevelContentItem : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
 
     PlaceableObject placeableObject;
+    CharacterObject characterObject;
 
     private void Start()
     {
@@ -24,9 +25,30 @@ public class UI_LevelContentItem : MonoBehaviour
         text.text = "";
     }
 
+    public void Set(CharacterObject characterObject)
+    {
+        this.characterObject = characterObject;
+        image.texture = this.characterObject.Icon;
+        text.text = "";
+    }
+
     private void OnButtonPress()
     {
-        Placeable placeable = Instantiate(placeableObject.Prefab);
-        placeable.Set(placeableObject);
+        if (characterObject != null)
+        {
+            EnemyCharacter enemy = Instantiate(characterObject.EnemyCharacterPrefab);
+            enemy.configRef = characterObject.CharacterIndex;
+            enemy.UpdateCharacter();
+            enemy.Placeable.Set(characterObject);
+            enemy.Placeable.Placing = true;
+
+            //enemy.Set(placeableObject);
+        }
+        else if (placeableObject != null)
+        {
+            Placeable placeable = Instantiate(placeableObject.Prefab);
+            placeable.Set(placeableObject);
+            placeable.Placing = true;
+        }     
     }
 }

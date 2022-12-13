@@ -2,17 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCharacter : MonoBehaviour
+public class EnemyCharacter : Character
 {
-    // Start is called before the first frame update
-    void Start()
+    const string PATROL = "Patrol";
+
+    public Placeable Placeable { get; private set; }
+
+    protected override void Awake()
     {
+        base.Awake();
+        Placeable = GetComponent<Placeable>();
+    }
+
+    protected override void Update()
+    {
+        if (Placeable.Placing) return;
+        base.Update();
+
+        PlayMode();
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayMode()
     {
-        
+        if (Game.TestingMode)
+        {
+            CB_PatrolBehaviour();
+
+        }
+    }
+
+    private void CB_PatrolBehaviour()
+    {
+        if (!Game.CharacterConfig[configRef].HasCodeBlock(PATROL)) return;
+
+        print("Patrol Behaviour Online");
     }
 }

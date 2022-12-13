@@ -27,17 +27,29 @@ public class CameraController : MonoBehaviour
     {
         transform.position = startingPos;
         transform.eulerAngles = levelScreenAngles;
+        Camera.orthographic = true;
     }
 
     public void FaceCharacterCreator()
     {
         transform.position = startingPos;
         transform.eulerAngles = characterScreenAngles;
+        Camera.orthographic = false;
     }
 
     public void FaceProgramming()
     {
         transform.position = programmingPos;
         transform.eulerAngles = programmingAngles;
+    }
+
+    public void SetPerspectiveProjection()
+    {
+        Camera.orthographic = false;
+    }
+
+    public void SetOtherpedicProjection()
+    {
+        Camera.orthographic = true;
     }
 }
