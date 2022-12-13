@@ -166,7 +166,7 @@ public class Placeable : MonoBehaviour
 
     private void OnPlace()
     {
-        if (!validPlacement) return;
+        if (!validPlacement || !game.isPlacing) return;
 
         Placing = false;
         game.isPlacing = false;
@@ -181,7 +181,7 @@ public class Placeable : MonoBehaviour
 
         if (character != null) character.Controller.enabled = true;
 
-        game.PointSystem.TakePoints(config.Cost);
+        game.PointSystem?.TakePoints(config.Cost);
     }
 
 
