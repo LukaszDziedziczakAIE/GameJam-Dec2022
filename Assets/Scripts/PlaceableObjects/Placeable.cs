@@ -11,17 +11,21 @@ public class Placeable : MonoBehaviour
     PlaceableObject config;
     [SerializeField] List<Collider> colliders = new List<Collider>();
     Character character;
+    BoxCollider boxCollider;
 
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
         character = GetComponent<Character>();
+        boxCollider = GetComponentInChildren<BoxCollider>();
     }
 
     private void Start()
     {
         game.InputReader.RightMouseEvent += OnCancel;
         game.InputReader.LeftMouseEvent += OnPlace;
+
+        if (boxCollider != null) boxCollider.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -186,6 +190,8 @@ public class Placeable : MonoBehaviour
 
         if (config.isArt) game.PointSystem?.AddArtPoints(config.Cost);
         else if (config.isDesign) game.PointSystem?.AddDesignPoints(config.Cost);
+
+        if (boxCollider != null) boxCollider.gameObject.SetActive(false);
     }
 
 
