@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class UI_MainMenu : MonoBehaviour
 {
-    public GameObject mainMenu;
-    public GameObject credits;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject credits;
+    [SerializeField] GameObject loading;
 
     void Start()
     {
         credits.SetActive(false);
         mainMenu.SetActive(true);
+        loading.SetActive(false);
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class UI_MainMenu : MonoBehaviour
     public void CreatePressed()
     {
         mainMenu.SetActive(false);
+        loading.SetActive(true);
         SceneManager.LoadSceneAsync(1);
     }
 
