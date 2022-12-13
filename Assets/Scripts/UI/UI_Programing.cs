@@ -23,6 +23,7 @@ public class UI_Programing : UI_Base
     [SerializeField] UI_ProgramingItem programingItemPrefab;
     [SerializeField] UI_ProgrammingCharacterItem programmingCharacterItem;
     List<UI_ProgramingItem> items = new List<UI_ProgramingItem>();
+    List<UI_ProgrammingCharacterItem> characterItems = new List<UI_ProgrammingCharacterItem>();
 
     private void Start()
     {
@@ -67,21 +68,25 @@ public class UI_Programing : UI_Base
     private void OnEnemyButton1Press()
     {
         CurrentlySelected = 1;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton2Press()
     {
         CurrentlySelected = 2;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton3Press()
     {
         CurrentlySelected = 3;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton4Press()
     {
         CurrentlySelected = 4;
+        BuildCharacterBlocks();
     }
 
     private CharacterConfig config
@@ -92,16 +97,31 @@ public class UI_Programing : UI_Base
         }
     }
 
-    private void BuildCharacterBlocks()
+    public void BuildCharacterBlocks()
     {
         if (CurrentlySelected == 0 || programmingCharacterItem != null) return;
+        ClearCharacterBlocks();
 
         if (config.CodeBlocks.Count > 0)
         {
             foreach(CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
             {
-
+                UI_ProgrammingCharacterItem charItem = Instantiate(programmingCharacterItem, CharacterBlocksContent);
+                charItem.Set(block.CodeConfig);
+                characterItems.Add(charItem);
             }
+        }
+    }
+
+    private void ClearCharacterBlocks()
+    {
+        if (characterItems.Count > 0)
+        {
+            foreach (UI_ProgrammingCharacterItem item in characterItems)
+            {
+                Destroy(item.gameObject);
+            }
+            characterItems.Clear();
         }
     }
 }
