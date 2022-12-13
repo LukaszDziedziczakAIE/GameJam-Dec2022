@@ -101,3 +101,6 @@ MonoBehaviour:
   programmingAngles: {x: 0, y: 90, z: 0}
   levelScreenAngles: {x: 0, y: 90, z: 0}
   characterScreenAngles: {x: 0, y: -90, z: 0}
+  speed: 10
+  minZ: -26
+  maxZ: 20
