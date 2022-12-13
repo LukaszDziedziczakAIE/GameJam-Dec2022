@@ -220,7 +220,9 @@ public class UI_CharacterDesign : UI_Base
     {
         helmetIndex--;
         if (helmetIndex <= -1) helmetIndex = 2;
-        helmetText.text = "Helmet " + (helmetIndex + 1);
+        if (helmetIndex == 0) helmetText.text = "Titan";
+        else if (helmetIndex == 1) helmetText.text = "Bezerker";
+        else if (helmetIndex == 2) helmetText.text = "Vanguard";
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -229,7 +231,18 @@ public class UI_CharacterDesign : UI_Base
     {
         helmetIndex++;
         if (helmetIndex >= 3) helmetIndex = 0;
-        helmetText.text = "Helmet " + (helmetIndex + 1);
+        if(currentCharacterIndex == 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Titan";
+            else if (helmetIndex == 1) helmetText.text = "Bezerker";
+            else if (helmetIndex == 2) helmetText.text = "Vanguard";
+        }
+        else if (currentCharacterIndex > 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Gitz";
+            else if (helmetIndex == 1) helmetText.text = "Gulfo";
+            else if (helmetIndex == 2) helmetText.text = "Golem";
+        }
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -346,17 +359,31 @@ public class UI_CharacterDesign : UI_Base
     private void SetStats()
     {
         voiceIndex = Game.CharacterConfig [currentCharacterIndex].voiceRef;
-        voiceText.text = "Voice " + (voiceIndex + 1);
+        if (voiceIndex == 0) voiceText.text = "Human";
+        else if (voiceIndex == 1) voiceText.text = "Golbin";
 
         helmetIndex = Game.CharacterConfig [currentCharacterIndex].helmetRef;
-        helmetText.text = "Helmet " + (helmetIndex + 1);
+        if (currentCharacterIndex == 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Titan";
+            else if (helmetIndex == 1) helmetText.text = "Bezerker";
+            else if (helmetIndex == 2) helmetText.text = "Vanguard";
+        }
+        else if (currentCharacterIndex > 0)
+        {
+            if (helmetIndex == 0) helmetText.text = "Gitz";
+            else if (helmetIndex == 1) helmetText.text = "Gulfo";
+            else if (helmetIndex == 2) helmetText.text = "Golem";
+        }
 
         colourIndex = Game.CharacterConfig[currentCharacterIndex].armourColourRef;
         //set colour to index colour
 
         weaponIndex = Game.CharacterConfig[currentCharacterIndex].weaponRef;
-        if (weaponIndex == 0) weaponText.text = "Sword";
-        else if (weaponIndex == 1) weaponText.text = "Bow";
+        if (weaponIndex == 0) weaponText.text = "Knights Sword";
+        else if (weaponIndex == 1) weaponText.text = "Crusader Blade";
+        else if (weaponIndex == 2) weaponText.text = "Goblin Scimitar";
+        else if (weaponIndex == 3) weaponText.text = "Bloody Warhammer";
     }
 
     private void SpawnCharacter()

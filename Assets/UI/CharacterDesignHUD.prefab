@@ -2279,7 +2279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Helmet 1
+  m_text: Titan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
   m_sharedMaterial: {fileID: -7345992752625734411, guid: cae1f62574c8b5b4eb24dadd24590c54, type: 2}
