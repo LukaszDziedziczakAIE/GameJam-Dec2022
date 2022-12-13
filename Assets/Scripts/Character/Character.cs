@@ -62,7 +62,6 @@ public class Character : MonoBehaviour
 
     protected void ApplyPhysics()
     {
-        print(name + " running physics");
         //gravity
         if (verticalVelocity < 0f && isGrounded)
         {
@@ -74,6 +73,7 @@ public class Character : MonoBehaviour
         }
 
         Animator?.SetBool("IsGrounded", isGrounded);
+        print(name + " " + isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -81,6 +81,7 @@ public class Character : MonoBehaviour
         {
             impact = Vector3.zero;
         }
+        print(name + " running physics");
     }
 
     public void ResetPhysics()

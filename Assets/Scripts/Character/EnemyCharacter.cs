@@ -46,12 +46,10 @@ public class EnemyCharacter : Character
 
     protected override void Update()
     {
-        if (Placeable.Placing || !isInPlay) return;
+        ProcessMovement();
+        if ((Placeable != null && Placeable.Placing) || !isInPlay) return;
         base.Update();
-
         PlayMode();
-
-        
     }
 
     private void PlayMode()
@@ -117,7 +115,7 @@ public class EnemyCharacter : Character
 
     private void ProcessMovement()
     {
-        if (Game.TestingMode && EnemyMovement != Vector3.zero)
+        if (/*Game.TestingMode &&*/ EnemyMovement != Vector3.zero)
         {
             FaceMovementDirection(EnemyMovement);
             Move(Movement * Speed);
