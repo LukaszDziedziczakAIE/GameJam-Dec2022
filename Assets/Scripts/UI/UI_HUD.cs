@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI_HUD : UI_Base
@@ -27,8 +28,6 @@ public class UI_HUD : UI_Base
         LevelDesign.gameObject.SetActive(false);
         CharacterDesign.gameObject.SetActive(false);
         Programing.gameObject.SetActive(false);
-
-        OnLevelDesignButtonPress();
     }
 
     private void OnLevelDesignButtonPress()
@@ -82,7 +81,7 @@ public class UI_HUD : UI_Base
 
     private void OnXButtonPress()
     {
-        Application.Quit();
+        SceneManager.LoadSceneAsync(0);
     }
 
     private void TestingMode(bool testing)

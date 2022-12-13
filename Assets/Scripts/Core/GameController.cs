@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
     [field: SerializeField] public float RaycastDistance { get; private set; }
+    [field: SerializeField] public float PlaceableGroundRaycastDistance { get; private set; }
     [field: SerializeField] public float GridSnapInterval { get; private set; }
 
     [field: SerializeField, Header("Characters")] public CharacterConfig[] CharacterConfig { get; private set; }

@@ -314,10 +314,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3711287403960588901, guid: 952cb161da129424d9877558cfd1b302, type: 3}
-      propertyPath: m_Center.y
-      value: 1.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3749232231841957442, guid: 952cb161da129424d9877558cfd1b302, type: 3}
       propertyPath: <Game>k__BackingField
       value: 
