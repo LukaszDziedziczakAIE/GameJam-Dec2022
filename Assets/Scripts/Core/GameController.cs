@@ -18,7 +18,9 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public EnemyCharacter EnemyCharacterPrefab { get; private set; }
     [field: SerializeField] public Material[] ArmourColors { get; private set; }
     [field: SerializeField] public GameObject[] HelmentPrefabs { get; private set; }
-    [field: SerializeField] public Material[] HelmetColors { get; private set; }
+    [field: SerializeField] public Material[] Helmet1Colors { get; private set; }
+    [field: SerializeField] public Material[] Helmet2Colors { get; private set; }
+    [field: SerializeField] public Material[] Helmet3Colors { get; private set; }
 
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
@@ -37,6 +39,7 @@ public class GameController : MonoBehaviour
     [field: SerializeField, Header("Code Blocks")] public CodeBlock CodeBlockPrefab;
 
     public bool TestingMode = false;
+    public bool isPlacing;
 
     public Vector3 PositionUnderMouse
     {

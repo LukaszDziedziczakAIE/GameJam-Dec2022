@@ -37,6 +37,7 @@ public class Placeable : MonoBehaviour
         SaveOriginalMaterials();
         SetMaterialsPlacementValid();
         if (character != null) character.Controller.enabled = false;
+        game.isPlacing = true;
     }
 
     public void SaveOriginalMaterials()
@@ -170,6 +171,7 @@ public class Placeable : MonoBehaviour
         if (!validPlacement) return;
 
         Placing = false;
+        game.isPlacing = false;
         game.InputReader.RightMouseEvent -= OnCancel;
         game.InputReader.LeftMouseEvent -= OnPlace;
         SetMaterialsOriginal();

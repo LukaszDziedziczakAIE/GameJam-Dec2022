@@ -1084,7 +1084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138070695679121266, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
       propertyPath: m_Size
-      value: 0
+      value: 0.34333333
       objectReference: {fileID: 0}
     - target: {fileID: 459040382677108823, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1132,7 +1132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2377302824827873730, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
       propertyPath: m_HorizontalScrollbarVisibility
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2841548853476977613, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1245,6 +1245,14 @@ PrefabInstance:
     - target: {fileID: 4247850622226598338, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983541836083333479, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
+      propertyPath: m_CellSize.x
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983541836083333479, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
+      propertyPath: m_CellSize.y
+      value: 98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d7c8f945e8f564ab3364b3413c8a6e, type: 3}
