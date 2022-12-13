@@ -42,7 +42,7 @@ public class Character : MonoBehaviour
     {
         if (inLevel && !(Game.HUD.Programing.gameObject.activeSelf || Game.HUD.CharacterDesign.gameObject.activeSelf))
         {
-            //print(name + " " + Controller.isGrounded);
+            //print(name + " grounded = " + isGrounded);
             ApplyPhysics();
             ResetToCenter();
         }
@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
     private void ApplyPhysics()
     {
         //gravity
-        if (verticalVelocity < 0f && Controller.isGrounded)
+        if (verticalVelocity < 0f && isGrounded)
         {
             verticalVelocity = Physics.gravity.y * Time.deltaTime;
         }
@@ -69,7 +69,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        Animator?.SetBool("IsGrounded", Controller.isGrounded);
+        Animator?.SetBool("IsGrounded", isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
@@ -129,9 +129,6 @@ public class Character : MonoBehaviour
         }
 
         Helmet = Instantiate(Game.HelmentPrefabs[config.helmetRef], HeadPos);
-        /*Helmet.transform.parent = HeadPos;
-        Helmet.transform.localEulerAngles = Vector3.zero;
-        Helmet.transform.localPosition = Vector3.zero;*/
     }
 
     private void ApplyHelmetColor()
@@ -163,12 +160,6 @@ public class Character : MonoBehaviour
             Destroy(Weapon.gameObject);
             Weapon = null;
         }
-
-        /*print("length = " + Game.WeaponConfigs.Length);
-        print("configRef = " + configRef);
-        print("CharacterConfigLength = " + Game.CharacterConfig.Length);
-        print("config = " + Game.CharacterConfig[configRef] != null);
-        print("refNo = " + Game.CharacterConfig[configRef]);*/
 
         if (Game.WeaponConfigs[config.weaponRef] == null) return;
 
@@ -203,35 +194,14 @@ public class Character : MonoBehaviour
     {
         get
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
-
-            Ray ray = new Ray(position, transform.up);
-            Debug.DrawLine(ray.origin, transform.up * 1f);
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Game.GroundLayer.value);
-            
-            if (hits.Length > 0)
-            {
-                foreach (RaycastHit hit in hits)
-                {
-                    //if (((1 << hit.collider.gameObject.layer) & Game.InteractableLayer) != 0) return true;
-                    if (((1 << hit.collider.gameObject.layer) & Game.GroundLayer) != 0)
-                    {
-                        print(hit.collider.gameObject.name);
-                        return true;
-                    }
-                }
-            }
-            
-            
+            Vector3 position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            //print(position);
+            Vector3 down = transform.up * -1;
+            Ray ray = new Ray(position, down);
+            //Debug.DrawLine(ray.origin, ray.origin + transform.up * -1f * Game.GroundRaycastLength, Color.red);
+            if (Physics.Raycast(ray, Game.GroundRaycastLength, Game.GroundLayer) ||
+                Physics.Raycast(ray, Game.GroundRaycastLength, Game.InteractableLayer)) return true;
             return false;
         }
     }
-
-/*    private void OnDrawGizmos()
-    {
-        Vector3 position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(position, 0.5f);
-    }*/
-
 }
