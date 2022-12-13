@@ -1050,10 +1050,6 @@ PrefabInstance:
       propertyPath: <PlayerCharacter>k__BackingField
       value: 
       objectReference: {fileID: 128901875}
-    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
-      propertyPath: <RaycastDistance>k__BackingField
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 503326331158938953, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -1439,30 +1435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1672300404, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672300404, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672300404, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672300404, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672300404, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672300406, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e870e7aa8832fe14e90e8c35784adf37, type: 2}
     - target: {fileID: 3846298026242527742, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1510,10 +1482,6 @@ PrefabInstance:
     - target: {fileID: 3846298026242527743, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
       propertyPath: m_Name
       value: Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846298027447754048, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24b9ce859bdc1134b92c7e9f2aae8436, type: 3}
