@@ -25,7 +25,7 @@ public class Placeable : MonoBehaviour
         game.InputReader.RightMouseEvent += OnCancel;
         game.InputReader.LeftMouseEvent += OnPlace;
 
-        if (boxCollider != null) boxCollider.gameObject.SetActive(false);
+        //if (boxCollider != null) boxCollider.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -191,7 +191,7 @@ public class Placeable : MonoBehaviour
         if (config.isArt) game.PointSystem?.AddArtPoints(config.Cost);
         else if (config.isDesign) game.PointSystem?.AddDesignPoints(config.Cost);
 
-        if (boxCollider != null) boxCollider.gameObject.SetActive(false);
+        //if (boxCollider != null) boxCollider.gameObject.SetActive(false);
     }
 
 

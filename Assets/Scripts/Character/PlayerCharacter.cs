@@ -45,6 +45,15 @@ public class PlayerCharacter : Character
         inLevel = false;
     }
 
+    public void SetPos_Programming()
+    {
+        Controller.enabled = false;
+        lastPos = transform.position;
+        transform.position = Game.ProgrammingPos;
+        transform.eulerAngles = Game.ProgrammingRot;
+        inLevel = false;
+    }
+
     private void ProcessMovement()
     {
         if (Game.TestingMode && InputReader.Movement.x != 0)

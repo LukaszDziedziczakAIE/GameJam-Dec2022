@@ -15,7 +15,7 @@ MonoBehaviour:
   <ObjectName>k__BackingField: Tent Blue
   <Prefab>k__BackingField: {fileID: 2678528936384764224, guid: 6ff1947c4708b3b46b1d8e3c0b4d7822, type: 3}
   <Icon>k__BackingField: {fileID: 2800000, guid: 1c655c098f3fa154c89b51c2f6132cf0, type: 3}
-  <xPos>k__BackingField: 2
+  <xPos>k__BackingField: 6
   <Cost>k__BackingField: 10
   <isDesign>k__BackingField: 0
   <isArt>k__BackingField: 1

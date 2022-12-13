@@ -12,14 +12,15 @@ public class PointSystem : MonoBehaviour
 
     public Color[] colors;
 
-    [SerializeField] private int initialPoints = 200;
-    private int programmingPoints;
-    private int artPoints;
-    private int designPoints;
+    [SerializeField] public int initialPoints;
+    [SerializeField] public int programmingPoints;
+    [SerializeField] public int artPoints;
+    [SerializeField] public int designPoints;
 
 
     private void Start()
     {
+
     }
 
     public int totalPoint

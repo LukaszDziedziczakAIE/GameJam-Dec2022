@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7445f2d759a47d949a74388359e8eea6, type: 3}
+  m_Name: Jump_Pad
+  m_EditorClassIdentifier: 
+  <ObjectName>k__BackingField: 
+  <Prefab>k__BackingField: {fileID: 420543569882035858, guid: ff025af2a18484941b542737a69930f4, type: 3}
+  <Icon>k__BackingField: {fileID: 2800000, guid: e869b58baba1af44c8670e4bc53b220e, type: 3}
+  <xPos>k__BackingField: 0
+  <Cost>k__BackingField: 0
+  <isDesign>k__BackingField: 0
+  <isArt>k__BackingField: 0
