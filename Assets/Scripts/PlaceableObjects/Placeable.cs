@@ -160,7 +160,10 @@ public class Placeable : MonoBehaviour
 
     private void OnCancel()
     {
+        game.InputReader.RightMouseEvent -= OnCancel;
+        game.InputReader.LeftMouseEvent -= OnPlace;
         Destroy(gameObject);
+        game.isPlacing = false;
     }
 
 
@@ -195,5 +198,14 @@ public class Placeable : MonoBehaviour
     {
         //print("Removed " + other.gameObject.name);
         colliders.Remove(other);
+    }
+
+    public void RestartPlacement()
+    {
+        // take points back
+        Placing = true;
+        game.isPlacing = true;
+        game.InputReader.RightMouseEvent += OnCancel;
+        game.InputReader.LeftMouseEvent += OnPlace;
     }
 }
