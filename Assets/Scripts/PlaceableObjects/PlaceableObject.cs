@@ -12,6 +12,4 @@ public class PlaceableObject : ScriptableObject
     [field: SerializeField] public int Cost { get; private set; }
     [field: SerializeField] public bool isDesign { get; private set; }
     [field: SerializeField] public bool isArt { get; private set; }
-
-
 }
