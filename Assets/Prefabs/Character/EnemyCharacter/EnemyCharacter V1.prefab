@@ -369,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2401769798243406188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.99, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 2386601801958394708}
@@ -775,6 +775,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6920833236111711966}
+  - component: {fileID: 422785070277948551}
+  - component: {fileID: 1005324743469211783}
+  - component: {fileID: 6642420538888307266}
   m_Layer: 0
   m_Name: EnemyCharacter V1
   m_TagString: Untagged
@@ -798,6 +801,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422785070277948551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220423561292305237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db98aa19ab1232f48b766d8c43bdfaf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Game>k__BackingField: {fileID: 0}
+  <HeadPos>k__BackingField: {fileID: 1657864265860271197}
+  Controller: {fileID: 1005324743469211783}
+  Animator: {fileID: 8103971886590934061}
+  Audio: {fileID: 7051761790057310334}
+  Speed: 5
+  configRef: 0
+  drag: 0.3
+  Placing: 0
+--- !u!143 &1005324743469211783
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220423561292305237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6642420538888307266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220423561292305237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae17b412643155409069834dae9d7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers: []
+  Placing: 1
+  colliders: []
 --- !u!1 &5574589230741491238
 GameObject:
   m_ObjectHideFlags: 0

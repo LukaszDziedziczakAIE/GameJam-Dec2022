@@ -7,15 +7,17 @@ public class Placeable : MonoBehaviour
     GameController game;
     [SerializeField] MeshRenderer[] meshRenderers;
     [SerializeField] List<Material[]> mat_arrays = new List<Material[]>();
-    
-    public bool Placing = true;
+    public bool Placing;
     PlaceableObject config;
-
+    CodeBlock codeBlock;
     [SerializeField] List<Collider> colliders = new List<Collider>();
+    Character character;
 
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
+        codeBlock = GetComponent<CodeBlock>();
+        character = GetComponent<Character>();
     }
 
     private void Start()
@@ -34,6 +36,8 @@ public class Placeable : MonoBehaviour
         this.config = config;
         SaveOriginalMaterials();
         SetMaterialsPlacementValid();
+        if (character != null) character.Controller.enabled = false;
+        game.isPlacing = true;
     }
 
     public void SaveOriginalMaterials()
@@ -51,7 +55,7 @@ public class Placeable : MonoBehaviour
     {
         if (meshRenderers.Length == 0)
         {
-            Debug.LogError(name + " missing meshRenderers array.");
+            //Debug.LogError(name + " missing meshRenderers array.");
             return;
         }
 
@@ -97,21 +101,40 @@ public class Placeable : MonoBehaviour
 
     private void PlacingLogic()
     {
-        if (!Placing || config == null) return;
+        if (!Placing || (config == null && codeBlock == null)) return;
 
         if (validPlacement) SetMaterialsPlacementValid();
         else SetMaterialsPlacementInvalid();
 
+        float x;
+        float y;
+        float z;
+
+        float remainderY;
+        float remainderZ;
+
         if (game.PositionUnderMouse != Vector3.zero)
         {
-            transform.position = new Vector3(config.xPos, game.PositionUnderMouse.y, game.PositionUnderMouse.z);
+            
+            if (config != null) x = config.xPos;
+            else x = 0;
+
+            y = game.PositionUnderMouse.y;
+            remainderY = y % game.GridSnapInterval;
+            if (remainderY > (game.GridSnapInterval * 10 / 2)) y += ((game.GridSnapInterval * 10) - remainderY);
+            else y -= remainderY;
+
+            z = game.PositionUnderMouse.z;
+            remainderZ = z % game.GridSnapInterval;
+            if (remainderZ > (game.GridSnapInterval * 10 / 2)) z += ((game.GridSnapInterval * 10) - remainderZ);
+            else z -= remainderZ;
+
+            transform.position = new Vector3(x, y, z);
         }
         else
         {
             transform.position = new Vector3(0, 100f, 0);
         }
-
-        
     }
 
     private bool validPlacement
@@ -148,9 +171,18 @@ public class Placeable : MonoBehaviour
         if (!validPlacement) return;
 
         Placing = false;
+        game.isPlacing = false;
         game.InputReader.RightMouseEvent -= OnCancel;
         game.InputReader.LeftMouseEvent -= OnPlace;
         SetMaterialsOriginal();
+
+        if(gameObject.TryGetComponent<EnemyCharacter>(out EnemyCharacter enemy))
+        {
+            enemy.inLevel = true;
+        }
+
+        if (codeBlock != null) game.BlockDetector.CodeBlockPlaced();
+        if (character != null) character.Controller.enabled = true;
     }
 
 

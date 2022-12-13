@@ -5,12 +5,23 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [field: SerializeField] public UI_HUD HUD { get; private set; }
+    [field: SerializeField] public CodeBlockDetector BlockDetector { get; private set; }
     [field: SerializeField] public CameraController Camera { get; private set; }
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
-    [field: SerializeField] public CharacterConfig[] CharacterConfig { get; private set; }
-    [SerializeField] private int numberOfCharacter = 5;
     [SerializeField] float raycastDistance = 10f;
+    [field: SerializeField] public float GridSnapInterval { get; private set; }
+
+    [field: SerializeField, Header("Characters")] public CharacterConfig[] CharacterConfig { get; private set; }
+    [SerializeField] private int numberOfCharacter = 5;
+    [field: SerializeField] public float MapZCenter = 0; 
+    [field: SerializeField] public EnemyCharacter EnemyCharacterPrefab { get; private set; }
+    [field: SerializeField] public Material[] ArmourColors { get; private set; }
+    [field: SerializeField] public GameObject[] HelmentPrefabs { get; private set; }
+    [field: SerializeField] public Material[] Helmet1Colors { get; private set; }
+    [field: SerializeField] public Material[] Helmet2Colors { get; private set; }
+    [field: SerializeField] public Material[] Helmet3Colors { get; private set; }
+
     [field: SerializeField, Header("Materials")] public Material placingMaterialValid { get; private set; }
     [field: SerializeField] public Material placingMaterialInvalid { get; private set; }
     
@@ -20,7 +31,15 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public LayerMask InteractableLayer;
     [field: SerializeField] public LayerMask CharacterLayer;
 
+    [field: SerializeField, Header("Screen PlayerCharacter Positions")] public Vector3 LevelStartPos;
+    [field: SerializeField] public Vector3 LevelStartRot;
+    [field: SerializeField] public Vector3 CharacterDesignPos;
+    [field: SerializeField] public Vector3 CharacterDesignRot;
+
+    [field: SerializeField, Header("Code Blocks")] public CodeBlock CodeBlockPrefab;
+
     public bool TestingMode = false;
+    public bool isPlacing;
 
     public Vector3 PositionUnderMouse
     {

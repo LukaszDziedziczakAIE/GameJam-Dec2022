@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterAnimEventHandler : MonoBehaviour
 {
     [SerializeField] Character character;
-    [SerializeField] CharacterAudio audio;
+    [SerializeField] new CharacterAudio audio;
 
     private void Awake()
     {
@@ -15,9 +15,16 @@ public class CharacterAnimEventHandler : MonoBehaviour
 
     private void PlayFootstep()
     {
-        if (audio != null)
-        {
-            audio.PlayFootstep();
-        }
+        audio?.PlayFootstep();
+    }
+
+    private void PlayAttackVoice()
+    {
+        audio?.PlayAttackVoice();
+    }
+
+    private void PlayJumpVoice()
+    {
+        audio?.PlayJumpVoice();
     }
 }
