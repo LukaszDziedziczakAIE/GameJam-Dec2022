@@ -47,6 +47,7 @@ public class UI_Publish : MonoBehaviour
         artReference.SetActive(false);
         designReference.SetActive(false);
         programmingReference.SetActive(false);
+        mulitReference.SetActive(false);
     }
 
     void Update()
