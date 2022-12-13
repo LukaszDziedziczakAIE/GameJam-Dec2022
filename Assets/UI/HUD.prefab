@@ -921,6 +921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterDesignHUD
       objectReference: {fileID: 0}
+    - target: {fileID: 4288341174866966633, guid: 10273bc6252280648b561284129e6d3e, type: 3}
+      propertyPath: enemyIcon
+      value: 
+      objectReference: {fileID: 2800000, guid: ef6d75d129590e34bbea0134c246b095, type: 3}
     - target: {fileID: 5702738724225489217, guid: 10273bc6252280648b561284129e6d3e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
