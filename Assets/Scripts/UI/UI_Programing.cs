@@ -47,7 +47,6 @@ public class UI_Programing : UI_Base
 
     public override void Hide()
     {
-        Game.BlockDetector.ClearCodeBlocks();
         base.Hide();
     }
 

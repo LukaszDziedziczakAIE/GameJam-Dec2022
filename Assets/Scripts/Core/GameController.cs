@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour
 {
     [field: SerializeField] public UI_HUD HUD { get; private set; }
     [field: SerializeField] public PointSystem PointSystem { get; private set; }
-    [field: SerializeField] public CodeBlockDetector BlockDetector { get; private set; }
     [field: SerializeField] public CameraController Camera { get; private set; }
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
@@ -41,8 +40,6 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public Vector3 CharacterDesignRot;
     [field: SerializeField] public Vector3 ProgrammingPos;
     [field: SerializeField] public Vector3 ProgrammingRot;
-
-    [field: SerializeField, Header("Code Blocks")] public CodeBlock CodeBlockPrefab;
 
     public bool TestingMode = false;
     public bool isPlacing;

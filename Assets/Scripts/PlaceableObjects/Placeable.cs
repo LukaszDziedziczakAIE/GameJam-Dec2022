@@ -9,14 +9,12 @@ public class Placeable : MonoBehaviour
     [SerializeField] List<Material[]> mat_arrays = new List<Material[]>();
     public bool Placing;
     PlaceableObject config;
-    CodeBlock codeBlock;
     [SerializeField] List<Collider> colliders = new List<Collider>();
     Character character;
 
     private void Awake()
     {
         game = FindObjectOfType<GameController>();
-        codeBlock = GetComponent<CodeBlock>();
         character = GetComponent<Character>();
     }
 
@@ -101,7 +99,7 @@ public class Placeable : MonoBehaviour
 
     private void PlacingLogic()
     {
-        if (!Placing || (config == null && codeBlock == null)) return;
+        if (!Placing || config == null) return;
 
         if (validPlacement) SetMaterialsPlacementValid();
         else SetMaterialsPlacementInvalid();
@@ -181,7 +179,6 @@ public class Placeable : MonoBehaviour
             enemy.inLevel = true;
         }
 
-        if (codeBlock != null) game.BlockDetector.CodeBlockPlaced();
         if (character != null) character.Controller.enabled = true;
 
         game.PointSystem.TakePoints(config.Cost);

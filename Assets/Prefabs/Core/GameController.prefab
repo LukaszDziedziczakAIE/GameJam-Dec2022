@@ -48,7 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HUD>k__BackingField: {fileID: 0}
   <PointSystem>k__BackingField: {fileID: 0}
-  <BlockDetector>k__BackingField: {fileID: 0}
   <Camera>k__BackingField: {fileID: 0}
   <PlayerCharacter>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 1191283179}
@@ -116,7 +115,6 @@ MonoBehaviour:
   CharacterDesignRot: {x: 0, y: 95, z: 0}
   ProgrammingPos: {x: -12.35, y: 1.5, z: 997.75}
   ProgrammingRot: {x: 0, y: 300.65405, z: 0}
-  CodeBlockPrefab: {fileID: 2494328983319479514, guid: 7d90000985adfa34198f1a9521920771, type: 3}
   TestingMode: 0
   isPlacing: 0
 --- !u!114 &1191283179
