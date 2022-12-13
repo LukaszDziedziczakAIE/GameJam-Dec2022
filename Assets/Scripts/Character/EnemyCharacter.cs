@@ -148,8 +148,11 @@ public class EnemyCharacter : Character
         {
             if (Patrol_TargetPos != 0)
             {
-                return Vector3.Distance(Patrol_TargetPos, transform.position);
+                Vector3 targetPos = transform.position;
+                targetPos.z = Patrol_TargetPos;
+                return Vector3.Distance(targetPos, transform.position);
             }
+            return Mathf.Infinity;
         }
     }
 
