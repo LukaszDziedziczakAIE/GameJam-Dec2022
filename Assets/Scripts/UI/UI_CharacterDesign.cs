@@ -361,6 +361,10 @@ public class UI_CharacterDesign : UI_Base
         selectedCharacter.configRef = currentCharacterIndex;
         selectedCharacter.UpdateCharacter();
         selectedCharacter.inLevel = false;
+        if(selectedCharacter.TryGetComponent<Placeable>(out Placeable placeable))
+        {
+            placeable.Placing = false;
+        }
     }
 
     public void ClearCharacter()
