@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class UI_Programing : UI_Base
 {
+    [SerializeField] RectTransform CharacterBlocks;
+
+    [Header("Buttons")]
     [SerializeField] Button enemyButton1;
     [SerializeField] Button enemyButton2;
     [SerializeField] Button enemyButton3;
     [SerializeField] Button enemyButton4;
-    [SerializeField] RectTransform Content;
+    [SerializeField] RectTransform CodeBlockContent;
     [field: SerializeField] public int CurrentlySelected { get; private set; }
     ProgrammingObjectConfig[] programmingObjectConfigs;
 
@@ -25,6 +28,8 @@ public class UI_Programing : UI_Base
         enemyButton2.onClick.AddListener(OnEnemyButton2Press);
         enemyButton3.onClick.AddListener(OnEnemyButton3Press);
         enemyButton4.onClick.AddListener(OnEnemyButton4Press);
+
+        print(programmingObjectConfigs.Length);
     }
 
     public override void Show()
@@ -51,7 +56,7 @@ public class UI_Programing : UI_Base
         {
             foreach (ProgrammingObjectConfig config in programmingObjectConfigs)
             {
-                UI_ProgramingItem item = Instantiate(programingItemPrefab, Content);
+                UI_ProgramingItem item = Instantiate(programingItemPrefab, CodeBlockContent);
                 item.Set(config);
                 items.Add(item);
             }
