@@ -183,6 +183,8 @@ public class Placeable : MonoBehaviour
 
         if (codeBlock != null) game.BlockDetector.CodeBlockPlaced();
         if (character != null) character.Controller.enabled = true;
+
+        game.PointSystem.TakePoints(config.Cost);
     }
 
 
