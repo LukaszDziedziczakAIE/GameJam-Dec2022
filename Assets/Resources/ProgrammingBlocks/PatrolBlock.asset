@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PatrolBlock
   m_EditorClassIdentifier: 
   <ObjectName>k__BackingField: Patrol
-  <BlockColor>k__BackingField: {r: 1, g: 0, b: 0, a: 0}
   <Icon>k__BackingField: {fileID: 0}
+  <Cost>k__BackingField: 15

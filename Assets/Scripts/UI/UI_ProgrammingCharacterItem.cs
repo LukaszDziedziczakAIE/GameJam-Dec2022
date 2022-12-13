@@ -33,5 +33,6 @@ public class UI_ProgrammingCharacterItem : UI_Base
     {
         Game.CharacterConfig[Game.HUD.Programing.CurrentlySelected].RemoveCodeBlock(config);
         Game.HUD.Programing.BuildCharacterBlocks();
+        Game.PointSystem.RemoveProgrammingPoints(config.Cost);
     }
 }

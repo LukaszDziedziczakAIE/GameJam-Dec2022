@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectName>k__BackingField: ExtraHealth
   <Icon>k__BackingField: {fileID: 0}
+  <Cost>k__BackingField: 5

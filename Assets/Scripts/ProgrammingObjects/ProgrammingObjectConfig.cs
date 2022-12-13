@@ -7,4 +7,5 @@ public class ProgrammingObjectConfig : ScriptableObject
 {
     [field: SerializeField] public string ObjectName { get; private set; }
     [field: SerializeField] public Texture Icon { get; private set; }
+    [field: SerializeField] public int Cost { get; private set; }
 }
