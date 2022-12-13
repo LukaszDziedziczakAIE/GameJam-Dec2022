@@ -119,6 +119,7 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnEnemy1ButtonPress()
     {
+        if (!Game.CharacterConfig[1].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 1;
         SetCurrentActive();
         deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
@@ -130,6 +131,7 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnEnemy2ButtonPress()
     {
+        if (!Game.CharacterConfig[2].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 2;
         SetCurrentActive();
         deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
@@ -141,6 +143,7 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnEnemy3ButtonPress()
     {
+        if (!Game.CharacterConfig[3].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 3;
         SetCurrentActive();
         deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
@@ -152,6 +155,7 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnEnemy4ButtonPress()
     {
+        if (!Game.CharacterConfig[4].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 4;
         
         deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
@@ -163,7 +167,7 @@ public class UI_CharacterDesign : UI_Base
 
     private void SetCurrentActive()
     {
-        if (!Game.CharacterConfig[currentCharacterIndex].active)
+        if (!Game.CharacterConfig[currentCharacterIndex].active && Game.PointSystem.CanBuy(costPerEnemy))
         {
             Game.CharacterConfig[currentCharacterIndex].active = true;
 
@@ -264,9 +268,11 @@ public class UI_CharacterDesign : UI_Base
     private void OnNextWeaponButtonPress()
     {
         weaponIndex++;
-        if (weaponIndex >= 2) weaponIndex = 0;
-        if (weaponIndex == 0) weaponText.text = "Sword";
-        else if (weaponIndex == 1) weaponText.text = "Bow";
+        if (weaponIndex >= 4) weaponIndex = 0;
+        if (weaponIndex == 0) weaponText.text = "Knights Sword";
+        else if (weaponIndex == 1) weaponText.text = "Crusader Blade";
+        else if (weaponIndex == 2) weaponText.text = "Goblin Scimitar";
+        else if (weaponIndex == 3) weaponText.text = "Bloody Warhammer";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -274,9 +280,11 @@ public class UI_CharacterDesign : UI_Base
     private void OnPreviousWeaponButtonPress()
     {
         weaponIndex--;
-        if (weaponIndex <= -1) weaponIndex = 1;
-        if (weaponIndex == 0) weaponText.text = "Sword";
-        else if (weaponIndex == 1) weaponText.text = "Bow";
+        if (weaponIndex <= -1) weaponIndex = 3;
+        if (weaponIndex == 0) weaponText.text = "Knights Sword";
+        else if (weaponIndex == 1) weaponText.text = "Crusader Blade";
+        else if (weaponIndex == 2) weaponText.text = "Goblin Scimitar";
+        else if (weaponIndex == 3) weaponText.text = "Bloody Warhammer";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
         selectedCharacter.UpdateCharacter();
     }
