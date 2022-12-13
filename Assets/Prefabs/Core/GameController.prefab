@@ -123,12 +123,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
   <HelmentPrefabs>k__BackingField:
   - {fileID: 22397740786480669, guid: 6ddaa24b28acb4243ad3f805b8eb8c67, type: 3}
-  <HelmetColors>k__BackingField:
-  - {fileID: 2100000, guid: 00c9b2eeb0877a74eb8c5fb1bf920f15, type: 2}
-  - {fileID: 2100000, guid: 4be2989a610e1b541b562958f7820049, type: 2}
-  - {fileID: 2100000, guid: 1b6fb80fb32b6e34788f49294a965f4f, type: 2}
-  - {fileID: 2100000, guid: 0158c5cc3fe2aa540939a2537867f1a4, type: 2}
-  - {fileID: 2100000, guid: f768f680081ae024baf0cebff05abd88, type: 2}
+  <Helmet1Colors>k__BackingField:
+  - {fileID: 2100000, guid: b4952f74860f4f04184cdd169651654b, type: 2}
+  - {fileID: 2100000, guid: 22963b90040be064b96ec06f5c09aca7, type: 2}
+  - {fileID: 2100000, guid: b3ee78788d07d3d43b06421f3aaed7ef, type: 2}
+  - {fileID: 2100000, guid: 9a6ab1361df0443488e771ed0759e826, type: 2}
+  - {fileID: 2100000, guid: 414172c8d00301642a7e460a577af7c0, type: 2}
+  <Helmet2Colors>k__BackingField: []
+  <Helmet3Colors>k__BackingField: []
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   BackgroundLayer:
@@ -152,6 +154,7 @@ MonoBehaviour:
   CharacterDesignRot: {x: 0, y: 95, z: 0}
   CodeBlockPrefab: {fileID: 2494328983319479514, guid: 7d90000985adfa34198f1a9521920771, type: 3}
   TestingMode: 0
+  isPlacing: 0
 --- !u!114 &1191283179
 MonoBehaviour:
   m_ObjectHideFlags: 0
