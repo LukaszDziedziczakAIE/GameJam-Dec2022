@@ -26,7 +26,8 @@ public class UI_MainMenu : MonoBehaviour
 
     public void CreatePressed()
     {
-        SceneManager.LoadScene("GameScene");
+        mainMenu.SetActive(false);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void CreditsPressed()

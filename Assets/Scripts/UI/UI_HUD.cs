@@ -26,7 +26,10 @@ public class UI_HUD : UI_Base
         testingButton.onClick.AddListener(OnTestingButtonnPress);
         publishButton.onClick.AddListener(OnPublishButtonPress);
 
-        Publish = FindObjectOfType<UI_Publish>();
+        LevelDesign.Hide();
+        CharacterDesign.Hide();
+        Programing.Hide();
+        Publish.Hide();
 
         LevelDesign.gameObject.SetActive(false);
         CharacterDesign.gameObject.SetActive(false);
