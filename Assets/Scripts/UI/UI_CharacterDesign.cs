@@ -122,7 +122,7 @@ public class UI_CharacterDesign : UI_Base
         if (!Game.CharacterConfig[1].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 1;
         SetCurrentActive();
-        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        deleteButton.gameObject.SetActive(lastActiveIndex);
         title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
@@ -134,7 +134,7 @@ public class UI_CharacterDesign : UI_Base
         if (!Game.CharacterConfig[2].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 2;
         SetCurrentActive();
-        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        deleteButton.gameObject.SetActive(lastActiveIndex);
         title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
@@ -146,7 +146,7 @@ public class UI_CharacterDesign : UI_Base
         if (!Game.CharacterConfig[3].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 3;
         SetCurrentActive();
-        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        deleteButton.gameObject.SetActive(lastActiveIndex);
         title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
@@ -157,8 +157,8 @@ public class UI_CharacterDesign : UI_Base
     {
         if (!Game.CharacterConfig[4].active && !Game.PointSystem.CanBuy(costPerEnemy)) return;
         currentCharacterIndex = 4;
-        
-        deleteButton.gameObject.SetActive(Game.CharacterConfig[currentCharacterIndex - 1].active);
+        SetCurrentActive();
+        deleteButton.gameObject.SetActive(lastActiveIndex);
         title.text = "Enemy " + currentCharacterIndex;
         SetStats();
         SetCharacterButtonVisibility();
@@ -308,11 +308,30 @@ public class UI_CharacterDesign : UI_Base
 
     private void OnDeleteButtonPress()
     {
+        if (!lastActiveIndex) return;
+
         Game.CharacterConfig[currentCharacterIndex].Clear();
         OnPlayerButtonPress();
+
         Game.PointSystem.RemoveArtPoints(costPerEnemy/3);
         Game.PointSystem.RemoveDesignPoints(costPerEnemy / 3);
         Game.PointSystem.RemoveProgrammingPoints(costPerEnemy / 3);
+    }
+
+    private bool lastActiveIndex
+    {
+        get
+        {
+            int lastIndex;
+
+            if (Game.CharacterConfig[4].active) lastIndex = 4;
+            else if (Game.CharacterConfig[3].active && !Game.CharacterConfig[4].active) lastIndex = 3;
+            else if (Game.CharacterConfig[2].active && !Game.CharacterConfig[3].active) lastIndex = 2;
+            else if (Game.CharacterConfig[1].active && !Game.CharacterConfig[2].active) lastIndex = 1;
+            else lastIndex = 0;
+
+            return currentCharacterIndex == lastIndex;
+        }
     }
 
     private void SetCharacterButtonVisibility()

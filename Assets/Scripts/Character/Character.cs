@@ -183,6 +183,7 @@ public class Character : MonoBehaviour
 
     protected void Jump()
     {
+        Animator?.SetTrigger("Jump");
         verticalVelocity += jumpForce;
     }
 
