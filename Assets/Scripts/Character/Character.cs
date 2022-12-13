@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
     {
         if (inLevel && !(Game.HUD.Programing.gameObject.activeSelf || Game.HUD.CharacterDesign.gameObject.activeSelf))
         {
-            //print(name + " " + Controller.isGrounded);
+            print(name + " " + Controller.isGrounded);
             ApplyPhysics();
             ResetToCenter();
         }
@@ -57,7 +57,7 @@ public class Character : MonoBehaviour
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
-        //Animator?.SetBool("IsGrounded", Controller.isGrounded);
+        Animator?.SetBool("IsGrounded", Controller.isGrounded);
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 

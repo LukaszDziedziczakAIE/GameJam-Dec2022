@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: <PlayerCharacter>k__BackingField
       value: 
       objectReference: {fileID: 128901875}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <GridSnapInterval>k__BackingField
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 503326331158938953, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: m_Name
       value: GameController

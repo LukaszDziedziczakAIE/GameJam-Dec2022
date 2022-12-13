@@ -54,7 +54,7 @@ public class Placeable : MonoBehaviour
     {
         if (meshRenderers.Length == 0)
         {
-            Debug.LogError(name + " missing meshRenderers array.");
+            //Debug.LogError(name + " missing meshRenderers array.");
             return;
         }
 
@@ -105,12 +105,30 @@ public class Placeable : MonoBehaviour
         if (validPlacement) SetMaterialsPlacementValid();
         else SetMaterialsPlacementInvalid();
 
+        float x;
+        float y;
+        float z;
+
+        float remainderY;
+        float remainderZ;
+
         if (game.PositionUnderMouse != Vector3.zero)
         {
-            float x;
+            
             if (config != null) x = config.xPos;
             else x = 0;
-            transform.position = new Vector3(x, game.PositionUnderMouse.y, game.PositionUnderMouse.z);
+
+            y = game.PositionUnderMouse.y;
+            remainderY = y % game.GridSnapInterval;
+            if (remainderY > (game.GridSnapInterval * 10 / 2)) y += ((game.GridSnapInterval * 10) - remainderY);
+            else y -= remainderY;
+
+            z = game.PositionUnderMouse.z;
+            remainderZ = z % game.GridSnapInterval;
+            if (remainderZ > (game.GridSnapInterval * 10 / 2)) z += ((game.GridSnapInterval * 10) - remainderZ);
+            else z -= remainderZ;
+
+            transform.position = new Vector3(x, y, z);
         }
         else
         {
