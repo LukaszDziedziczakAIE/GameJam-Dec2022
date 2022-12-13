@@ -10,6 +10,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public event Action LeftMouseEvent;
     public event Action RightMouseEvent;
+    public event Action JumpEvent;
+    public event Action AttackEvent;
+    public event Action InteractEvent;
     public Vector2 CameraMovement { get; private set; }
     public Vector2 MousePosition { get; private set; }
     public Vector2 Movement { get; private set; }
@@ -45,5 +48,20 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnMovement(InputAction.CallbackContext context)
     {
         Movement = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed) JumpEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed) AttackEvent?.Invoke();
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed) InteractEvent?.Invoke();
     }
 }
