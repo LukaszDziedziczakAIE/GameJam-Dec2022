@@ -26,11 +26,9 @@ public class UI_ProgramingItem : UI_Base
 
     private void OnButtonPress()
     {
-        if (Game.HUD.Programing.CurrentlySelected == 0) return;
+        int current = Game.HUD.Programing.CurrentlySelected;
+        if (current == 0) return;
 
-        CodeBlock codeBlock = Instantiate(Game.CodeBlockPrefab);
-        codeBlock.Set(config);
-        codeBlock.Placeable.SaveOriginalMaterials();
-        codeBlock.Placeable.SetMaterialsPlacementValid();
+        Game.CharacterConfig[current].AddCodeBlock(config);
     }
 }

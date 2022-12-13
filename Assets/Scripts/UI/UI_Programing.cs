@@ -18,6 +18,7 @@ public class UI_Programing : UI_Base
 
     [Header("Prefab")]
     [SerializeField] UI_ProgramingItem programingItemPrefab;
+    [SerializeField] UI_ProgrammingCharacterItem programmingCharacterItem;
     List<UI_ProgramingItem> items = new List<UI_ProgramingItem>();
 
     private void Start()
@@ -66,24 +67,22 @@ public class UI_Programing : UI_Base
     private void OnEnemyButton1Press()
     {
         CurrentlySelected = 1;
-        Game.BlockDetector.RebuildBlocks();
     }
 
     private void OnEnemyButton2Press()
     {
         CurrentlySelected = 2;
-        Game.BlockDetector.RebuildBlocks();
     }
 
     private void OnEnemyButton3Press()
     {
         CurrentlySelected = 3;
-        Game.BlockDetector.RebuildBlocks();
     }
 
     private void OnEnemyButton4Press()
     {
         CurrentlySelected = 4;
-        Game.BlockDetector.RebuildBlocks();
     }
+
+
 }

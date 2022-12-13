@@ -24,21 +24,17 @@ public class CharacterConfig : ScriptableObject
     public class CharacterCodeBlock
     {
         public ProgrammingObjectConfig CodeConfig;
-        public Vector3 Position;
 
-        public CharacterCodeBlock(CodeBlock codeBlock)
+        public CharacterCodeBlock(ProgrammingObjectConfig config)
         {
-            CodeConfig = codeBlock.config;
-            Position = codeBlock.transform.position;
+            CodeConfig = config;
         }
     }
 
-    public void AddCodeBlock(CodeBlock newCodeBlock)
+    public void AddCodeBlock(ProgrammingObjectConfig config)
     {
-        //Debug.Log("Adding " + newCodeBlock.CodeName);
-        if (HasCodeBlock(newCodeBlock.CodeName)) return;
-        CodeBlocks.Add(new CharacterCodeBlock(newCodeBlock));
-        //Debug.Log("CodeBlock total = " + CodeBlocks.Count.ToString());
+        if (HasCodeBlock(config.ObjectName)) return;
+        CodeBlocks.Add(new CharacterCodeBlock(config));
     }
 
     public bool HasCodeBlock(string CodeBlockName)
@@ -50,7 +46,6 @@ public class CharacterConfig : ScriptableObject
                 if (codeBlock.CodeConfig.ObjectName == CodeBlockName) return true;
             }
         }
-
         return false;
     }
 }
