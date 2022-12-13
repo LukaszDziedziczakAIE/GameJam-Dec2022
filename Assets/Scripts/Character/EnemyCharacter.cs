@@ -67,7 +67,10 @@ public class EnemyCharacter : Character
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(ATTACK)) return;
 
-        //print("ATTACK Behaviour Online");
+        if (distanceToPlayer < attackRange)
+        {
+            Attack();
+        }
     }
 
     private void CB_ChaseBehaviour()
@@ -100,7 +103,7 @@ public class EnemyCharacter : Character
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(PATROL)) return;
 
-        if(Patrol_InitialPos == 0) Patrol_InitialPos = transform.position.z;
+        if (Patrol_InitialPos == 0) Patrol_InitialPos = transform.position.z;
         if (Patrol_EndPos == 0) Patrol_EndPos = Patrol_InitialPos + patrolRange;
 
 
