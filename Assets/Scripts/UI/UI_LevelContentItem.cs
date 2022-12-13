@@ -45,6 +45,7 @@ public class UI_LevelContentItem : UI_Base
             enemy.UpdateCharacter();
             enemy.Placeable.Set(characterObject);
             enemy.Placeable.Placing = true;
+            Game.isPlacing = true;
 
             //enemy.Set(placeableObject);
         }
@@ -53,6 +54,7 @@ public class UI_LevelContentItem : UI_Base
             Placeable placeable = Instantiate(placeableObject.Prefab);
             placeable.Set(placeableObject);
             placeable.Placing = true;
+            Game.isPlacing = true;
         }     
     }
 }

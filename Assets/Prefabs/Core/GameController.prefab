@@ -51,7 +51,7 @@ MonoBehaviour:
   <Camera>k__BackingField: {fileID: 0}
   <PlayerCharacter>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 1191283179}
-  raycastDistance: 50
+  <RaycastDistance>k__BackingField: 20
   <GridSnapInterval>k__BackingField: 0.25
   <CharacterConfig>k__BackingField: []
   numberOfCharacter: 5

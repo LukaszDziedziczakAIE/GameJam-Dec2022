@@ -52,6 +52,13 @@ public class UI_LeveDesign : UI_Base
         base.Show();
         OnEnviromentButtonPress();
         Game.PlayerCharacter.Animator.StopPlayback();
+        Game.InputReader.LeftMouseEvent += OnLeftClick;
+    }
+
+    public override void Hide()
+    {
+        Game.InputReader.LeftMouseEvent -= OnLeftClick;
+        base.Hide();
     }
 
     private void OnEnviromentButtonPress()
@@ -121,6 +128,19 @@ public class UI_LeveDesign : UI_Base
                 }
                 
             }
+        }
+    }
+
+    private void OnLeftClick()
+    {
+        if (Game.isPlacing) return;
+
+        Ray ray = Game.Camera.Camera.ScreenPointToRay(Game.InputReader.MousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Game.RaycastDistance) && 
+            hit.collider.TryGetComponent<Placeable>(out Placeable placeable))
+        {
+            placeable.Placing = true;
         }
     }
 }
