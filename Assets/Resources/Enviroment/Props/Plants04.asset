@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectName>k__BackingField: 
   <Prefab>k__BackingField: {fileID: 8592881552717641769, guid: 77d24b180f985e84fb0a530c4e63ee57, type: 3}
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 2800000, guid: 35c45657b974cf145a995067a58c97a4, type: 3}
   <xPos>k__BackingField: 1.5
   <Cost>k__BackingField: 2
