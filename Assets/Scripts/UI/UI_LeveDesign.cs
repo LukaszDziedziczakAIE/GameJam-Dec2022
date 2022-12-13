@@ -139,16 +139,14 @@ public class UI_LeveDesign : UI_Base
     {
         if (Game.isPlacing) return;
 
-        
-
         Ray ray = Game.Camera.Camera.ScreenPointToRay(Game.InputReader.MousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Game.RaycastDistance))
+        /*if (Physics.Raycast(ray, out hit, Game.RaycastDistance))
         {
             print("Raycasting on click hit " + hit.collider.name);
         }
-        else print("Raycasting on click miss");
+        else print("Raycasting on click miss");*/
 
         if (Physics.Raycast(ray, out hit, Game.RaycastDistance) &&
             hit.collider.gameObject.TryGetComponent<Placeable>(out Placeable placeable))
