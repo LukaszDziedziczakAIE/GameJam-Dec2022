@@ -199,6 +199,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe03b7f40fc44d4d9e27ffe2a769631, type: 3}
+--- !u!114 &439725711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4874177894011515474, guid: bb3635dd55f23a743a05c5ed93325d0e, type: 3}
+  m_PrefabInstance: {fileID: 304228132565001726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f8a749805ba884e9decb33d85d5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &830521956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -657,10 +668,6 @@ PrefabInstance:
       propertyPath: Game
       value: 
       objectReference: {fileID: 1152633735}
-    - target: {fileID: 304228132565001728, guid: bb3635dd55f23a743a05c5ed93325d0e, type: 3}
-      propertyPath: <Programing>k__BackingField
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 346875500710518910, guid: bb3635dd55f23a743a05c5ed93325d0e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1011,6 +1018,10 @@ PrefabInstance:
       propertyPath: <Camera>k__BackingField
       value: 
       objectReference: {fileID: 4815714112457360300}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: <PointSystem>k__BackingField
+      value: 
+      objectReference: {fileID: 439725711}
     - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: <PlayerCharacter>k__BackingField
       value: 
