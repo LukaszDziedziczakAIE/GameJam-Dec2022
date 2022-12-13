@@ -148,7 +148,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7a15cde655bca09429ac6d0e201967d5, type: 2}
   - {fileID: 2100000, guid: b35b7ac28285e114b8cc3002c3a65b07, type: 2}
   - {fileID: 2100000, guid: b983a936981fbea4b98893c54750038f, type: 2}
-  <WeaponConfigs>k__BackingField: []
+  <WeaponConfigs>k__BackingField:
+  - {fileID: 11400000, guid: 6547dd66c4747cc47a0e99d1dcdda3f7, type: 2}
+  - {fileID: 11400000, guid: 870d81d1159219840a734567c3cd4386, type: 2}
+  - {fileID: 11400000, guid: 6fa82e54e144367458ec9e3c369db401, type: 2}
+  - {fileID: 11400000, guid: ee74f3f72aff125448a71451c030579d, type: 2}
   <placingMaterialValid>k__BackingField: {fileID: 2100000, guid: 8f3a34b77d0b3a346b17b97fd3430c15, type: 2}
   <placingMaterialInvalid>k__BackingField: {fileID: 2100000, guid: bc48824eaffa25b4db76bdf95b6194db, type: 2}
   BackgroundLayer:
@@ -168,7 +172,7 @@ MonoBehaviour:
     m_Bits: 256
   LevelStartPos: {x: 0, y: 0, z: 0}
   LevelStartRot: {x: 0, y: 0, z: 0}
-  CharacterDesignPos: {x: -18.802, y: 1.73, z: 1.099}
+  CharacterDesignPos: {x: -18.802, y: 1.608, z: 1.099}
   CharacterDesignRot: {x: 0, y: 95, z: 0}
   CodeBlockPrefab: {fileID: 2494328983319479514, guid: 7d90000985adfa34198f1a9521920771, type: 3}
   TestingMode: 0

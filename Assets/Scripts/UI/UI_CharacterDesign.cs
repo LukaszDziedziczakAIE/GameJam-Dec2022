@@ -261,9 +261,11 @@ public class UI_CharacterDesign : UI_Base
     private void OnNextWeaponButtonPress()
     {
         weaponIndex++;
-        if (weaponIndex >= 2) weaponIndex = 0;
-        if (weaponIndex == 0) weaponText.text = "Sword";
-        else if (weaponIndex == 1) weaponText.text = "Bow";
+        if (weaponIndex >= 4) weaponIndex = 0;
+        if (weaponIndex == 0) weaponText.text = "Knights Sword";
+        else if (weaponIndex == 1) weaponText.text = "Crusader Blade";
+        else if (weaponIndex == 2) weaponText.text = "Goblin Scimitar";
+        else if (weaponIndex == 3) weaponText.text = "Bloody Warhammer";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
         selectedCharacter.UpdateCharacter();
     }
@@ -271,9 +273,11 @@ public class UI_CharacterDesign : UI_Base
     private void OnPreviousWeaponButtonPress()
     {
         weaponIndex--;
-        if (weaponIndex <= -1) weaponIndex = 1;
-        if (weaponIndex == 0) weaponText.text = "Sword";
-        else if (weaponIndex == 1) weaponText.text = "Bow";
+        if (weaponIndex <= -1) weaponIndex = 3;
+        if (weaponIndex == 0) weaponText.text = "Knights Sword";
+        else if (weaponIndex == 1) weaponText.text = "Crusader Blade";
+        else if (weaponIndex == 2) weaponText.text = "Goblin Scimitar";
+        else if (weaponIndex == 3) weaponText.text = "Bloody Warhammer";
         Game.CharacterConfig[currentCharacterIndex].weaponRef = weaponIndex;
         selectedCharacter.UpdateCharacter();
     }
