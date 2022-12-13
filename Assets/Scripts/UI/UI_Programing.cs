@@ -47,6 +47,7 @@ public class UI_Programing : UI_Base
         BuildBlockList();
 
         CurrentlySelected = 0;
+        UpdateButtonInteractability();
     }
 
     public override void Hide()
@@ -75,6 +76,7 @@ public class UI_Programing : UI_Base
         enemyButton3.interactable = true;
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
+        UpdateButtonInteractability();
     }
 
     private void OnEnemyButton2Press()
@@ -85,6 +87,7 @@ public class UI_Programing : UI_Base
         enemyButton3.interactable = true;
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
+        UpdateButtonInteractability();
     }
 
     private void OnEnemyButton3Press()
@@ -95,6 +98,7 @@ public class UI_Programing : UI_Base
         enemyButton3.interactable = false;
         enemyButton4.interactable = true;
         BuildCharacterBlocks();
+        UpdateButtonInteractability();
     }
 
     private void OnEnemyButton4Press()
@@ -105,6 +109,7 @@ public class UI_Programing : UI_Base
         enemyButton3.interactable = true;
         enemyButton4.interactable = false;
         BuildCharacterBlocks();
+        UpdateButtonInteractability();
     }
 
     private CharacterConfig config
@@ -117,18 +122,28 @@ public class UI_Programing : UI_Base
 
     public void BuildCharacterBlocks()
     {
-        if (CurrentlySelected == 0 || programmingCharacterItem != null) return;
-        ClearCharacterBlocks();
+        if (CurrentlySelected == 0) return;
+        if (programmingCharacterItem == null)
+        {
+            Debug.LogError(name + " is missing programmingCharacterItem");
+            return;
+        }
 
+
+        ClearCharacterBlocks();
+        print("Building Character Blocks");
         if (config.CodeBlocks.Count > 0)
         {
-            foreach(CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
+            foreach (CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
             {
                 UI_ProgrammingCharacterItem charItem = Instantiate(programmingCharacterItem, CharacterBlocksContent);
                 charItem.Set(block.CodeConfig);
                 characterItems.Add(charItem);
             }
+            
         }
+        else Debug.LogError("config.CodeBlocks.Count is " + config.CodeBlocks.Count + name);
+        
     }
 
     private void ClearCharacterBlocks()
@@ -172,6 +187,20 @@ public class UI_Programing : UI_Base
         {
             Destroy (selectedCharacter.gameObject);
             selectedCharacter = null;
+        }
+    }
+
+    private void UpdateButtonInteractability()
+    {
+        if (items.Count > 0)
+        {
+            bool interactable = CurrentlySelected != 0;
+            foreach (UI_ProgramingItem item in items)
+            {
+                item.ButtonInteractability(interactable);
+            }
+
+
         }
     }
 }

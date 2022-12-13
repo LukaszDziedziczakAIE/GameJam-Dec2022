@@ -795,6 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Game: {fileID: 0}
+  <CurrentlySelected>k__BackingField: 0
   CharacterBlocks: {fileID: 7347420297591202909}
   enemyButton1: {fileID: 1293447375901369798}
   enemyButton2: {fileID: 6502363544854879963}
@@ -802,7 +803,6 @@ MonoBehaviour:
   enemyButton4: {fileID: 6517551593839784720}
   CodeBlockContent: {fileID: 4327841697974151138}
   CharacterBlocksContent: {fileID: 7709115415003232483}
-  <CurrentlySelected>k__BackingField: 0
   programingItemPrefab: {fileID: 6114937610319085313, guid: 19c9ee0a776c4a64294bcebc09f664b3, type: 3}
   programmingCharacterItem: {fileID: 8005338914759353585, guid: 88604ea7dfa1fa947963dd97be514e07, type: 3}
 --- !u!1 &5673381055158194254

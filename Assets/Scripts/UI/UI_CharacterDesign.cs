@@ -189,9 +189,9 @@ public class UI_CharacterDesign : UI_Base
                     enemy4Image.texture = enemyIcon;
                     break;
             }
-            Game.PointSystem.RemoveArtPoints(costPerEnemy/3);
-            Game.PointSystem.RemoveDesignPoints(costPerEnemy / 3);
-            Game.PointSystem.RemoveProgrammingPoints(costPerEnemy / 3);
+            Game.PointSystem.AddArtPoints(costPerEnemy/3);
+            Game.PointSystem.AddDesignPoints(costPerEnemy / 3);
+            Game.PointSystem.AddProgrammingPoints(costPerEnemy / 3);
         }
     }
 
@@ -310,9 +310,9 @@ public class UI_CharacterDesign : UI_Base
     {
         Game.CharacterConfig[currentCharacterIndex].Clear();
         OnPlayerButtonPress();
-        Game.PointSystem.AddArtPoints(costPerEnemy/3);
-        Game.PointSystem.AddDesignPoints(costPerEnemy / 3);
-        Game.PointSystem.AddProgrammingPoints(costPerEnemy / 3);
+        Game.PointSystem.RemoveArtPoints(costPerEnemy/3);
+        Game.PointSystem.RemoveDesignPoints(costPerEnemy / 3);
+        Game.PointSystem.RemoveProgrammingPoints(costPerEnemy / 3);
     }
 
     private void SetCharacterButtonVisibility()

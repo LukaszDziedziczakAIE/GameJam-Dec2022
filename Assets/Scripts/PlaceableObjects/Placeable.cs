@@ -203,7 +203,13 @@ public class Placeable : MonoBehaviour
 
     public void RestartPlacement()
     {
-        // take points back
+        if (config != null)
+        {
+            if (config.isArt) game.PointSystem?.RemoveArtPoints(config.Cost);
+            else if (config.isDesign) game.PointSystem?.RemoveDesignPoints(config.Cost);
+        }
+        else Debug.LogError(name + " is missing config!");
+        
         Placing = true;
         game.isPlacing = true;
         game.InputReader.RightMouseEvent += OnCancel;
