@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7b9cad5a6320506428d2f914ad951cc3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4898dcaa56f6f0c46b97faf61df162ad, type: 2}
   m_Tag: Death
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 50d186640cc411c42b0177845e035c13, type: 2}
+  m_Motion: {fileID: 7400000, guid: b2e2b7b13a3d2d0428ffdcc200ee7f16, type: 2}
   m_Tag: Attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -266,7 +266,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a4559bcfdc37ab14098af1efeaf7fbc8, type: 2}
+  m_Motion: {fileID: 7400000, guid: ea520d4c5611f694480fcf4d338011d4, type: 2}
   m_Tag: JumpPad
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -396,12 +396,6 @@ AnimatorStateMachine:
     m_State: {fileID: -8988384320981211430}
     m_Position: {x: -210, y: 200, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 30182431098795597}
-    m_Position: {x: -210, y: -280, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 110751614281911874}
-    m_Position: {x: -770, y: -390, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 522141447717236989}
     m_Position: {x: -210, y: -20, z: 0}
   - serializedVersion: 1
@@ -452,7 +446,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2fae1519616392449a372af8355f7852, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1ab59d17da60dca4ca4db38b69984fb7, type: 2}
   m_Tag: Impact
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -501,7 +495,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 20c354ca9086d1b4e9526ecb1ef2cea0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6db0aec92d1517e4397129fff4d3839b, type: 2}
   m_Tag: JumpPad
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -528,7 +522,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 388269b2c8a7d2947be313c49899f0df, type: 2}
+  m_Motion: {fileID: 7400000, guid: 93bc139649b7cf849b5a0057c2ac1d80, type: 2}
   m_Tag: JumpPad
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -571,7 +565,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5218458318691983206}
-  - {fileID: -3677486431967119024}
   - {fileID: -6952738166765804258}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -605,9 +598,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 1.6382895
   m_TransitionOffset: 0
-  m_ExitTime: 0.91847825
+  m_ExitTime: 0.6581734
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -622,7 +615,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9a63bdaa70aa1e84bac280d4c9300c9d, type: 2}
+    m_Motion: {fileID: 7400000, guid: d3fa56a64f72fa34e83f890a3f2ee370, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -630,7 +623,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 82e5b2f9e10873e4cb07aa65b431054e, type: 2}
+    m_Motion: {fileID: 7400000, guid: f1c55d38663208f49975b8cf9e3838e4, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
