@@ -19,7 +19,7 @@ public class PointSystem : MonoBehaviour
 
     private void Start()
     {
-        originalPoints = points;    
+        originalPoints = points;
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class PointSystem : MonoBehaviour
         points -= remove;
         text.text = "Points: " + points;
 
-        float sliderValue = originalPoints / 200;
+        float sliderValue = (float)points / originalPoints;
         slider.value = sliderValue;
     }
 
@@ -50,7 +50,12 @@ public class PointSystem : MonoBehaviour
         points += add;
         text.text = "Points: " + points;
 
-        float sliderValue = originalPoints / 200;
+        float sliderValue = (float)points / originalPoints;
         slider.value = sliderValue;
+    }
+
+    public bool CanBuy(int price)
+    {
+        return points - price >= 0;
     }
 }
