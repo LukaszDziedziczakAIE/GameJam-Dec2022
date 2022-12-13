@@ -34,31 +34,30 @@ public class UI_LevelContentItem : UI_Base
 
     private void OnButtonPress()
     {
-        print("clicked something to place");
         if (Game.isPlacing)
         {
             Debug.LogError("Game is placing, exiting.");
             return;
         }
 
-        if (!Game.PointSystem.CanBuy(placeableObject.Cost))
+        int cost = 0;
+        if (placeableObject != null) cost = placeableObject.Cost;
+        else if (characterObject != null) cost = characterObject.Cost;
+
+        if (!Game.PointSystem.CanBuy(cost))
         {
             Debug.LogError("Cannot afford " + placeableObject.Cost);
             return;
         }
 
-        print(characterObject);
         if (characterObject != null)
         {
-            print("about to place enemy character");
             EnemyCharacter enemy = Instantiate(characterObject.EnemyCharacterPrefab);
             enemy.configRef = characterObject.CharacterIndex;
             enemy.UpdateCharacter();
             enemy.Placeable.Set(characterObject);
             enemy.Placeable.Placing = true;
             Game.isPlacing = true;
-
-            //enemy.Set(placeableObject);
         }
         else if (placeableObject != null)
         {

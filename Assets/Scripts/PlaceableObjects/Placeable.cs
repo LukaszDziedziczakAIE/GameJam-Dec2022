@@ -166,8 +166,8 @@ public class Placeable : MonoBehaviour
     {
         game.InputReader.RightMouseEvent -= OnCancel;
         game.InputReader.LeftMouseEvent -= OnPlace;
-        Destroy(gameObject);
         game.isPlacing = false;
+        Destroy(gameObject);
     }
 
 
