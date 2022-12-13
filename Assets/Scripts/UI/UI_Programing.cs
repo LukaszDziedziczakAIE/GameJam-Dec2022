@@ -131,7 +131,6 @@ public class UI_Programing : UI_Base
 
 
         ClearCharacterBlocks();
-        print("Building Character Blocks");
         if (config.CodeBlocks.Count > 0)
         {
             foreach (CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
@@ -142,7 +141,7 @@ public class UI_Programing : UI_Base
             }
             
         }
-        else Debug.LogError("config.CodeBlocks.Count is " + config.CodeBlocks.Count + name);
+        else Debug.LogError("config.CodeBlocks.Count is " + config.CodeBlocks.Count + " in " + name);
         
     }
 

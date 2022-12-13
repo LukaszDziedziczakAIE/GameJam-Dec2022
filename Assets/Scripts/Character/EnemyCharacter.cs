@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyCharacter : Character
 {
-    const string PATROL = "Patrol";
-    const string FOLLOW = "FollowPlayer";
+    const string ATTACK = "Attack";
+    const string CHASE = "ChasePlayer";
     const string CLIMB = "ClimbLadder";
-    const string CHASE = "Chase";
-    const string ATTACK = "Attac";
+    const string HEALTH = "ExtraHealth";
+    const string PATROL = "Patrol";
 
 
     public Placeable Placeable { get; private set; }
@@ -33,14 +33,46 @@ public class EnemyCharacter : Character
         if (Game.TestingMode)
         {
             CB_PatrolBehaviour();
-
+            CB_ChaseBehaviour();
+            CB_ClimbBehaviour();
+            CB_ExtraHealthBehaviour();
+            CB_PatrolBehaviour();
         }
+    }
+
+
+    private void CB_AttackBehaviour()
+    {
+        if (!Game.CharacterConfig[configRef].HasCodeBlock(ATTACK)) return;
+
+        print("ATTACK Behaviour Online");
+    }
+
+    private void CB_ChaseBehaviour()
+    {
+        if (!Game.CharacterConfig[configRef].HasCodeBlock(CHASE)) return;
+
+        print("CHASE Behaviour Online");
+    }
+
+    private void CB_ClimbBehaviour()
+    {
+        if (!Game.CharacterConfig[configRef].HasCodeBlock(CLIMB)) return;
+
+        print("CLIMB Behaviour Online");
+    }
+
+    private void CB_ExtraHealthBehaviour()
+    {
+        if (!Game.CharacterConfig[configRef].HasCodeBlock(HEALTH)) return;
+
+        print("HEALTH Behaviour Online");
     }
 
     private void CB_PatrolBehaviour()
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(PATROL)) return;
 
-        print("Patrol Behaviour Online");
+        print("PATROL Behaviour Online");
     }
 }
