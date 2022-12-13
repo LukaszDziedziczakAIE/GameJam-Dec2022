@@ -72,6 +72,8 @@ public class PlayerCharacter : Character
 
     protected Vector3 CalculateMovement()
     {
+        if (!isAlive) return Vector3.zero;
+
         Vector3 forward = Game.Camera.transform.forward;
         Vector3 right = Game.Camera.transform.right;
 
