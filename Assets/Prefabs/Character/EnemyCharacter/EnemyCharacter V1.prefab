@@ -708,6 +708,12 @@ MonoBehaviour:
   configRef: 0
   drag: 0.3
   inLevel: 1
+  attackRange: 2
+  minChaseRange: 1.5
+  maxChaseRange: 15
+  extraHealth: 2
+  patrolRange: 10
+  RotationDamping: 24
 --- !u!143 &1005324743469211783
 CharacterController:
   m_ObjectHideFlags: 0
