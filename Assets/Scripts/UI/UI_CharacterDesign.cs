@@ -208,7 +208,7 @@ public class UI_CharacterDesign : UI_Base
     private void OnPreviousHelmetButtonPress()
     {
         helmetIndex--;
-        if (helmetIndex <= -1) helmetIndex = 3;
+        if (helmetIndex <= -1) helmetIndex = 2;
         helmetText.text = "Helmet " + (helmetIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();
@@ -217,7 +217,7 @@ public class UI_CharacterDesign : UI_Base
     private void OnNextHelmetButtonPress()
     {
         helmetIndex++;
-        if (helmetIndex >= 4) helmetIndex = 0;
+        if (helmetIndex >= 3) helmetIndex = 0;
         helmetText.text = "Helmet " + (helmetIndex + 1);
         Game.CharacterConfig[currentCharacterIndex].helmetRef = helmetIndex;
         selectedCharacter.UpdateCharacter();
