@@ -168,11 +168,11 @@ public class EnemyCharacter : Character
 
     private void MoveLeft()
     {
-        EnemyMovement = new Vector3(-1, 0, 0);
+        EnemyMovement = new Vector3(0, 0, -1);
     }
 
     private void MoveRight()
     {
-        EnemyMovement = new Vector3(1, 0, 0);
+        EnemyMovement = new Vector3(0, 0, 1);
     }
 }

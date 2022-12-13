@@ -2332,9 +2332,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 4.8912
       objectReference: {fileID: 0}
+    - target: {fileID: 5080100654901554012, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603915414904556518, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603915415324448530, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603915416868449674, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7072002354493335582, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
       propertyPath: m_Name
       value: TopHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132031329690967523, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f220b5fd39b8c9642a8cb060444b2b02, type: 3}
