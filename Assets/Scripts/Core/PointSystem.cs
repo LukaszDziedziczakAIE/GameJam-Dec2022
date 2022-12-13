@@ -99,7 +99,7 @@ public class PointSystem : MonoBehaviour
     {
         text.text = "Points: " + remainingPoints;
 
-        float sliderValue = (float)remainingPoints / initialPoints;
+        float sliderValue = (float)remainingPoints / (float)initialPoints;
         slider.value = sliderValue;
     }
 }
