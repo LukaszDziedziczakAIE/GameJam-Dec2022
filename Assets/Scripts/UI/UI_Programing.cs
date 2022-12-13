@@ -68,24 +68,40 @@ public class UI_Programing : UI_Base
     private void OnEnemyButton1Press()
     {
         CurrentlySelected = 1;
+        enemyButton1.interactable = false;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = true;
         BuildCharacterBlocks();
     }
 
     private void OnEnemyButton2Press()
     {
         CurrentlySelected = 2;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = false;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = true;
         BuildCharacterBlocks();
     }
 
     private void OnEnemyButton3Press()
     {
         CurrentlySelected = 3;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = false;
+        enemyButton4.interactable = true;
         BuildCharacterBlocks();
     }
 
     private void OnEnemyButton4Press()
     {
         CurrentlySelected = 4;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = false;
         BuildCharacterBlocks();
     }
 
