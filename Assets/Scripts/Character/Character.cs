@@ -211,16 +211,22 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void TakeHealth(int amount = 1)
+    public void TakeHealth(int amount = 1)
     {
         Health -= amount;
         if (Health <= 0) Death();
     }
 
-    private void GiveHealth(int amount = 1)
+    public void GiveHealth(int amount = 1)
     {
         Health += amount;
     }
+
+    public void SetHealth(int newHealth)
+    {
+        Health = newHealth;
+    }
+
 
     private void Death()
     {
