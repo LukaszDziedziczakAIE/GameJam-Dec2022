@@ -250,6 +250,7 @@ MonoBehaviour:
   <Helmet>k__BackingField: {fileID: 0}
   Speed: 5
   jumpForce: 5
+  <Health>k__BackingField: 1
   Renderer: {fileID: 3919570538776275452}
   configRef: 0
   drag: 0.3
@@ -272,7 +273,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!114 &877428395710176487
 MonoBehaviour:
   m_ObjectHideFlags: 0

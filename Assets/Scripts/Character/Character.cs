@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameObject Helmet { get; private set; }
     [field: SerializeField] public float Speed = 5;
     [field: SerializeField] public float jumpForce = 5;
-    [field: SerializeField] public int Health { get; private set; }
+    [field: SerializeField] public int Health { get; private set; } = 1;
     [SerializeField] SkinnedMeshRenderer Renderer;
 
     public int configRef;
@@ -211,8 +211,9 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void TakeHealth(int amount = 1)
+    public void TakeDamage(int amount = 1)
     {
+        Animator?.SetTrigger("Impact");
         Health -= amount;
         if (Health <= 0) Death();
     }
@@ -227,9 +228,11 @@ public class Character : MonoBehaviour
         Health = newHealth;
     }
 
-
     private void Death()
     {
-
+        Animator?.SetTrigger("Death");
+        if (configRef != 0) Destroy(gameObject, 2);
     }
+
+    public bool isAlive { get { return Health > 0; } }
 }
