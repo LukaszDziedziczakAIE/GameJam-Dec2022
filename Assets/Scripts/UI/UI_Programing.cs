@@ -44,9 +44,9 @@ public class UI_Programing : UI_Base
         enemyButton2.gameObject.gameObject.SetActive(Game.CharacterConfig[2].active);
         enemyButton3.gameObject.gameObject.SetActive(Game.CharacterConfig[3].active);
         enemyButton4.gameObject.gameObject.SetActive(Game.CharacterConfig[4].active);
-        BuildBlockList();
 
         CurrentlySelected = 0;
+        BuildBlockList();
         UpdateButtonInteractability();
 
         if (Game.CharacterConfig[1].active) OnEnemyButton1Press();
