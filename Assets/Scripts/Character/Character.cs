@@ -140,15 +140,15 @@ public class Character : MonoBehaviour
 
         switch (config.helmetRef)
         {
-            case 1:
+            case 0:
                 HelmentRenderer.material = Game.Helmet1Colors[config.armourColourRef];
                 break;
 
-            case 2:
+            case 1:
                 HelmentRenderer.material = Game.Helmet2Colors[config.armourColourRef];
                 break;
 
-            case 3:
+            case 2:
                 HelmentRenderer.material = Game.Helmet3Colors[config.armourColourRef];
                 break;
         }
@@ -203,10 +203,10 @@ public class Character : MonoBehaviour
     {
         get
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
 
             Ray ray = new Ray(position, transform.up);
-            Debug.DrawLine(ray.origin, transform.up * -0.5f);
+            Debug.DrawLine(ray.origin, transform.up * 1f);
             RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Game.GroundLayer.value);
             
             if (hits.Length > 0)
