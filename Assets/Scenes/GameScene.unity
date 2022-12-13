@@ -874,6 +874,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
+      propertyPath: GroundRaycastLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503326331158938952, guid: b27f8b2a93e0b3e479f3bf919abff632, type: 3}
       propertyPath: <HUD>k__BackingField
       value: 
       objectReference: {fileID: 304228132565001728}
