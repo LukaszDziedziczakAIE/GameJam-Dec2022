@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Game>k__BackingField: {fileID: 0}
-  <HeadPos>k__BackingField: {fileID: 0}
+  <HeadPos>k__BackingField: {fileID: 1226877006609811736}
   Controller: {fileID: 3711287403960588901}
   Animator: {fileID: 2434338333872718430}
   Audio: {fileID: 6443308998982580109}
