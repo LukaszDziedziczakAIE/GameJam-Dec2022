@@ -25,6 +25,8 @@ public class UI_Programing : UI_Base
     List<UI_ProgramingItem> items = new List<UI_ProgramingItem>();
     List<UI_ProgrammingCharacterItem> characterItems = new List<UI_ProgrammingCharacterItem>();
 
+    Character selectedCharacter;
+
     private void Start()
     {
         programmingObjectConfigs = Resources.LoadAll<ProgrammingObjectConfig>("ProgrammingBlocks/");
@@ -138,6 +140,38 @@ public class UI_Programing : UI_Base
                 Destroy(item.gameObject);
             }
             characterItems.Clear();
+        }
+    }
+
+
+    private void SpawnCharacter()
+    {
+        if (Game.EnemyCharacterPrefab == null)
+        {
+            Debug.LogError("Missing enemy Prefab");
+            return;
+        }
+
+        ClearCharacter();
+        selectedCharacter = Instantiate(
+            Game.EnemyCharacterPrefab,
+            Game.ProgrammingPos,
+            Quaternion.Euler(Game.ProgrammingRot));
+        selectedCharacter.configRef = CurrentlySelected;
+        selectedCharacter.UpdateCharacter();
+        selectedCharacter.inLevel = false;
+        if (selectedCharacter.TryGetComponent<Placeable>(out Placeable placeable))
+        {
+            placeable.Placing = false;
+        }
+    }
+
+    private void ClearCharacter()
+    {
+        if (selectedCharacter != null)
+        {
+            Destroy (selectedCharacter.gameObject);
+            selectedCharacter = null;
         }
     }
 }

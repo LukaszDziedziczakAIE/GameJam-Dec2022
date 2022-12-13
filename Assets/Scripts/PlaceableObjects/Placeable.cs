@@ -166,7 +166,7 @@ public class Placeable : MonoBehaviour
 
     private void OnPlace()
     {
-        if (!validPlacement) return;
+        if (!validPlacement || !game.isPlacing) return;
 
         Placing = false;
         game.isPlacing = false;
