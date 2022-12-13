@@ -12,24 +12,31 @@ public class PointSystem : MonoBehaviour
 
     public Color[] colors;
 
-    //public int points;
-    public int programmingPoints;
-    public int artPoints;
-    public int designPoints;
-
-    private float originalPoints;
+    [SerializeField] private int initialPoints = 200;
+    private int programmingPoints;
+    private int artPoints;
+    private int designPoints;
 
 
     private void Start()
     {
-        originalPoints = points;
     }
 
-    public float points
+    public int totalPoint
     {
         get
         {
             return programmingPoints + artPoints + designPoints;
+        }
+    }
+
+    public int remainingPoints
+    {
+        get
+        {
+            /*print("spendingPoints=" + spendingPoints);
+            print("totalPointsused=" + totalPoint);*/
+            return initialPoints - totalPoint;
         }
     }
 
@@ -85,14 +92,14 @@ public class PointSystem : MonoBehaviour
 
     public bool CanBuy(int price)
     {
-        return points - price >= 0;
+        return remainingPoints - price >= 0;
     }
 
     public void UpdateScoreText()
     {
-        text.text = "Points: " + points;
+        text.text = "Points: " + remainingPoints;
 
-        float sliderValue = (float)points / originalPoints;
+        float sliderValue = (float)remainingPoints / (float)initialPoints;
         slider.value = sliderValue;
     }
 }
