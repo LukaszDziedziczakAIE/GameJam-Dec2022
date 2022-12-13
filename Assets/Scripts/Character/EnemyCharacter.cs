@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemyCharacter : Character
 {
     const string PATROL = "Patrol";
+    const string FOLLOW = "FollowPlayer";
+    const string CLIMB = "ClimbLadder";
+    const string CHASE = "Chase";
+    const string ATTACK = "Attac";
+
 
     public Placeable Placeable { get; private set; }
 

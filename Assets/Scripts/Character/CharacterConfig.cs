@@ -48,4 +48,18 @@ public class CharacterConfig : ScriptableObject
         }
         return false;
     }
+
+    public void RemoveCodeBlock(ProgrammingObjectConfig config)
+    {
+        if (!HasCodeBlock(config.ObjectName)) return;
+
+        foreach (CharacterCodeBlock codeBlock in CodeBlocks.ToArray())
+        {
+            if (codeBlock.CodeConfig.name == config.name)
+            {
+                CodeBlocks.Remove(codeBlock);
+                return;
+            }
+        }
+    }
 }
