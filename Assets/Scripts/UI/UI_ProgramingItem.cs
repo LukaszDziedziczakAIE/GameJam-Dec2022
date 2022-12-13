@@ -31,7 +31,10 @@ public class UI_ProgramingItem : UI_Base
 
         Game.CharacterConfig[current].AddCodeBlock(config);
         Game.HUD.Programing.BuildCharacterBlocks();
-        Game.PointSystem.AddProgrammingPoints(config.Cost);
+        if (Game.PointSystem.CanBuy(config.Cost))
+        {
+            Game.PointSystem.AddProgrammingPoints(config.Cost);
+        }
         //print("Adding codeBlock");
     }
 
