@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class MenuAudio : MonoBehaviour
 {
+
+
+
+
+    [SerializeField] public AudioSource UIsource;
+
+
     [Header("TabClick")]
-    [SerializeField] public AudioSource TabSource;
     [SerializeField] public List<AudioClip> TabClips;
 
     [Header("ObjectClick")]
-    [SerializeField] public AudioSource ClickSource;
     [SerializeField] public List<AudioClip> ClickClips;
 
     [Header("DropObject")]
-    [SerializeField] public AudioSource DropSource;
     [SerializeField] public List<AudioClip> DropClips;
+
+
     void Start()
     {
-        if (TabSource != null)
+
+        if (UIsource != null)
         {
-            TabSource.loop = false;
+            UIsource.GetComponent<AudioSource>();
+            UIsource.loop = false;
         }
 
-        if (ClickSource != null)
-        {
-            ClickSource.loop = false;
-        }
+   
 
-        if (DropSource != null)
-        {
-            DropSource.loop = false;
-        }
     }
 
     private AudioClip TabClip
@@ -73,31 +74,31 @@ public class MenuAudio : MonoBehaviour
 
     private void PlayTabSource(AudioClip audioClip)
     {
-        if (TabSource != null && audioClip != null)
+        if (UIsource != null && audioClip != null)
         {
-            if (TabSource.isPlaying) TabSource.Stop();
-            TabSource.clip = audioClip;
-            TabSource.Play();
+            if (UIsource.isPlaying) UIsource.Stop();
+            UIsource.clip = audioClip;
+            UIsource.Play();
         }
     }
 
     private void PlayClickSource(AudioClip audioClip)
     {
-        if (ClickSource != null && audioClip != null)
+        if (UIsource != null && audioClip != null)
         {
-            if (ClickSource.isPlaying) ClickSource.Stop();
-            ClickSource.clip = audioClip;
-            ClickSource.Play();
+            if (UIsource.isPlaying) UIsource.Stop();
+            UIsource.clip = audioClip;
+            UIsource.Play();
         }
     }
 
     private void PlayDropSource(AudioClip audioClip)
     {
-        if (DropSource != null && audioClip != null)
+        if (UIsource != null && audioClip != null)
         {
-            if (DropSource.isPlaying) DropSource.Stop();
-            DropSource.clip = audioClip;
-            DropSource.Play();
+            if (UIsource.isPlaying) UIsource.Stop();
+            UIsource.clip = audioClip;
+            UIsource.Play();
         }
     }
 
@@ -123,4 +124,5 @@ public class MenuAudio : MonoBehaviour
             PlayDropSource(DropClip);
         }
     }
+
 }

@@ -169,7 +169,7 @@ public class Placeable : MonoBehaviour
 
     private void OnPlace()
     {
-        if (!validPlacement || !game.isPlacing) return;
+        if (!validPlacement || !game.isPlacing || config == null || game == null || game.PointSystem == null) return;
 
         Placing = false;
         game.isPlacing = false;

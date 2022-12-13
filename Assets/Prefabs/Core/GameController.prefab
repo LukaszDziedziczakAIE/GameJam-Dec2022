@@ -249,7 +249,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameAudio
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4203160906843923815, guid: e05dfb9fa49e68a409f1d04a952bf3a2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e05dfb9fa49e68a409f1d04a952bf3a2, type: 3}
 --- !u!4 &503326332316074822 stripped
 Transform:
