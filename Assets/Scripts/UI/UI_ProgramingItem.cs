@@ -30,5 +30,6 @@ public class UI_ProgramingItem : UI_Base
         if (current == 0) return;
 
         Game.CharacterConfig[current].AddCodeBlock(config);
+        Game.HUD.Programing.BuildCharacterBlocks();
     }
 }

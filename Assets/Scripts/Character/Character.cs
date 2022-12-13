@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public GameObject Helmet { get; private set; }
     [field: SerializeField] public float Speed = 5;
     [field: SerializeField] public float jumpForce = 5;
+    [field: SerializeField] public int Health { get; private set; }
     [SerializeField] SkinnedMeshRenderer Renderer;
 
     public int configRef;
@@ -208,5 +209,21 @@ public class Character : MonoBehaviour
                 Physics.Raycast(ray, Game.GroundRaycastLength, Game.InteractableLayer)) return true;
             return false;
         }
+    }
+
+    private void TakeHealth(int amount = 1)
+    {
+        Health -= amount;
+        if (Health <= 0) Death();
+    }
+
+    private void GiveHealth(int amount = 1)
+    {
+        Health += amount;
+    }
+
+    private void Death()
+    {
+
     }
 }

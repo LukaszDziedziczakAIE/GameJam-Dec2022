@@ -52,6 +52,13 @@ public class UI_LeveDesign : UI_Base
         base.Show();
         OnEnviromentButtonPress();
         Game.PlayerCharacter.Animator.StopPlayback();
+        Game.InputReader.LeftMouseEvent += OnLeftClick;
+    }
+
+    public override void Hide()
+    {
+        Game.InputReader.LeftMouseEvent -= OnLeftClick;
+        base.Hide();
     }
 
     private void OnEnviromentButtonPress()
@@ -96,8 +103,10 @@ public class UI_LeveDesign : UI_Base
 
     private void BuildListInteractable()
     {
+        
         if (interactableObjectsItems.Count == 0 && interactableObjects.Length > 0)
         {
+            
             foreach (PlaceableObject placeableObject in interactableObjects)
             {
                 UI_LevelContentItem levelContentItem = Instantiate(levelContentItemPrefab, interactableContent);
@@ -105,6 +114,8 @@ public class UI_LeveDesign : UI_Base
                 enviromentalObjectItems.Add(levelContentItem);
             }
         }
+
+
     }
 
     private void BuildListCharacter()
@@ -121,6 +132,26 @@ public class UI_LeveDesign : UI_Base
                 }
                 
             }
+        }
+    }
+
+    private void OnLeftClick()
+    {
+        if (Game.isPlacing) return;
+
+        Ray ray = Game.Camera.Camera.ScreenPointToRay(Game.InputReader.MousePosition);
+        RaycastHit hit;
+
+        /*if (Physics.Raycast(ray, out hit, Game.RaycastDistance))
+        {
+            print("Raycasting on click hit " + hit.collider.name);
+        }
+        else print("Raycasting on click miss");*/
+
+        if (Physics.Raycast(ray, out hit, Game.RaycastDistance) &&
+            hit.collider.gameObject.TryGetComponent<Placeable>(out Placeable placeable))
+        {
+            placeable.RestartPlacement();
         }
     }
 }

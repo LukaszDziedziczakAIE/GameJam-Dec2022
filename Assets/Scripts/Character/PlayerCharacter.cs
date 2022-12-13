@@ -47,7 +47,7 @@ public class PlayerCharacter : Character
 
     private void ProcessMovement()
     {
-        if (Game.TestingMode && InputReader.Movement.magnitude > 0)
+        if (Game.TestingMode && InputReader.Movement.x > 0)
         {
             Vector3 Movement = CalculateMovement();
             FaceMovementDirection(Movement);
@@ -72,7 +72,9 @@ public class PlayerCharacter : Character
         forward.Normalize();
         right.Normalize();
 
-        return forward * Game.InputReader.Movement.y + right * Game.InputReader.Movement.x;
+        float yOverride = 0;
+
+        return forward * /*Game.InputReader.Movement.y*/ yOverride + right * Game.InputReader.Movement.x;
     }
 
     protected void FaceMovementDirection(Vector3 movement)

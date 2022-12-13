@@ -23,6 +23,9 @@ public class UI_Programing : UI_Base
     [SerializeField] UI_ProgramingItem programingItemPrefab;
     [SerializeField] UI_ProgrammingCharacterItem programmingCharacterItem;
     List<UI_ProgramingItem> items = new List<UI_ProgramingItem>();
+    List<UI_ProgrammingCharacterItem> characterItems = new List<UI_ProgrammingCharacterItem>();
+
+    Character selectedCharacter;
 
     private void Start()
     {
@@ -67,21 +70,41 @@ public class UI_Programing : UI_Base
     private void OnEnemyButton1Press()
     {
         CurrentlySelected = 1;
+        enemyButton1.interactable = false;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = true;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton2Press()
     {
         CurrentlySelected = 2;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = false;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = true;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton3Press()
     {
         CurrentlySelected = 3;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = false;
+        enemyButton4.interactable = true;
+        BuildCharacterBlocks();
     }
 
     private void OnEnemyButton4Press()
     {
         CurrentlySelected = 4;
+        enemyButton1.interactable = true;
+        enemyButton2.interactable = true;
+        enemyButton3.interactable = true;
+        enemyButton4.interactable = false;
+        BuildCharacterBlocks();
     }
 
     private CharacterConfig config
@@ -92,16 +115,63 @@ public class UI_Programing : UI_Base
         }
     }
 
-    private void BuildCharacterBlocks()
+    public void BuildCharacterBlocks()
     {
         if (CurrentlySelected == 0 || programmingCharacterItem != null) return;
+        ClearCharacterBlocks();
 
         if (config.CodeBlocks.Count > 0)
         {
             foreach(CharacterConfig.CharacterCodeBlock block in config.CodeBlocks)
             {
-
+                UI_ProgrammingCharacterItem charItem = Instantiate(programmingCharacterItem, CharacterBlocksContent);
+                charItem.Set(block.CodeConfig);
+                characterItems.Add(charItem);
             }
+        }
+    }
+
+    private void ClearCharacterBlocks()
+    {
+        if (characterItems.Count > 0)
+        {
+            foreach (UI_ProgrammingCharacterItem item in characterItems)
+            {
+                Destroy(item.gameObject);
+            }
+            characterItems.Clear();
+        }
+    }
+
+
+    private void SpawnCharacter()
+    {
+        if (Game.EnemyCharacterPrefab == null)
+        {
+            Debug.LogError("Missing enemy Prefab");
+            return;
+        }
+
+        ClearCharacter();
+        selectedCharacter = Instantiate(
+            Game.EnemyCharacterPrefab,
+            Game.ProgrammingPos,
+            Quaternion.Euler(Game.ProgrammingRot));
+        selectedCharacter.configRef = CurrentlySelected;
+        selectedCharacter.UpdateCharacter();
+        selectedCharacter.inLevel = false;
+        if (selectedCharacter.TryGetComponent<Placeable>(out Placeable placeable))
+        {
+            placeable.Placing = false;
+        }
+    }
+
+    private void ClearCharacter()
+    {
+        if (selectedCharacter != null)
+        {
+            Destroy (selectedCharacter.gameObject);
+            selectedCharacter = null;
         }
     }
 }

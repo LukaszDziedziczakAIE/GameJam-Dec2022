@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [field: SerializeField] public CameraController Camera { get; private set; }
     [field: SerializeField] public PlayerCharacter PlayerCharacter { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
-    [SerializeField] float raycastDistance = 10f;
+    [field: SerializeField] public float RaycastDistance { get; private set; }
     [field: SerializeField] public float GridSnapInterval { get; private set; }
 
     [field: SerializeField, Header("Characters")] public CharacterConfig[] CharacterConfig { get; private set; }
@@ -50,7 +50,8 @@ public class GameController : MonoBehaviour
         {
             Ray ray = Camera.Camera.ScreenPointToRay(InputReader.MousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, raycastDistance, BackgroundLayer)) return hit.point;
+            Debug.DrawLine(ray.origin, ray.direction * RaycastDistance, Color.red);
+            if (Physics.Raycast(ray, out hit, RaycastDistance/*, BackgroundLayer*/)) return hit.point;
             else return Vector3.zero;
         }
     }
