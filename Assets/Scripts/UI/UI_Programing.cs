@@ -51,7 +51,7 @@ public class UI_Programing : UI_Base
 
         Camera.main.orthographic = false;
 
-        OnEnemyButton1Press();
+        if (Game.CharacterConfig[1].active) OnEnemyButton1Press();
     }
 
     public override void Hide()

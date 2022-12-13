@@ -197,6 +197,8 @@ public class Placeable : MonoBehaviour
         {
             enemyCharacter.isInPlay = true;
         }
+
+        character?.ResetPhysics();
     }
 
 
