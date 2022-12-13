@@ -169,7 +169,7 @@ public class Placeable : MonoBehaviour
 
     private void OnPlace()
     {
-        if (!validPlacement || !game.isPlacing) return;
+        if (!validPlacement || !game.isPlacing || config == null || game == null || game.PointSystem == null) return;
 
         Placing = false;
         game.isPlacing = false;
@@ -184,7 +184,8 @@ public class Placeable : MonoBehaviour
 
         if (character != null) character.Controller.enabled = true;
 
-        game.PointSystem?.TakePoints(config.Cost);
+        if (config.isArt) game.PointSystem?.AddArtPoints(config.Cost);
+        else if (config.isDesign) game.PointSystem?.AddDesignPoints(config.Cost);
     }
 
 
@@ -207,5 +208,20 @@ public class Placeable : MonoBehaviour
         game.isPlacing = true;
         game.InputReader.RightMouseEvent += OnCancel;
         game.InputReader.LeftMouseEvent += OnPlace;
+    }
+
+    private bool isGrounded
+    {
+        get
+        {
+            Vector3 position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            //print(position);
+            Vector3 down = transform.up * -1;
+            Ray ray = new Ray(position, down);
+            //Debug.DrawLine(ray.origin, ray.origin + transform.up * -1f * Game.GroundRaycastLength, Color.red);
+            if (Physics.Raycast(ray, game.PlaceableGroundRaycastDistance, game.GroundLayer) ||
+                Physics.Raycast(ray, game.PlaceableGroundRaycastDistance, game.InteractableLayer)) return true;
+            return false;
+        }
     }
 }

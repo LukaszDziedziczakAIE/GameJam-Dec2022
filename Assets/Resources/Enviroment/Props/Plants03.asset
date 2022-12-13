@@ -17,3 +17,5 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 2800000, guid: a0b887c56c20aa04e89f520296fcba8b, type: 3}
   <xPos>k__BackingField: 1.5
   <Cost>k__BackingField: 2
+  <isDesign>k__BackingField: 0
+  <isArt>k__BackingField: 1
