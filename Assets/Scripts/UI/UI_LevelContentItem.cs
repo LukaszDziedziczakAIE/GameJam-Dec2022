@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_LevelContentItem : MonoBehaviour
+public class UI_LevelContentItem : UI_Base
 {
     [SerializeField] Button button;
     [SerializeField] RawImage image;
@@ -34,6 +34,8 @@ public class UI_LevelContentItem : MonoBehaviour
 
     private void OnButtonPress()
     {
+        if (Game.isPlacing) return;
+
         if (characterObject != null)
         {
             EnemyCharacter enemy = Instantiate(characterObject.EnemyCharacterPrefab);
