@@ -192,6 +192,11 @@ public class Placeable : MonoBehaviour
         else if (config.isDesign) game.PointSystem?.AddDesignPoints(config.Cost);
 
         //if (boxCollider != null) boxCollider.gameObject.SetActive(false);
+
+        if(TryGetComponent<EnemyCharacter>(out EnemyCharacter enemyCharacter))
+        {
+            enemyCharacter.isInPlay = true;
+        }
     }
 
 

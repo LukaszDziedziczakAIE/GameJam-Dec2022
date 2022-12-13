@@ -29,6 +29,8 @@ public class EnemyCharacter : Character
     Vector3 EnemyMovement = Vector3.zero;
     [SerializeField] float RotationDamping = 24f;
 
+    public bool isInPlay;
+
     public Placeable Placeable { get; private set; }
 
     protected override void Awake()
@@ -44,10 +46,12 @@ public class EnemyCharacter : Character
 
     protected override void Update()
     {
-        if (Placeable.Placing) return;
+        if (Placeable.Placing || !isInPlay) return;
         base.Update();
 
         PlayMode();
+
+        print(name + " distance to player = " + distanceToPlayer);
     }
 
     private void PlayMode()
@@ -76,7 +80,7 @@ public class EnemyCharacter : Character
     private void CB_ChaseBehaviour()
     {
         if (!Game.CharacterConfig[configRef].HasCodeBlock(CHASE)) return;
-
+        print("running chase");
         if (distanceToPlayer < maxChaseRange && distanceToPlayer > minChaseRange)
         {
             if (Game.PlayerCharacter.transform.position.z < transform.position.z) MoveLeft();
