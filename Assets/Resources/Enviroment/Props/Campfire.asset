@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7445f2d759a47d949a74388359e8eea6, type: 3}
-  m_Name: Tent Blue
+  m_Name: Campfire
   m_EditorClassIdentifier: 
-  <ObjectName>k__BackingField: Tent Blue
-  <Prefab>k__BackingField: {fileID: 2678528936384764224, guid: 6ff1947c4708b3b46b1d8e3c0b4d7822, type: 3}
-  <Icon>k__BackingField: {fileID: 2800000, guid: 1c655c098f3fa154c89b51c2f6132cf0, type: 3}
-  <xPos>k__BackingField: 6
-  <Cost>k__BackingField: 10
+  <ObjectName>k__BackingField: Campfire
+  <Prefab>k__BackingField: {fileID: 6243012939333349445, guid: cad08dddd256a5f468394cad4dc329c1, type: 3}
+  <Icon>k__BackingField: {fileID: 2800000, guid: 850319569b918f445abe76e3b6eceaaf, type: 3}
+  <xPos>k__BackingField: 2
+  <Cost>k__BackingField: 8
   <isDesign>k__BackingField: 0
   <isArt>k__BackingField: 1
